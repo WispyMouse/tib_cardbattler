@@ -1,22 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 2:58:17 PM">
+<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 3:25:03 PM">
 
 	<Narration> -PIC:Tavern_Dingy-   -DIA:Pick and Play-</Narration>
 
 	<Dialogue trigger="None/" convID="Pick and Play" r="true">
-		<Branch num="1" name="">/This is the dispatch point of the dialogue. Normally seeing this would lead to your next encounter.
+		<Branch num="1" name="">/This is where we can choose encounters from. What do you fancy?
 			<Action>ShowDeckButton/</Action>
-			<Reply>Neat!/LoadConv/Default Encounter</Reply>
+			<Reply>vs Bandit Deck/LoadConv/Bandit Deck Battle</Reply>
+			<Reply>vs Starter Deck/LoadConv/Starter Deck Battle</Reply>
+			<Reply>vs Advanced Deck/LoadConv/Tourney Three Deck Battle</Reply>
+			<Reply>vs Dusht the Deplorable Deck/LoadConv/Dusht Deck Battle</Reply>
+			<Reply>vs Sita the Shark/LoadConv/Sita Deck Battle</Reply>
 		</Branch>
 	</Dialogue>
 
-	<Dialogue trigger="None/" convID="Default Encounter" r="true">
-		<Branch num="2" name="">-STR:_GeneratedUnit-/I'm a friendly random person. Let's play Psy Clash!
+	<Dialogue trigger="None/" convID="Bandit Deck Battle" r="true">
+		<Branch num="2" name="">-STR:_GeneratedUnit-/I really like bandits. My entire deck, all bandits!
 			<Action>SetString/ChosenClass,PICK{Assassin|Axefighter|Cavalier|Swordsman|Engineer|Spearman|Mentalist|Kineticist|Pyrokineticist|Cryokineticist|Photokineticist|Skiakineticist|Psy Healer|Gasul|Barudit|Dark Spriggat|Golden Spriggat|Red Spriggat|Frost Spriggat}</Action>
 			<Action>SetString/OpponentColor,PICK{Red|Orange|Yellow|Green|White|Black|Violet}</Action>
 			<Action>GenerateUnique/1,-STR:ChosenClass-,1,RANDOM,,,-1,-1,Down,,,,false,100,0,-1</Action>
-			<Action>SetList/OpponentDeck,Awareness|Bandit|Bandit|Bandit|Bandit|Barudit|Barudit|Bowman|Frost Armor|Fury|Leap|Merchant|Mind Blast|Mind Blast|Mind Shield|Mind Shield|Shadowling|Shadowling|Solid State Shield|Swordsman|Swordsman|Terror</Action>
+			<Action>SetList/OpponentDeck,Bandit|Bandit|Bandit|Bandit|Bandit|Bandit|Bandit|Bandit|Bandit|Bandit|Bandit|Bandit|Bandit|Bandit|Bandit|Bandit|Bandit|Bandit|Bandit|Bandit|Bandit|Bandit</Action>
 			<Action>AddPortrait/-STR:_GeneratedUnit-,-STR:_GeneratedUnit-,right</Action>
+			<Action>SetString/OpponentName,-STR:_GeneratedUnit-</Action>
+			<Reply>Fight on!/NextBranch</Reply>
+		</Branch>
+		<Branch num="3" name="">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,-STR:_GeneratedUnit-,-STR:OpponentColor-,20,0,OpponentDeck,-STR:_GeneratedUnit-,1,2</Action>
+			<Reply>/</Reply>
+		</Branch>
+	</Dialogue>
+	
+	<Dialogue trigger="None/" convID="Starter Deck Battle" r="true">
+		<Branch num="2" name="">Rohit/I have Rohit's deck, which is the starting deck. Good luck, have fun!
+			<Action>AddPortrait/Rohit,Villager Dese M,right</Action>
+			<Action>SetString/OpponentName,Rohit</Action>
+			<Action>SetList/OpponentDeck,Awareness|Bandit|Bandit|Bandit|Bandit|Barudit|Barudit|Bowman|Frost Armor|Fury|Leap|Merchant|Mind Blast|Mind Blast|Mind Shield|Mind Shield|Shadowling|Shadowling|Solid State Shield|Swordsman|Swordsman|Terror</Action>
+			<Reply>Fight on!/NextBranch</Reply>
+		</Branch>
+		<Branch num="3" name="">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Rohit,Red,20,0,StartingDeck,Rohit,1,2</Action>
+			<Reply>/</Reply>
+		</Branch>
+	</Dialogue>
+
+	<Dialogue trigger="None/" convID="Tourney Three Deck Battle" r="true">
+		<Branch num="2" name="">-STR:_GeneratedUnit-/I'm pretty tough. Good luck!
+			<Action>SetString/ChosenClass,PICK{Assassin|Axefighter|Cavalier|Swordsman|Engineer|Spearman|Mentalist|Kineticist|Pyrokineticist|Cryokineticist|Photokineticist|Skiakineticist|Psy Healer|Gasul|Barudit|Dark Spriggat|Golden Spriggat|Red Spriggat|Frost Spriggat}</Action>
+			<Action>SetString/OpponentColor,PICK{Red|Orange|Yellow|Green|White|Black|Violet}</Action>
+			<Action>GenerateUnique/1,-STR:ChosenClass-,1,RANDOM,,,-1,-1,Down,,,,false,100,0,-1</Action>
+			<Action>SetList/OpponentDeck,Barudit|Barudit|Barudit|Barudit|Drake|Drake|Bowman|Bowman|Frost Armor|Frost Armor|Fury|Fury|Fury|Fury|Leap|Leap|Smuggler|Smuggler|Focus|Focus|Focus|Focus|Stimulate|Stimulate|Spriggat|Spriggat|Spearman|Spearman|Feedback|Feedback|Shadow Blast|Shadow Blast|Dark Vortex</Action>
+			<Action>AddToList/OpponentDeck,PICK{Spirit|Smuggler}</Action>
+			<Action>AddToList/OpponentDeck,PICK{Bakery|Steam Engine}</Action>
+			<Action>AddToList/OpponentDeck,PICK{Feedback|Light Blast|Shadow Blast|Kinetic Gust}</Action>
+			<Action>AddToList/OpponentDeck,PICK{Dark Vortex|Drake|Mantis Rider|Crossbowman}</Action>
+			<Action>AddToList/OpponentDeck,PICK{Dark Vortex|Drake|Mantis Rider|Crossbowman}</Action>
+			<Action>AddPortrait/-STR:_GeneratedUnit-,-STR:_GeneratedUnit-,right</Action>
+			<Action>SetString/OpponentName,-STR:_GeneratedUnit-</Action>
 			<Reply>Fight on!/NextBranch</Reply>
 		</Branch>
 		<Branch num="3" name="">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
@@ -25,14 +64,42 @@
 		</Branch>
 	</Dialogue>
 
+	<Dialogue trigger="None/" convID="Dusht Deck Battle" r="true">
+		<Branch num="2" name="">Dusht/I have Dusht's deck, full of real haymakers.
+			<Action>AddPortrait/Dusht,Dusht,right</Action>
+			<Action>SetString/OpponentName,Dusht</Action>
+			<Action>SetList/OpponentDeck,Barudit|Barudit|Barudit|Assassin|Assassin|Assassin|Bowman|Bowman|Iron Jaw Trap|Iron Jaw Trap|Iron Jaw Trap|Fury|Fury|Fury|Smuggler|Smuggler|Mentalist|Mentalist|Focus|Focus|Focus|Focus|Drain|Drain|Blinding Cloak|Blinding Cloak|Spirit|Spirit|Spirit|Feedback|Feedback|Kinetic Gust|Kinetic Gust|Mind Control|Library|Library</Action>
+			<Reply>Fight on!/NextBranch</Reply>
+		</Branch>
+		<Branch num="3" name="">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Rohit,Orange,20,0,OpponentDeck,Rohit,1,2</Action>
+			<Reply>/</Reply>
+		</Branch>
+	</Dialogue>
+
+	<Dialogue trigger="None/" convID="Sita Deck Battle" r="true">
+		<Branch num="2" name="">Sita/I have Sita's deck. Ahahaha, have fun.
+			<Action>AddPortrait/Dusht,Dusht,right</Action>
+			<Action>SetString/OpponentName,Dusht</Action>
+			<Action>SetList/OpponentDeck,Barudit|Barudit|Barudit|Barudit|Drake|Drake|Bowman|Bowman|Frost Armor|Frost Armor|Fury|Fury|Fury|Fury|Leap|Leap|Smuggler|Smuggler|Focus|Focus|Focus|Focus|Stimulate|Stimulate|Spriggat|Spriggat|Spearman|Spearman|Feedback|Feedback|Shadow Blast|Shadow Blast|Dark Vortex</Action>
+			<Reply>Fight on!/NextBranch</Reply>
+		</Branch>
+		<Branch num="3" name="">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Sita,Green,20,0,OpponentDeck,Sita,1,2</Action>
+			<Reply>/</Reply>
+		</Branch>
+	</Dialogue>
+
 	<Dialogue trigger="None/" convID="Encounter Win" r="true">
-		<Branch num="0" name="">-STR:_GeneratedUnit-/This is the encounter win dialogue. Wow, good job!
+		<Branch num="0" name="">-STR:OpponentName-/This is the encounter win dialogue. Wow, good job!
+			<Action>AddPortrait/-STR:OpponentName-,-STR:OpponentName-,left</Action>
 			<Reply>Thanks!/NewScene/Main Game Loop</Reply>
 		</Branch>
 	</Dialogue>
 
 	<Dialogue trigger="None/" convID="Encounter Lost" r="true">
-		<Branch num="0" name="">-STR:_GeneratedUnit-/Too bad this is the lose dialogue. Wow, good job?
+		<Branch num="0" name="">-STR:OpponentName-/Too bad this is the lose dialogue. Wow, good job?
+			<Action>AddPortrait/-STR:OpponentName-,-STR:OpponentName-,left</Action>
 			<Reply>Darn/NewScene/Main Game Loop</Reply>
 		</Branch>
 	</Dialogue>
