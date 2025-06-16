@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/16/2025 2:41:32 PM">
+<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/16/2025 2:57:11 PM">
 
 	<Script>TrySetPlayerStartingDeck
-		<Action>IfValRun/LASTINLIST[PlayerDeck],=,0,_ConfirmedSetPlayerStartingDeck</Action>
+		<Action>SetVal/DeckLastIndex,=:LASTINLIST[PlayerDeck]</Action>
+		<Action>IfValRun/DeckLastIndex,l,0,_ConfirmedSetPlayerStartingDeck</Action>
 	</Script>
 
 	<Script>_ConfirmedSetPlayerStartingDeck

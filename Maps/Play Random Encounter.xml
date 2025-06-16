@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 2:40:27 PM">
+<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 2:58:17 PM">
 
 	<Narration> -PIC:Tavern_Dingy-   -DIA:Pick and Play-</Narration>
 
 	<Dialogue trigger="None/" convID="Pick and Play" r="true">
 		<Branch num="1" name="">/This is the dispatch point of the dialogue. Normally seeing this would lead to your next encounter.
+			<Action>ShowDeckButton/</Action>
 			<Reply>Neat!/LoadConv/Default Encounter</Reply>
 		</Branch>
 	</Dialogue>
