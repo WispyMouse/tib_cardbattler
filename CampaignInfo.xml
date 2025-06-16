@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CampaignInfo>
+
+	<Name txt="Card Battler"></Name>
+	
+	<Description txt="Reframing the Psy Clash minigame as the main focus of a card battler."></Description>
+	
+	<FirstScene txt="Introduction"></FirstScene>
+
+</CampaignInfo>

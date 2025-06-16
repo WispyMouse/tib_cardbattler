@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 2:14:27 PM">
+
+	<Narration> -PIC:Tavern_Dingy- -DIA:Pick and Play-</Narration>
+
+	<Dialogue trigger="None/" convID="Pick and Play" r="true">
+		<Branch num="0" name="">/Player should not see this text. This text exists so that the very first cutscene is not directing immediate convo change.
+			<Action>GoToNextBranch/</Action>
+			<Reply>/</Reply>
+		</Branch>
+		<Branch num="1" name="">/
+			<Action>LoadConv/Default Encounter</Action>
+		</Branch>
+	</Dialogue>
+
+	<Dialogue trigger="None/" convID="Default Encounter" r="true">
+		<Branch num="2" name="">-STR:_GeneratedUnit-/I'm a friendly random person. Let's play Psy Clash!
+			<Action>SetString/ChosenClass,PICK{Assassin|Axefighter|Cavalier|Swordsman|Engineer|Spearman|Mentalist|Kineticist|Pyrokineticist|Cryokineticist|Photokineticist|Skiakineticist|Psy Healer|Gasul|Barudit|Dark Spriggat|Golden Spriggat|Red Spriggat|Frost Spriggat}</Action>
+			<Action>SetString/OpponentColor,PICK{Red|Orange|Yellow|Green|White|Black|Violet}</Action>
+			<Action>GenerateUnique/1,-STR:ChosenClass-,1,RANDOM,,,-1,-1,Down,,,,false,100,0,-1</Action>
+			<Action>SetList/OpponentDeck,Awareness|Bandit|Bandit|Bandit|Bandit|Barudit|Barudit|Bowman|Frost Armor|Fury|Leap|Merchant|Mind Blast|Mind Blast|Mind Shield|Mind Shield|Shadowling|Shadowling|Solid State Shield|Swordsman|Swordsman|Terror</Action>
+			<Action>AddPortrait/-STR:_GeneratedUnit-,-STR:_GeneratedUnit-,right</Action>
+			<Reply>Fight on!/NextBranch</Reply>
+		</Branch>
+		<Branch num="3" name="">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,-STR:_GeneratedUnit-,-STR:OpponentColor-,20,0,OpponentDeck,-STR:_GeneratedUnit-,1,2</Action>
+			<Reply>/</Reply>
+		</Branch>
+	</Dialogue>
+
+	<Dialogue trigger="None/" convID="Encounter Win" r="true">
+		<Branch num="0" name="">-STR:_GeneratedUnit-/This is the encounter win dialogue. Wow, good job!
+			<Reply>Thanks!/NewScene/Main Gameplay Loop</Reply>
+		</Branch>
+	</Dialogue>
+
+	<Dialogue trigger="None/" convID="Encounter Lost" r="true">
+		<Branch num="0" name="">-STR:_GeneratedUnit-/Too bad this is the lose dialogue. Wow, good job?
+			<Reply>Darn/NewScene/Main Gameplay Loop</Reply>
+		</Branch>
+	</Dialogue>
+
+</Level>

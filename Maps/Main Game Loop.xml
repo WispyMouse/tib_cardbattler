@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level mapname="Main Game Loop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 1:42:55 PM">
+
+	<Narration> -DIA:Dispatch- -PIC:Card_Tournament_Dese_Alt-</Narration>
+
+	<Dialogue trigger="None/" convID="Dispatch" r="true">
+		<Branch num="0" name="" showSingleReplies="true">/This is the main game loop dispatch!
+			<Reply>To the action!/NewScene/Play Random Encounter</Reply>
+		</Branch>
+	</Dialogue>
+
+</Level>

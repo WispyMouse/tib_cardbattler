@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ItemAttributes>
+  <Weapon>
+    <Attr cat="Quality" loadID="Average01Q" name="" qualityRng="0-3" valueMod="*:1.0"></Attr>
+    <Attr cat="Quality" loadID="Average02Q" name="" qualityRng="0-5" valueMod="*:1.0"></Attr>
+    <Attr cat="Quality" loadID="Average03Q" name="" qualityRng="0-7" valueMod="*:1.0"></Attr>
+    <Attr cat="Quality" loadID="Shoddy" name="Shoddy" goesAfterNoun="false" qualityRng="0" statMods="Strength,-:3" valueMod="*:0.5"></Attr>
+    <Attr cat="Quality" loadID="Inferior" name="Inferior" goesAfterNoun="false" qualityRng="0-1" statMods="Strength,-:2" valueMod="*:0.65"></Attr>
+    <Attr cat="Quality" loadID="Poor" name="Poor" goesAfterNoun="false" qualityRng="0-2" statMods="Strength,-:1" valueMod="*:0.8"></Attr>
+    <Attr cat="Quality" loadID="Fine" name="Fine" goesAfterNoun="false" qualityRng="1-6" statMods="Strength,+:1" valueMod="*:1.2"></Attr>
+    <Attr cat="Quality" loadID="Excellent" name="Excellent" goesAfterNoun="false" qualityRng="2-8" statMods="Strength,+:2" valueMod="*:1.35"></Attr>
+    <Attr cat="Quality" loadID="Superb" name="Superb" goesAfterNoun="false" qualityRng="3-10" statMods="Strength,+:3" valueMod="*:1.5"></Attr>
+    <Attr cat="Quality" loadID="Masterful" name="Masterful" goesAfterNoun="false" qualityRng="5-11" statMods="Strength,+:4" valueMod="*:1.7"></Attr>
+    <Attr cat="Quality" loadID="Peerless" name="Peerless" goesAfterNoun="false" qualityRng="7-12" statMods="Strength,+:5" valueMod="*:2.0"></Attr>
+    <Attr cat="Balance" loadID="Average01B" name="" qualityRng="0-3" valueMod="*:1.0"></Attr>
+    <Attr cat="Balance" loadID="Average02B" name="" qualityRng="0-5" valueMod="*:1.0"></Attr>
+    <Attr cat="Balance" loadID="Average03B" name="" qualityRng="0-8" valueMod="*:1.0"></Attr>
+    <Attr cat="Balance" loadID="Balanced" name="Balanced" goesAfterNoun="false" qualityRng="0-7" statMods="Accuracy,+:10/Dodge,+:5" valueMod="*:1.2"></Attr>
+    <Attr cat="Balance" loadID="Graceful" name="Graceful" goesAfterNoun="false" qualityRng="3-10" statMods="Accuracy,+:20/Dodge,+:10" valueMod="*:1.4"></Attr>
+    <Attr cat="Balance" loadID="Effortless" name="Effortless" goesAfterNoun="false" qualityRng="6-99" statMods="Accuracy,+:30/Dodge,+:15" valueMod="*:1.8"></Attr>
+    <Attr cat="Durability" loadID="Average01D" name="" qualityRng="0-3" valueMod="*:1.0"></Attr>
+    <Attr cat="Durability" loadID="Average02D" name="" qualityRng="0-5" valueMod="*:1.0"></Attr>
+    <Attr cat="Durability" loadID="Average03D" name="" qualityRng="0-8" valueMod="*:1.0"></Attr>
+    <Attr cat="Durability" loadID="Worn" name="Worn" goesAfterNoun="false" qualityRng="0-1" durabilityMod="*:0.5" valueMod="*:0.4"></Attr>
+    <Attr cat="Durability" loadID="Old" name="Old" goesAfterNoun="false" qualityRng="0-2" durabilityMod="*:0.75" valueMod="*:0.65"></Attr>
+    <Attr cat="Durability" loadID="Sturdy" name="Sturdy" goesAfterNoun="false" qualityRng="1-8" durabilityMod="*:1.3" valueMod="*:1.35"></Attr>
+    <Attr cat="Durability" loadID="Durable" name="Durable" goesAfterNoun="false" qualityRng="2-9" durabilityMod="*:1.6" valueMod="*:1.65"></Attr>
+    <Attr cat="Durability" loadID="Reinforced" name="Reinforced" goesAfterNoun="false" qualityRng="3-99" durabilityMod="*:2.0" valueMod="*:2.1"></Attr>
+    <Attr cat="Durability" loadID="Unbreakable" name="Unbreakable" goesAfterNoun="false" qualityRng="4-99" durabilityMod="=:0" valueMod="*:3.0"></Attr>
+    <Attr cat="Weight" loadID="Average01W" name="" qualityRng="0-99" valueMod="*:1.0"></Attr>
+    <Attr cat="Weight" loadID="Average02W" name="" qualityRng="0-99" valueMod="*:1.0"></Attr>
+    <Attr cat="Weight" loadID="Average03W" name="" qualityRng="0-99" valueMod="*:1.0"></Attr>
+    <Attr cat="Weight" loadID="Light" name="Light" goesAfterNoun="false" qualityRng="1-3" statMods="Strength,-:1/Energy,+:4/Dodge,+:2" valueMod="*:0.95"></Attr>
+    <Attr cat="Weight" loadID="Featherweight" name="Featherweight" goesAfterNoun="false" qualityRng="2-4" statMods="Strength,-:2/Energy,+:8/Dodge,+:4" valueMod="*:0.9"></Attr>
+    <Attr cat="Weight" loadID="Heavy" name="Heavy" goesAfterNoun="false" qualityRng="2-99" statMods="Strength,+:3/Energy,-:2/Reflexes,-:1" valueMod="*:1.2"></Attr>
+    <Attr cat="Weight" loadID="Staggering" name="Staggering" goesAfterNoun="false" desc="Hits hard, preventing counterattacks." qualityRng="3-99" statMods="Strength,+:4/Energy,-:4/Reflexes,-:2" grantedTags="StopsCounters,[GrantedSkill]" valueMod="*:2.25"></Attr>
+    <Attr cat="Weight" loadID="Colossal" name="Colossal" goesAfterNoun="false" desc="Knockback +1." qualityRng="4-99" statMods="Strength,+:5/Energy,-:8/Reflexes,-:4" grantedTags="ModSkillKnockback,[GrantedSkill],+:1" valueMod="*:2.75"></Attr>
+    <Attr cat="Miscellaneous" loadID="Average01M" name="" qualityRng="0-1" valueMod="*:1.0"></Attr>
+    <Attr cat="Miscellaneous" loadID="Average02M" name="" qualityRng="0-3" valueMod="*:1.0"></Attr>
+    <Attr cat="Miscellaneous" loadID="Average03M" name="" qualityRng="0-5" valueMod="*:1.0"></Attr>
+    <Attr cat="Miscellaneous" loadID="Average04M" name="" qualityRng="0-7" valueMod="*:1.0"></Attr>
+    <Attr cat="Miscellaneous" loadID="Average05M" name="" qualityRng="0-9" valueMod="*:1.0"></Attr>
+    <Attr cat="Miscellaneous" loadID="Invigorating" name="Invigorating" goesAfterNoun="false" qualityRng="1-2" statMods="Energy,+:4" valueMod="*:1.1"></Attr>
+    <Attr cat="Miscellaneous" loadID="Nimble" name="Nimble" goesAfterNoun="false" qualityRng="1-2" statMods="Dodge,+:5" valueMod="*:1.1"></Attr>
+    <Attr cat="Miscellaneous" loadID="Vindictive" name="Vindictive" goesAfterNoun="false" qualityRng="1-2" statMods="Counter Limit,+:1" valueMod="*:1.1"></Attr>
+    <Attr cat="Miscellaneous" loadID="Flashy" name="Flashy" goesAfterNoun="false" desc="Attracts enemy attention." qualityRng="1-10" grantedTags="TargetValue,1.15" valueMod="*:1.25"></Attr>
+    <Attr cat="Miscellaneous" loadID="Brilliant" name="Brilliant" goesAfterNoun="false" qualityRng="2-3" statMods="Dodge,+:10" valueMod="*:1.2"></Attr>
+    <Attr cat="Miscellaneous" loadID="Vigilant" name="Vigilant" goesAfterNoun="false" qualityRng="2-3" statMods="Reflexes,+:1" valueMod="*:1.6"></Attr>
+    <Attr cat="Miscellaneous" loadID="Elongated" name="Elongated" goesAfterNoun="false" desc="Range bonus +1." qualityRng="2-99" grantedTags="ModSkillRange,[GrantedSkill],+:1" valueMod="*:1.65"></Attr>
+    <Attr cat="Miscellaneous" loadID="Gap-seeking" name="Gap-seeking" goesAfterNoun="false" desc="Backstab bonus +50%, sidestab bonus +20%." qualityRng="2-10" grantedTags="BackstabFactorPlus,[GrantedSkill],0.5/SidestabFactorPlus,[GrantedSkill],0.2" valueMod="*:1.4"></Attr>
+    <Attr cat="Miscellaneous" loadID="Poisoned" name="Poisoned" goesAfterNoun="false" desc="+4 Poison dmg, causes Poisoned." qualityRng="2-99" grantedTags="ModSkillSFX,[GrantedSkill],Poisoned/BonusDmg,[GrantedSkill],4,Poison" statMods="Uses Left,*:0.8/Max Uses,*:0.8" valueMod="*:1.5"></Attr>
+    <Attr cat="Miscellaneous" loadID="Vengeful" name="Vengeful" goesAfterNoun="false" qualityRng="2-99" statMods="Counter Limit,+:2" valueMod="*:1.35"></Attr>
+    <Attr cat="Miscellaneous" loadID="Armor-piercing" name="Armor-piercing" goesAfterNoun="false" desc="Bypass 50% of resistances." qualityRng="3-99" grantedTags="DmgIgnoreRes,[GrantedSkill],0.5" valueMod="*:1.4"></Attr>
+    <Attr cat="Miscellaneous" loadID="Axe-catching" name="Axe-catching" goesAfterNoun="false" desc="+6 damage against axe-equipped foes." qualityRng="3-99" grantedTags="ModDmgVsWeapon,[GrantedSkill],Axe,+:6" valueMod="*:1.25"></Attr>
+    <Attr cat="Miscellaneous" loadID="Sword-catching" name="Sword-catching" goesAfterNoun="false" desc="+6 damage against sword-equipped foes." qualityRng="3-99" grantedTags="ModDmgVsWeapon,[GrantedSkill],Sword,+:6" valueMod="*:1.25"></Attr>
+    <Attr cat="Miscellaneous" loadID="Spear-catching" name="Spear-catching" goesAfterNoun="false" desc="+6 damage against spear-equipped foes." qualityRng="3-99" grantedTags="ModDmgVsWeapon,[GrantedSkill],Spear,+:6" valueMod="*:1.25"></Attr>
+    <Attr cat="Miscellaneous" loadID="Glimmering" name="Glimmering" goesAfterNoun="false" desc="Causes Distracted." qualityRng="3-99" grantedTags="ModSkillSFX,[GrantedSkill],Distracted" valueMod="*:1.2"></Attr>
+    <Attr cat="Miscellaneous" loadID="Blinding" name="Blinding" goesAfterNoun="false" qualityRng="4-99" statMods="Dodge,+:15" valueMod="*:1.35"></Attr>
+    <Attr cat="Miscellaneous" loadID="Hair-Trigger" name="Hair-Trigger" goesAfterNoun="false" qualityRng="4-99" statMods="Reflexes,+:2" valueMod="*:2.0"></Attr>
+    <Attr cat="Miscellaneous" loadID="Anti-Mount" name="Anti-Mount" goesAfterNoun="false" desc="+8 damage against cavaliers." qualityRng="4-99" grantedTags="ModDmgVsClass,[GrantedSkill],Cavalier,+:8" valueMod="*:1.3"></Attr>
+    <Attr cat="Miscellaneous" loadID="Shredwing" name="Shredwing" goesAfterNoun="false" desc="+8 damage against spriggats." qualityRng="4-99" grantedTags="ModDmgVsSpecies,[GrantedSkill],Spriggat,+:8" valueMod="*:1.45"></Attr>
+    <Attr cat="Miscellaneous" loadID="Pipe-Wrecking" name="Pipe-Wrecking" goesAfterNoun="false" desc="+10 damage against golems." qualityRng="4-99" grantedTags="ModDmgVsSpecies,[GrantedSkill],Golem,+:10" valueMod="*:1.65"></Attr>
+    <Attr cat="Miscellaneous" loadID="Blazing" name="Blazing" goesAfterNoun="false" desc="+4 Heat dmg, causes Burning." qualityRng="4-99" grantedTags="ModSkillSFX,[GrantedSkill],Burning/BonusDmg,[GrantedSkill],4,Heat" statMods="Uses Left,*:0.5/Max Uses,*:0.5" valueMod="*:1.65"></Attr>
+  </Weapon>
+  <Armor>
+    <Attr cat="All" loadID="Nothing01Armor" name="" qualityRng="0-3" valueMod="*:1.0"></Attr>
+    <Attr cat="All" loadID="Nothing02Armor" name="" qualityRng="0-4" valueMod="*:1.0"></Attr>
+    <Attr cat="All" loadID="Nothing03Armor" name="" qualityRng="0-6" valueMod="*:1.0"></Attr>
+    <Attr cat="All" loadID="Nothing04Armor" name="" qualityRng="0-8" valueMod="*:1.0"></Attr>
+    <Attr cat="All" loadID="Shoddy" name="Shoddy" goesAfterNoun="false" qualityRng="0" statMods="Slash Res.,-:3/Pierce Res.,-:3" valueMod="*:0.5"></Attr>
+    <Attr cat="All" loadID="Inferior" name="Inferior" goesAfterNoun="false" qualityRng="0-1" statMods="Slash Res.,-:2/Pierce Res.,-:2" valueMod="*:0.65"></Attr>
+    <Attr cat="All" loadID="Poor" name="Poor" goesAfterNoun="false" qualityRng="0-2" statMods="Slash Res.,-:1/Pierce Res.,-:1" valueMod="*:0.8"></Attr>
+    <Attr cat="All" loadID="Fine" name="Fine" goesAfterNoun="false" qualityRng="1-7" statMods="Slash Res.,+:3/Pierce Res.,+:3" valueMod="*:1.2"></Attr>
+    <Attr cat="All" loadID="Excellent" name="Excellent" goesAfterNoun="false" qualityRng="2-8" statMods="Slash Res.,+:6/Pierce Res.,+:6" valueMod="*:1.4"></Attr>
+    <Attr cat="All" loadID="Superb" name="Superb" goesAfterNoun="false" qualityRng="3-10" statMods="Slash Res.,+:9/Pierce Res.,+:9" valueMod="*:1.6"></Attr>
+    <Attr cat="All" loadID="Masterful" name="Masterful" goesAfterNoun="false" qualityRng="5-11" statMods="Slash Res.,+:12/Pierce Res.,+:12" valueMod="*:1.9"></Attr>
+    <Attr cat="All" loadID="Peerless" name="Peerless" goesAfterNoun="false" qualityRng="7-12" statMods="Slash Res.,+:15/Pierce Res.,+:15" valueMod="*:2.2"></Attr>
+    <Attr cat="All" loadID="Padded" name="Padded" goesAfterNoun="false" qualityRng="1-7" statMods="Crush Res.,+:15" valueMod="*:1.7"></Attr>
+    <Attr cat="All" loadID="Unremarkable" name="Unremarkable" goesAfterNoun="false" desc="Attracts a bit less attention on the battlefield." qualityRng="1-10" grantedTags="TargetValue,0.9" valueMod="*:1.2"></Attr>
+    <Attr cat="All" loadID="Gaudy" name="Gaudy" goesAfterNoun="false" desc="Attracts enemy attention on the battlefield." qualityRng="2-10" grantedTags="TargetValue,1.2" valueMod="*:1.4"></Attr>
+    <Attr cat="All" loadID="Gleaming" name="Gleaming" goesAfterNoun="false" qualityRng="2-10" statMods="Dodge,+:7" valueMod="*:1.25"></Attr>
+    <Attr cat="All" loadID="Aquatic" name="Aquatic" goesAfterNoun="false" desc="+100% resistance to drowning damage." qualityRng="2-10" statMods="Drowning Res.,+:100" valueMod="*:1.9"></Attr>
+    <Attr cat="All" loadID="Beautiful" name="Beautiful" goesAfterNoun="false" desc="+2 Morale while equipped." qualityRng="2-10" statMods="Morale,+:2" valueMod="*:1.5"></Attr>
+    <Attr cat="All" loadID="Cushioned" name="Cushioned" goesAfterNoun="false" qualityRng="3-10" statMods="Crush Res.,+:30" valueMod="*:2.4"></Attr>
+    <Attr cat="All" loadID="Camouflaged" name="Camouflaged" goesAfterNoun="false" desc="Attracts a lot less attention on the battlefield." qualityRng="3-10" grantedTags="TargetValue,0.65" valueMod="*:1.6"></Attr>
+    <Attr cat="All" loadID="Insulated" name="Insulated" goesAfterNoun="false" qualityRng="3-10" statMods="Heat Res.,+:25/Cold Res.,+:25" valueMod="*:2.0"></Attr>
+    <Attr cat="All" loadID="Lead-lined" name="Lead-lined" goesAfterNoun="false" qualityRng="3-10" statMods="Light Res.,+:25/Shadow Res.,+:25" valueMod="*:2.0"></Attr>
+    <Attr cat="All" loadID="Gorgeous" name="Gorgeous" goesAfterNoun="false" desc="+4 Morale while equipped." qualityRng="4-10" statMods="Morale,+:4" valueMod="*:1.8"></Attr>
+  </Armor>
+  <Helm>
+    <Attr cat="All" loadID="Nothing01Helm" name="" qualityRng="0-1" valueMod="*:1.0"></Attr>
+    <Attr cat="All" loadID="Nothing02Helm" name="" qualityRng="0-3" valueMod="*:1.0"></Attr>
+    <Attr cat="All" loadID="Nothing03Helm" name="" qualityRng="0-5" valueMod="*:1.0"></Attr>
+    <Attr cat="All" loadID="Nothing04Helm" name="" qualityRng="0-7" valueMod="*:1.0"></Attr>
+    <Attr cat="All" loadID="Nothing05Helm" name="" qualityRng="0-9" valueMod="*:1.0"></Attr>
+    <Attr cat="All" loadID="Stylish" name="Stylish" goesAfterNoun="false" desc="+1 Morale while equipped." qualityRng="1-10" statMods="Morale,+:1" valueMod="*:1.4"></Attr>
+    <Attr cat="All" loadID="Lensed" name="Lensed" goesAfterNoun="false" desc="+10 Accuracy while equipped." qualityRng="1-10" statMods="Accuracy,+:10" valueMod="*:1.25"></Attr>
+    <Attr cat="All" loadID="Rounded" name="Rounded" goesAfterNoun="false" qualityRng="1-10" statMods="Pierce Res.,+:4" valueMod="*:1.2"></Attr>
+    <Attr cat="All" loadID="Beautiful" name="Beautiful" goesAfterNoun="false" desc="+2 Morale while equipped." qualityRng="2-10" statMods="Morale,+:2" valueMod="*:1.7"></Attr>
+    <Attr cat="All" loadID="Visored" name="Visored" goesAfterNoun="false" desc="Grants immunity to Blinded status." qualityRng="2-10" grantedTags="Immunity,Blinded" valueMod="*:2.5"></Attr>
+    <Attr cat="All" loadID="Calming" name="Calming" goesAfterNoun="false" desc="Regain +1 energy each turn." qualityRng="4-10" grantedTags="ModFocus,+:1" valueMod="*:5.0"></Attr>
+    <Attr cat="All" loadID="Gorgeous" name="Gorgeous" goesAfterNoun="false" desc="+4 Morale while equipped." qualityRng="4-10" statMods="Morale,+:4" valueMod="*:2.2"></Attr>
+  </Helm>
+  <Shield>
+    <Attr cat="All" loadID="Nothing01Shield" name="" qualityRng="0-3" valueMod="*:1.0"></Attr>
+    <Attr cat="All" loadID="Nothing02Shield" name="" qualityRng="0-5" valueMod="*:1.0"></Attr>
+    <Attr cat="All" loadID="Nothing03Shield" name="" qualityRng="0-7" valueMod="*:1.0"></Attr>
+    <Attr cat="All" loadID="Shoddy" name="Shoddy" goesAfterNoun="false" qualityRng="0" statMods="Health,-:3" valueMod="*:0.5"></Attr>
+    <Attr cat="All" loadID="Inferior" name="Inferior" goesAfterNoun="false" qualityRng="0-1" statMods="Health,-:2" valueMod="*:0.65"></Attr>
+    <Attr cat="All" loadID="Poor" name="Poor" goesAfterNoun="false" qualityRng="0-2" statMods="Health,-:1" valueMod="*:0.8"></Attr>
+    <Attr cat="All" loadID="Fine" name="Fine" goesAfterNoun="false" qualityRng="1-7" statMods="Health,+:2" valueMod="*:1.2"></Attr>
+    <Attr cat="All" loadID="Excellent" name="Excellent" goesAfterNoun="false" qualityRng="2-8" statMods="Health,+:4" valueMod="*:1.35"></Attr>
+    <Attr cat="All" loadID="Superb" name="Superb" goesAfterNoun="false" qualityRng="3-10" statMods="Health,+:6" valueMod="*:1.5"></Attr>
+    <Attr cat="All" loadID="Masterful" name="Masterful" goesAfterNoun="false" qualityRng="5-11" statMods="Health,+:9" valueMod="*:1.8"></Attr>
+    <Attr cat="All" loadID="Peerless" name="Peerless" goesAfterNoun="false" qualityRng="7-12" statMods="Health,+:12" valueMod="*:2.1"></Attr>
+    <Attr cat="All" loadID="Rounded" name="Rounded" goesAfterNoun="false" desc="Designed for turning aside points." qualityRng="1-6" statMods="Pierce Res.,+:12/Health,*:0.75" valueMod="*:1.2"></Attr>
+    <Attr cat="All" loadID="Convex" name="Convex" goesAfterNoun="false" desc="Specialized at turning aside points." qualityRng="2-10" statMods="Pierce Res.,+:25/Health,*:0.5" valueMod="*:1.5"></Attr>
+    <Attr cat="All" loadID="Beautiful" name="Beautiful" goesAfterNoun="false" desc="+2 Morale while equipped." qualityRng="2-10" statMods="Morale,+:2" valueMod="*:1.5"></Attr>
+    <Attr cat="All" loadID="Gorgeous" name="Gorgeous" goesAfterNoun="false" desc="+4 Morale while equipped." qualityRng="4-10" statMods="Morale,+:4" valueMod="*:1.8"></Attr>
+  </Shield>
+  <MainGauche>
+    <Attr cat="All" loadID="Nothing01MG" name="" qualityRng="0-3" valueMod="*:1.0"></Attr>
+    <Attr cat="All" loadID="Nothing02MG" name="" qualityRng="0-5" valueMod="*:1.0"></Attr>
+    <Attr cat="All" loadID="Nothing03MG" name="" qualityRng="0-7" valueMod="*:1.0"></Attr>
+    <Attr cat="All" loadID="Shoddy" name="Shoddy" goesAfterNoun="false" qualityRng="0" statMods="Dodge,-:3" valueMod="*:0.5"></Attr>
+    <Attr cat="All" loadID="Inferior" name="Inferior" goesAfterNoun="false" qualityRng="0-1" statMods="Dodge,-:2" valueMod="*:0.65"></Attr>
+    <Attr cat="All" loadID="Poor" name="Poor" goesAfterNoun="false" qualityRng="0-2" statMods="Dodge,-:1" valueMod="*:0.8"></Attr>
+    <Attr cat="All" loadID="Fine" name="Fine" goesAfterNoun="false" qualityRng="1-6" statMods="Dodge,+:1" valueMod="*:1.2"></Attr>
+    <Attr cat="All" loadID="Excellent" name="Excellent" goesAfterNoun="false" qualityRng="2-8" statMods="Dodge,+:2" valueMod="*:1.35"></Attr>
+    <Attr cat="All" loadID="Superb" name="Superb" goesAfterNoun="false" qualityRng="3-10" statMods="Dodge,+:4" valueMod="*:1.5"></Attr>
+    <Attr cat="All" loadID="Masterful" name="Masterful" goesAfterNoun="false" qualityRng="5-11" statMods="Dodge,+:6" valueMod="*:1.7"></Attr>
+    <Attr cat="All" loadID="Peerless" name="Peerless" goesAfterNoun="false" qualityRng="7-12" statMods="Dodge,+:8" valueMod="*:1.9"></Attr>
+    <Attr cat="All" loadID="Keen" name="Keen" goesAfterNoun="false" qualityRng="2-5" statMods="Strength,+:1" valueMod="*:1.25"></Attr>
+    <Attr cat="All" loadID="Sharp" name="Sharp" goesAfterNoun="false" qualityRng="3-7" statMods="Strength,+:2" valueMod="*:1.5"></Attr>
+    <Attr cat="All" loadID="Deadly" name="Deadly" goesAfterNoun="false" qualityRng="4-10" statMods="Strength,+:3" valueMod="*:1.8"></Attr>
+    <Attr cat="All" loadID="Beautiful" name="Beautiful" goesAfterNoun="false" desc="+2 Morale while equipped." qualityRng="2-10" statMods="Morale,+:2" valueMod="*:1.5"></Attr>
+    <Attr cat="All" loadID="Gorgeous" name="Gorgeous" goesAfterNoun="false" desc="+4 Morale while equipped." qualityRng="4-10" statMods="Morale,+:4" valueMod="*:1.8"></Attr>
+  </MainGauche>
+</ItemAttributes>

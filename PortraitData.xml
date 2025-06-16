@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CharPortraits>
+  <Unique>
+    <Base name="Ambuur Sang" id="body1">
+      <Eye id="eye1" x="-25.2" y="67.3" scale="1.9"></Eye>
+      <Mouth id="mouth1" x="-36.4" y="35.4" scale="3.65"></Mouth>
+    </Base>
+    <Base name="Annel Stormhunter" id="body1">
+      <Eye id="eye1L" x="-39.7" y="68" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-9.5" y="71.3" scale="1.41"></Eye>
+      <Mouth id="mouth1" x="-26.4" y="33.5" scale="1.42"></Mouth>
+    </Base>
+    <Base name="Archos" species="Shadowling" id="body1" scale="1.5">
+      <Eye id="eye1L" x="-34.5" y="69" scale="2.65"></Eye>
+      <Eye id="eye1R" x="10.1" y="69" scale="2.2"></Eye>
+      <Mouth id="mouth1" x="-14.6" y="39.6" scale="2.25"></Mouth>
+    </Base>
+    <Base name="Arena Manager" id="body1">
+      <Eye id="eye1L" x="-39.5" y="72.25" scale="1.1"></Eye>
+      <Eye id="eye1R" x="-4" y="73" scale="1.55"></Eye>
+      <Mouth id="mouth1" x="-21" y="39" scale="1.0"></Mouth>
+    </Base>
+    <Base name="Chital" id="body1" scale="1.5"></Base>
+    <Base name="Cloch" id="body1" scale="1.9" x="-40"></Base>
+    <Base name="Dale Spenks" id="body1" scale="1.15">
+      <Eye id="eye1L" x="-23.5" y="89" scale="1.55"></Eye>
+      <Eye id="eye1R" x="9.9" y="92.7" scale="1.62"></Eye>
+      <Mouth id="mouth1" x="-5.4" y="57.6" scale="1.77"></Mouth>
+    </Base>
+    <Base name="Des Serret" id="body1">
+      <Eye id="eye1" x="-16.6" y="67.5" scale="1.91"></Eye>
+      <Mouth id="mouth1" x="-39.8" y="47.2" scale="3.62"></Mouth>
+    </Base>
+    <Base name="Doran Chamberlain" id="body1">
+      <Eye id="eye1L" x="-43.1" y="79.8" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-12" y="78.4" scale="1.41"></Eye>
+      <Glasses id="glasses" x="-23.8" y="84.5" scale="0.32"></Glasses>
+      <Mouth id="mouth1" x="-28.4" y="40.5" scale="1.49"></Mouth>
+    </Base>
+    <Base name="Ebon Raban" id="body1" scale="1.2" x="-24"></Base>
+    <Base name="Edwin Gabbergast" id="body1">
+      <Eye id="eye1R" x="-14.6" y="65.6" scale="1.41"></Eye>
+      <Mouth id="mouth1" x="-24.8" y="25.4" scale="2.42"></Mouth>
+    </Base>
+    <Base name="Emma Child" id="body1" scale="0.87">
+      <Eye id="eye1L" x="-49.7" y="43.3" scale="1.17"></Eye>
+      <Eye id="eye1R" x="-19" y="43.3" scale="1.23"></Eye>
+      <Mouth id="mouth1" x="-31.2" y="12.7" scale="1.4"></Mouth>
+    </Base>
+    <Base name="Emma Strider" id="body1">
+      <Eye id="eye1L" x="-41.5" y="60.5" scale="1.07"></Eye>
+      <Eye id="eye1R" x="-3.2" y="61" scale="1.58"></Eye>
+      <Mouth id="mouth1" x="-21" y="26" scale="1.0"></Mouth>
+    </Base>
+    <Base name="Farasat Hashmal" id="body1">
+      <Eye id="eye1L" x="-43.6" y="67.5" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-9" y="66.5" scale="1.42"></Eye>
+      <Mouth id="mouth1" x="-23.4" y="35" scale="1.36"></Mouth>
+    </Base>
+    <Base name="Fera" id="body1">
+      <Eye id="eye1L" x="-31" y="50" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-0.1" y="53.5" scale="1.42"></Eye>
+      <Mouth id="mouth1" x="-14.4" y="16.7" scale="1.2"></Mouth>
+    </Base>
+    <Base name="Gavrielle Hashmal" id="body1">
+      <Eye id="eye1L" x="-35.9" y="68.8" scale="1.36"></Eye>
+      <Eye id="eye1R" x="-5" y="68.3" scale="1.43"></Eye>
+      <Mouth id="mouth1" x="-23.1" y="34.7" scale="1.54"></Mouth>
+    </Base>
+    <Base name="Governor" id="body1">
+      <Eye id="eye1L" x="-47" y="72" scale="1.2"></Eye>
+      <Eye id="eye1R" x="-12" y="70" scale="1.1"></Eye>
+      <Mouth id="mouth1" x="-26" y="29" scale="1.0"></Mouth>
+    </Base>
+    <Base name="Gulch" id="body1">
+      <Eye id="eye1L" x="-36" y="48.5" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-3.5" y="52.2" scale="1.42"></Eye>
+      <Mouth id="mouth1" x="-24.5" y="15" scale="1.2"></Mouth>
+    </Base>
+    <Base name="Gunther Lathe" id="body1" scale="1.1">
+      <Eye id="eye1L" x="-30.5" y="78.8" scale="1.48"></Eye>
+      <Eye id="eye1R" x="5.2" y="77.6" scale="1.55"></Eye>
+      <Mouth id="mouth1" x="-14" y="37.9" scale="1.32"></Mouth>
+    </Base>
+    <Base name="Harriet Glaive" id="body1">
+      <Eye id="eye1L" x="-38.1" y="58.5" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-5.8" y="58.5" scale="1.42"></Eye>
+      <Mouth id="mouth1" x="-24.3" y="21.2" scale="1.2"></Mouth>
+    </Base>
+    <Base name="Harynx" species="Shadowling" id="body1" scale="1.5">
+      <Eye id="eye1L" x="-36.2" y="44.3" scale="2.6"></Eye>
+      <Eye id="eye1R" x="15.5" y="46.8" scale="2.2"></Eye>
+      <Mouth id="mouth1" x="-13.6" y="8.5" scale="2.3"></Mouth>
+    </Base>
+    <Base name="Hee'la" id="body1">
+      <Eye id="eye1" x="-18.6" y="70.4" scale="1.91"></Eye>
+      <Mouth id="mouth1" x="-27.8" y="33.6" scale="3.62"></Mouth>
+    </Base>
+    <Base name="Igor Bloodbeard" id="body1" scale="1.3" x="-12">
+      <Eye id="eye1L" x="-16.25" y="80" scale="1.75"></Eye>
+      <Eye id="eye1R" x="4.8" y="86.2" scale="1.84"></Eye>
+      <Mouth id="mouth1" x="-9.3" y="43.1" scale="1.6"></Mouth>
+    </Base>
+    <Base name="Ishita Svaamee" id="body1">
+      <Eye id="eye1L" x="-44" y="77" scale="1.08"></Eye>
+      <Eye id="eye1R" x="-7" y="79" scale="1.6"></Eye>
+      <Mouth id="mouth1" x="-31" y="36.5" scale="1.0"></Mouth>
+    </Base>
+    <Base name="King Dese" id="body1" scale="1.025">
+      <Eye id="eye1L" x="-32.8" y="72.5" scale="1.1"></Eye>
+      <Eye id="eye1R" x="0" y="70.3" scale="1.6"></Eye>
+      <Mouth id="mouth1" x="-18.3" y="39.25" scale="1.45"></Mouth>
+    </Base>
+    <Base name="King Dese Disguise" id="body1" scale="1.05">
+      <Eye id="eye1L" x="-32.8" y="72.5" scale="1.1"></Eye>
+      <Eye id="eye1R" x="5" y="75" scale="1.55"></Eye>
+      <Mouth id="mouth1" x="-17" y="39" scale="1.45"></Mouth>
+    </Base>
+    <Base name="King Dese Disguise Hooded" id="body1" scale="1.05">
+      <Mouth id="mouth1" x="-17" y="39" scale="1.45"></Mouth>
+    </Base>
+    <Base name="King Evil Twin" id="body1">
+      <Eye id="eye1L" x="-35" y="67" scale="1.1"></Eye>
+      <Eye id="eye1R" x="1" y="66.75" scale="1.55"></Eye>
+      <Mouth id="mouth1" x="-21.25" y="33.75" scale="1.425"></Mouth>
+    </Base>
+    <Base name="Lakshmi Bana" id="body1" scale="0.95">
+      <Eye id="eye1L" x="-40.2" y="63.7" scale="1.02"></Eye>
+      <Eye id="eye1R" x="-2.3" y="63.7" scale="1.5"></Eye>
+      <Mouth id="mouth1" x="-23.3" y="26.4" scale="1.45"></Mouth>
+    </Base>
+    <Base name="Leon Hart" id="body1">
+      <Eye id="eye1L" x="-39.1" y="74.8" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-4.4" y="74.8" scale="1.42"></Eye>
+      <Mouth id="mouth1" x="-22.3" y="38.8" scale="1.2"></Mouth>
+    </Base>
+    <Base name="Lissit Child" id="body1">
+      <Eye id="eye1" x="-3" y="54" scale="1.2"></Eye>
+      <Mouth id="mouth1" x="-19" y="30" scale="3.0"></Mouth>
+    </Base>
+    <Base name="Lord Dakarai" id="body1" scale="1.9" x="-40"></Base>
+    <Base name="Louise Legerdemain" id="body1">
+      <Eye id="eye1L" x="-44.6" y="65" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-15.7" y="65" scale="1.42"></Eye>
+      <Mouth id="mouth1" x="-30.5" y="27.5" scale="1.2"></Mouth>
+    </Base>
+    <Base name="Madeleine Strongarm" id="body1">
+      <Eye id="eye1L" x="-33.7" y="75" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-4" y="75" scale="1.41"></Eye>
+      <Mouth id="mouth1" x="-20.6" y="39.6" scale="1.43"></Mouth>
+    </Base>
+    <Base name="Malcolm Eichan" id="body1">
+      <Eye id="eye1L" x="-43.1" y="58.3" scale="1.09"></Eye>
+      <Eye id="eye1R" x="-13.1" y="57.3" scale="1.12"></Eye>
+      <Mouth id="mouth1" x="-28.4" y="29.1" scale="1.27"></Mouth>
+    </Base>
+    <Base name="Manbir Raksha" id="body1">
+      <Eye id="eye1L" x="-36.25" y="66" scale="1.05"></Eye>
+      <Eye id="eye1R" x="-1.5" y="65.25" scale="1.5"></Eye>
+      <Mouth id="mouth1" x="-21" y="29.6" scale="1.25"></Mouth>
+    </Base>
+    <Base name="Mantis" id="body1" scale="1.75"></Base>
+    <Base name="Medomai" species="Shadowling" id="body1" scale="1.5">
+      <Eye id="eye1L" x="-34.5" y="66.5" scale="3.4"></Eye>
+      <Eye id="eye1R" x="33.6" y="64.6" scale="2.8"></Eye>
+    </Base>
+    <Base name="Merchant" id="body1">
+      <Eye id="eye1L" x="-41.3" y="65.5" scale="1.05"></Eye>
+      <Eye id="eye1R" x="-7.5" y="65" scale="1.6"></Eye>
+      <Mouth id="mouth1" x="-24.8" y="27.5" scale="1.45"></Mouth>
+    </Base>
+    <Base name="Merchant Dese" id="body1">
+      <Eye id="eye1L" x="-38" y="72" scale="1.0"></Eye>
+      <Eye id="eye1R" x="-2.5" y="72.5" scale="1.6"></Eye>
+      <Mouth id="mouth1" x="-27.4" y="37.6" scale="1.4"></Mouth>
+    </Base>
+    <Base name="Merchant Dese 2" id="body1">
+      <Eye id="eye1L" x="-37.5" y="71.1" scale="1.05"></Eye>
+      <Eye id="eye1R" x="-1.25" y="70.5" scale="1.55"></Eye>
+      <Mouth id="mouth1" x="-24.75" y="37.25" scale="1.42"></Mouth>
+    </Base>
+    <Base name="Merchant Dese 3" id="body1" scale="1.05">
+      <Eye id="eye1L" x="-36.2" y="83" scale="1.125"></Eye>
+      <Eye id="eye1R" x="4" y="84" scale="1.6"></Eye>
+      <Mouth id="mouth1" x="-24" y="42" scale="1.5"></Mouth>
+    </Base>
+    <Base name="Meridian" id="body1" scale="1.2">
+      <Eye id="eye1L" x="-32.2" y="70.1" scale="1.65"></Eye>
+      <Eye id="eye1R" x="0.25" y="69.5" scale="1.7"></Eye>
+      <Mouth id="mouth1" x="-16.7" y="34" scale="1.45"></Mouth>
+    </Base>
+    <Base name="Naila Hashmal" id="body1">
+      <Eye id="eye1L" x="-38.9" y="65.5" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-7.5" y="67" scale="1.41"></Eye>
+      <Mouth id="mouth1" x="-24.7" y="32.3" scale="1.5"></Mouth>
+    </Base>
+    <Base name="Nikolai" id="body1">
+      <Eye id="eye1R" x="-3.2" y="71.2" scale="1.41"></Eye>
+      <Mouth id="mouth1" x="-19.6" y="32.9" scale="1.275"></Mouth>
+    </Base>
+    <Base name="Oliver Spenks" id="body1">
+      <Eye id="eye1L" x="-44.5" y="60" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-10.6" y="57" scale="1.41"></Eye>
+      <Glasses id="glasses" x="-12.2" y="66.1" scale="0.43"></Glasses>
+      <Mouth id="mouth1" x="-30" y="25.3" scale="1.2"></Mouth>
+    </Base>
+    <Base name="Pathos" species="Shadowling" id="body1" scale="1.5">
+      <Eye id="eye1L" x="-28.3" y="54.3" scale="2.65"></Eye>
+      <Eye id="eye1R" x="22.5" y="58.2" scale="2.2"></Eye>
+      <Mouth id="mouth1" x="-3.5" y="17.5" scale="2.3"></Mouth>
+    </Base>
+    <Base name="Phoebe Wittler" id="body1">
+      <Eye id="eye1L" x="-43.5" y="57.4" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-8.7" y="57.4" scale="1.42"></Eye>
+      <Mouth id="mouth1" x="-29.5" y="24.2" scale="1.2"></Mouth>
+    </Base>
+    <Base name="Praetor Nero" id="body1">
+      <Eye id="eye1L" x="-41.25" y="65" scale="1.05"></Eye>
+      <Eye id="eye1R" x="-7" y="68" scale="1.5"></Eye>
+      <Mouth id="mouth1" x="-28" y="30.5" scale="1.4"></Mouth>
+    </Base>
+    <Base name="Rebecca Flare" id="body1">
+      <Eye id="eye1L" x="-43.6" y="63.2" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-11.5" y="63.1" scale="1.42"></Eye>
+      <Mouth id="mouth1" x="-27.9" y="28.9" scale="1.2"></Mouth>
+    </Base>
+    <Base name="Recruiter" id="body1" scale="0.95">
+      <Eye id="eye1L" x="-47" y="76" scale="1.0"></Eye>
+      <Eye id="eye1R" x="-13" y="75" scale="1.5"></Eye>
+      <Mouth id="mouth1" x="-31.5" y="38" scale="1.3"></Mouth>
+    </Base>
+    <Base name="Sabrina Child" id="body1" scale="0.8">
+      <Eye id="eye1L" x="-51.1" y="37.5" scale="1.34"></Eye>
+      <Eye id="eye1R" x="-19.3" y="39" scale="1.24"></Eye>
+      <Mouth id="mouth1" x="-34.4" y="10.2" scale="1.14"></Mouth>
+    </Base>
+    <Base name="Sabrina Strider" id="body1">
+      <Eye id="eye1L" x="-33.5" y="60.5" scale="1.05"></Eye>
+      <Eye id="eye1R" x="7.6" y="62.5" scale="1.6"></Eye>
+      <Mouth id="mouth1" x="-17.5" y="21" scale="1.4"></Mouth>
+    </Base>
+    <Base name="Samir Hashmal" id="body1">
+      <Eye id="eye1L" x="-36" y="60.5" scale="1.35"></Eye>
+      <Eye id="eye1R" x="0" y="63" scale="1.41"></Eye>
+      <Mouth id="mouth1" x="-16.8" y="22.8" scale="1.93"></Mouth>
+    </Base>
+    <Base name="Sarn Kamina" id="body1">
+      <Eye id="eye1" x="-8.8" y="71" scale="1.91"></Eye>
+      <Mouth id="mouth1" x="-23.5" y="50" scale="3.62"></Mouth>
+    </Base>
+    <Base name="Sarn Kamina Hooded" id="body1">
+      <Mouth id="mouth1" x="-34.5" y="43.4" scale="3.62"></Mouth>
+    </Base>
+    <Base name="Scarlet Etoile" id="body1">
+      <Eye id="eye1L" x="-38.6" y="56.8" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-10.9" y="56.7" scale="1.42"></Eye>
+      <Mouth id="mouth1" x="-25.7" y="26.7" scale="1.2"></Mouth>
+    </Base>
+    <Base name="Shadowling Child" species="Shadowling" id="body1" scale="1.4">
+      <Eye id="eye1L" x="-31" y="45" scale="1.6"></Eye>
+      <Eye id="eye1R" x="3" y="44" scale="1.7"></Eye>
+      <Mouth id="mouth1" x="-15" y="21" scale="1.5"></Mouth>
+    </Base>
+    <Base name="Silas Harrowbeak" id="body1">
+      <Eye id="eye1L" x="-38.9" y="64.4" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-5.7" y="61.7" scale="1.41"></Eye>
+      <Mouth id="mouth1" x="-25.2" y="25.8" scale="1.25"></Mouth>
+    </Base>
+    <Base name="Silithis Predat" id="body1">
+      <Eye id="eye1" x="-10.4" y="69.2" scale="1.9"></Eye>
+      <Mouth id="mouth1" x="-28.1" y="42.2" scale="3.62"></Mouth>
+    </Base>
+    <Base name="Siripent" id="body1">
+      <Eye id="eye1" x="-6.6" y="65.1" scale="1.91"></Eye>
+      <Mouth id="mouth1" x="-23.5" y="45.4" scale="3.62"></Mouth>
+    </Base>
+    <Base name="Spriggat Child" id="body1" scale="1.15">
+      <Eye id="eye1L" x="-30" y="51" scale="1.1"></Eye>
+      <Eye id="eye1R" x="-3.5" y="51" scale="1.25"></Eye>
+      <Nose id="nose1" x="-27.5" y="34" scale="1.1"></Nose>
+      <Mouth id="mouth1" x="-13.5" y="20" scale="1.6"></Mouth>
+    </Base>
+    <Base name="Tarion" species="Shadowling" id="body1" scale="1.5">
+      <Eye id="eye1L" x="-39.7" y="53.8" scale="2.6"></Eye>
+      <Eye id="eye1R" x="13" y="56.5" scale="2.2"></Eye>
+      <Mouth id="mouth1" x="-8.7" y="21" scale="2.2"></Mouth>
+    </Base>
+    <Base name="Tarion Dark" species="Shadowling" id="body1" scale="1.5">
+      <Eye id="eye1L" x="-39.7" y="53.8" scale="2.6"></Eye>
+      <Eye id="eye1R" x="13" y="56.5" scale="2.2"></Eye>
+    </Base>
+    <Base name="Tarn Strider" id="body1">
+      <Eye id="eye1L" x="-34.8" y="66.5" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-2.5" y="62.1" scale="1.41"></Eye>
+      <Mouth id="mouth1" x="-20.5" y="29.3" scale="1.2"></Mouth>
+    </Base>
+    <Base name="Tarn Strider Sick" id="body1">
+      <Eye id="eye1L" x="-38.4" y="58.6" scale="1.71"></Eye>
+      <Eye id="eye1R" x="-2.6" y="58.6" scale="2.25"></Eye>
+      <Mouth id="mouth1" x="-22.3" y="27.5" scale="1.42"></Mouth>
+    </Base>
+    <Base name="Teresa Dayo" id="body1">
+      <Eye id="eye1L" x="-49" y="56.8" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-17" y="56.8" scale="1.41"></Eye>
+      <Mouth id="mouth1" x="-34.5" y="19.5" scale="1.2"></Mouth>
+    </Base>
+    <Base name="Tremolo Phalanges" id="body1">
+      <Eye id="eye1L" x="-34.9" y="60.5" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-5.8" y="60.2" scale="1.42"></Eye>
+      <Mouth id="mouth1" x="-22.5" y="31.7" scale="1.43"></Mouth>
+    </Base>
+    <Base name="Umber Gnawbone" id="body1">
+      <Eye id="eye1L" x="-42" y="68.2" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-11.2" y="68.4" scale="1.42"></Eye>
+      <Mouth id="mouth1" x="-27.2" y="33.9" scale="1.2"></Mouth>
+    </Base>
+    <Base name="Villager F" id="body1">
+      <Eye id="eye1L" x="-35.6" y="56.8" scale="1.05"></Eye>
+      <Eye id="eye1R" x="-0.3" y="55" scale="1.55"></Eye>
+      <Mouth id="mouth1" x="-22.8" y="20.7" scale="1.4"></Mouth>
+    </Base>
+    <Base name="Villager F Child" id="body1">
+      <Eye id="eye1L" x="-32.9" y="52.7" scale="1.05"></Eye>
+      <Eye id="eye1R" x="2" y="51.7" scale="1.55"></Eye>
+      <Mouth id="mouth1" x="-19.1" y="16.8" scale="1.42"></Mouth>
+    </Base>
+    <Base name="Villager F Old" id="body1">
+      <Eye id="eye1L" x="-44.7" y="68.5" scale="1.22"></Eye>
+      <Eye id="eye1R" x="-8.7" y="68.5" scale="1.55"></Eye>
+      <Mouth id="mouth1" x="-29.4" y="30.4" scale="1.42"></Mouth>
+    </Base>
+    <Base name="Villager M" id="body1">
+      <Eye id="eye1L" x="-37.2" y="66.5" scale="1.055"></Eye>
+      <Eye id="eye1R" x="-6" y="69" scale="1.6"></Eye>
+      <Mouth id="mouth1" x="-24.2" y="26.2" scale="1.4"></Mouth>
+    </Base>
+    <Base name="Villager M Child" id="body1">
+      <Eye id="eye1L" x="-38.4" y="49.7" scale="1.08"></Eye>
+      <Eye id="eye1R" x="0" y="50" scale="1.55"></Eye>
+      <Mouth id="mouth1" x="-24.8" y="13" scale="1.4"></Mouth>
+    </Base>
+    <Base name="Villager M Old" id="body1">
+      <Eye id="eye1L" x="-46.5" y="66" scale="1.05"></Eye>
+      <Eye id="eye1R" x="-10.5" y="66" scale="1.55"></Eye>
+      <Mouth id="mouth1" x="-30.5" y="27.8" scale="1.45"></Mouth>
+    </Base>
+    <Base name="Villager Dese F" id="body1">
+      <Eye id="eye1L" x="-46.8" y="60" scale="1.075"></Eye>
+      <Eye id="eye1R" x="-11.5" y="66" scale="1.55"></Eye>
+      <Mouth id="mouth1" x="-32.8" y="22" scale="1.4"></Mouth>
+    </Base>
+    <Base name="Villager Dese F Child" id="body1">
+      <Eye id="eye1L" x="-37.5" y="57" scale="1.05"></Eye>
+      <Eye id="eye1R" x="0" y="58" scale="1.55"></Eye>
+      <Mouth id="mouth1" x="-23.5" y="21" scale="1.4"></Mouth>
+    </Base>
+    <Base name="Villager Dese F Old" id="body1">
+      <Eye id="eye1L" x="-43.3" y="60.5" scale="1.05"></Eye>
+      <Eye id="eye1R" x="-9" y="59.5" scale="1.55"></Eye>
+      <Mouth id="mouth1" x="-27.5" y="23" scale="1.4"></Mouth>
+    </Base>
+    <Base name="Villager Dese M" id="body1" scale="1.05">
+      <Eye id="eye1L" x="-35" y="68.23" scale="1.1"></Eye>
+      <Eye id="eye1R" x="3.3" y="71.5" scale="1.6"></Eye>
+      <Mouth id="mouth1" x="-20" y="27" scale="1.5"></Mouth>
+    </Base>
+    <Base name="Villager Dese M2" id="body1">
+      <Eye id="eye1L" x="-41.5" y="62.8" scale="1.04"></Eye>
+      <Eye id="eye1R" x="-6" y="61" scale="1.55"></Eye>
+      <Mouth id="mouth1" x="-28" y="24.2" scale="1.3"></Mouth>
+    </Base>
+    <Base name="Villager Dese M Child" id="body1">
+      <Eye id="eye1L" x="-39.33" y="60" scale="1.05"></Eye>
+      <Eye id="eye1R" x="-4.75" y="59" scale="1.55"></Eye>
+      <Mouth id="mouth1" x="-24.79" y="24.68" scale="1.4"></Mouth>
+    </Base>
+    <Base name="Villager Dese M Old" id="body1">
+      <Eye id="eye1L" x="-49" y="73.6" scale="1.05"></Eye>
+      <Eye id="eye1R" x="-15" y="71.3" scale="1.55"></Eye>
+      <Mouth id="mouth1" x="-37" y="33.25" scale="1.45"></Mouth>
+    </Base>
+    <Base name="Vitalia Spring" id="body1"></Base>
+    <Base name="Zash" id="body1">
+      <Eye id="eye1L" x="-35.5" y="63.5" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-4.8" y="68" scale="1.43"></Eye>
+      <Mouth id="mouth1" x="-17.5" y="38.4" scale="1.65"></Mouth>
+    </Base>
+    <Base name="Zimmer Thrawn" id="body1">
+      <Eye id="eye1L" x="-47.1" y="59" scale="1.35"></Eye>
+      <Eye id="eye1R" x="-15.8" y="63.2" scale="1.41"></Eye>
+      <Mouth id="mouth1" x="-32.8" y="26" scale="1.2"></Mouth>
+    </Base>
+  </Unique>
+</CharPortraits>

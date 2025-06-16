@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Glossary>
+  <Characters id="Characters" desc="Significant people revealed so far.">
+    <g type="Characters" id="Annie Available" name="Annie Available" desc="A character available from the start of the game. The player already knows about her and it's not a spoiler to have her here, so the entry is left unlocked.-NL--NL-She's related to Bob Available, so Bob is linked to this entry.">[b]See:[/b] LINK[Bob Available]Bob Available[/L].</g>
+    <g type="Characters" id="Bob Available" name="Bob Available" desc="Another character available from the start.">[b]See:[/b] LINK[Annie Available]Annie Available[/L].</g>
+    <g type="Characters" id="Sarah Spoiler" name="Sarah Spoiler" locked="true" desc="This entry contains spoilers, so we're locking it by default. The lock can be removed using the UnlockGlossaryEntry script action--just use whatever's in the id attribute as the Topic ID (in this case, Sarah Spoiler)."></g>
+  </Characters>
+  <General id="General" desc="General, uncategorized lore about the world.">
+    <g type="General" id="A Thing" name="A Thing" desc="This is something that is interesting about the setting of your campaign."></g>
+  </General>
+  <Species id="Species" desc="Species of the world.">
+    <g type="Species" id="Placeholder" name="Placeholder" desc="Talk about a unique species in your campaign setting here."></g>
+  </Species>
+  <Regions id="Regions" desc="Geographical regions in your setting.">
+    <g type="Regions" id="Placeland" name="Placeland" desc="Not only is it a place, it's also a land. [i]Placeland![/i]"></g>
+  </Regions>
+  <CitiesAndTowns id="Cities and Towns" desc="Cities and towns in your setting.">
+    <g type="Cities and Towns" id="Availa-ville" name="Availa-ville" desc="The small, innocent town that Annie and Bob come from.">[b]See:[/b] LINK[Annie Available]Annie Available[/L], LINK[Bob Available]Bob Available[/L].</g>
+  </CitiesAndTowns>
+  <Maps id="Maps" desc="Maps in your setting.">
+    <g type="Maps" id="Blank Map" name="Blank Map" mapImage="Custom/Blank"></g>
+  </Maps>
+</Glossary>

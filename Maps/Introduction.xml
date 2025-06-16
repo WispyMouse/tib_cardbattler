@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level mapname="Introduction" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 1:47:04 PM">
+
+	<Narration> -DIA:Intro-</Narration>
+
+	<Shop costMultiplier="100" baseSalePrice="50" itemQuality="3" qualityVariance="2" foodCostPercent="300">Default Store
+		<Stock type="Weapons" chance="100" num="1-5" materials="WeaponMaterials">GEN:Axe</Stock>
+		<Stock type="Weapons" chance="100" num="1-5" materials="WeaponMaterials">GEN:Bow</Stock>
+		<Stock type="Weapons" chance="100" num="1-5" materials="WeaponMaterials">GEN:Crossbow</Stock>
+		<Stock type="Weapons" chance="100" num="1-5" materials="WeaponMaterials">GEN:Knife</Stock>
+		<Stock type="Weapons" chance="100" num="1-5" materials="WeaponMaterials">GEN:Lance</Stock>
+		<Stock type="Weapons" chance="100" num="1-5" materials="WeaponMaterials">GEN:Mace</Stock>
+		<Stock type="Weapons" chance="100" num="1-5" materials="WeaponMaterials">GEN:Spear</Stock>
+		<Stock type="Weapons" chance="100" num="1-5" materials="WeaponMaterials">GEN:Talwar</Stock>
+		<Stock type="Weapons" chance="80" num="1-2" materials="WeaponMaterials">GEN:Wrench</Stock>
+		<Stock type="Weapons" chance="40" num="1-3" materials="WeaponMaterials">GEN:Flail,GEN:Halberd,GEN:Javelins,GEN:Longbow,GEN:Rapier,GEN:Throwing Axes</Stock>
+		<Stock type="Armor" chance="100" num="16-24" materials="ArmorMaterials">GEN:Helm,GEN:Winged Helm,GEN:Boots,GEN:Plated Boots,GEN:Vest,GEN:Mail,GEN:Plate,GEN:Small Shield,GEN:Kite Shield</Stock>
+		<Stock type="Armor" chance="25" num="1-5" materials="ArmorMaterials">Armored Plating,Light Plating,GEN:Main Gauche,GEN:Wing Armor</Stock>
+		<Stock type="Consumables" chance="100" num="0">Bandages,Focus Pills,Mango</Stock>
+		<Stock type="Consumables" chance="100" num="3-4">Adrenaline Pills,Caffeine Pills,Eye Drops,Lead Ointment,Splint,Thermal Paste,Whetstone,Wine</Stock>
+		<Stock type="Consumables" chance="50" num="1">Novice Battle Primer,Novice Battle Primer,Novice Battle Primer,Novice Battle Primer,Novice Battle Primer,Novice Battle Primer,Intermediate Battle Primer,Intermediate Battle Primer,Intermediate Battle Primer,Expert Battle Primer</Stock>
+		<Stock type="Misc." chance="100" num="1-4">Binoculars,Bowman's Gloves,Bracing Gloves,Fur-Lined Cloak,Grapple Chain,Runner's Cleats,Shadow Cloak,Steamthopter</Stock>
+		<Stock type="Misc." chance="50" num="1">Snare Kit,Satchel Charge</Stock>
+		<Stock type="Misc." chance="40" num="1">Blood Orb,Blood Orb,Black Orb,Blue Orb,Orange Orb,White Orb,Energy Orb,Energy Orb,Power Orb,Power Orb,Swift Orb,Foreseeing Orb,Crystal Orb,Rejuvenation Orb,Azure Orb</Stock>
+		<Stock type="Food" chance="100" num="0">10,20,50,100,240</Stock>
+	</Shop>
+
+	<Menu txt="This is a menu! Place it in a frame of your cut scene--when the frame is reached, the player will see this message and buttons below it.">Default Menu
+		<Btn name="Button 1" explanation="What's this do?|Clicking this runs the DoNothing script." runScript="DoNothing" hidden="false"></Btn>
+		<Btn name="Button 2" explanation="What's this do?|Clicking this runs the CloseMenu script." runScript="CloseMenu" hidden="false"></Btn>
+	</Menu>
+
+	<Dialogue trigger="None/" convID="Intro" r="true">
+		<Branch num="0" name="" showSingleReplies="true">/Psy Clash is a lot of fun, so here's a card battle roguelike based on it. Have fun! This introduction area is where we normally would set configuration options, but there aren't any yet. Click through to go to the Main Game Loop, which will repeatedly trigger a random encounter out of a set of predefined encounters. After that encounter, the game will loop back here.
+			<Action>Run/TrySetPlayerStartingDeck</Action>
+			<Reply>Continue./NextBranch</Reply>
+		</Branch>
+	</Dialogue>
+
+</Level>

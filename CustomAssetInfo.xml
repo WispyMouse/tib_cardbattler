@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomAssetInfo>
+	The thumbnail for the campaign should be stored in this folder.
+	It must be saved as a JPG file; 440 x 440 are the recommended 
+	image dimensions. The file *must* be named Thumbnail.jpg!
+</CustomAssetInfo>

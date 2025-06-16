@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomAssetInfo>
+	Custom object graphics should be stored in this folder.
+	They must be saved as PNG files, 64 x 96 in size.
+	Once placed here, you may reference these as spriteSets
+	for objects you add to PremadeUnits.xml.
+	
+	To make your new object use a custom sprite, 
+	edit the spriteSet attribute so it reads spriteSet="Custom/X", 
+	where X is the name of your sprite. (E.g. if you have placed 
+	an image called BlueStatue.png in Object Images, make sure 
+	your new object has spriteSet="Custom/BlueStatue").
+</CustomAssetInfo>

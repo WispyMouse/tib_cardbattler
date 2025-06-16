@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomAssetInfo>
+	Custom skill graphics should be stored in this folder.
+	They must be saved as PNG files, 48 x 48 in size.
+	Once placed here, they will become available to choose
+	in the skill editor!
+</CustomAssetInfo>

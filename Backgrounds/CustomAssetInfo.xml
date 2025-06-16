@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomAssetInfo>
+	Custom cut scene backgrounds for the campaign should be stored in this folder.
+	The backgrounds must be saved as PNG files; 5000 x 2813 are the default 
+	image dimensions, but any dimensions with a 16:9 aspect ratio should work.
+	
+	Custom battle backgrounds should *also* be stored in this folder.
+	Battle backgrounds must be saved as PNG files; 8192 x 8192 are the default 
+	image dimensions, but any dimensions with a 1:1 aspect ratio should work.
+	
+	To add an emissions layer to a battle background, save an image with 
+	the exact same dimensions and the same filename (plus 'Emission') in this folder.
+	(For instance, the emissions layer for a battle background named CastleGray.png 
+	would have to be named CastleGrayEmission.png.)
+</CustomAssetInfo>

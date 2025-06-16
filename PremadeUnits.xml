@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PremadeUnits>
+  <Characters></Characters>
+  <Objects>
+    <u category="object" loadID="ExampleObject" is3D="false" swayStr="0" spriteSet="Custom/Blank" name="Example Object" moveType="Flying" particle="Wood" stats="Health,16/Slash Res.,0/Pierce Res.,0/Crush Res.,0/Mental Res.,100/Heat Res.,0/Cold Res.,0/Light Res.,0/Shadow Res.,0/Poison Res.,100/Pushable,1" statFXImmunities="Alert/Blinded/Clarity/Distracted/Enthralled/Focused/Lucid/New Turn/Stunned/Immobilized/Slowed/Clouded/Weakened/Sick"></u>
+  </Objects>
+</PremadeUnits>

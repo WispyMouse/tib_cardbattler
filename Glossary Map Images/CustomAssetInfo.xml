@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CustomAssetInfo>
+	Custom glossary maps should be stored in this folder.
+	They must be saved as PNG files, with a width-height ratio
+	of 1.15:1 (e.g. 4000 x 3480 or 2000 x 1740 in size).
+	Once placed here, they will become available to display
+	in the campaign's glossary using the mapImage attribute!
+	(E.G. mapImage="Custom/My Map Name").
+</CustomAssetInfo>
