@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 2:14:27 PM">
+<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 2:40:27 PM">
 
-	<Narration> -PIC:Tavern_Dingy- -DIA:Pick and Play-</Narration>
+	<Narration> -PIC:Tavern_Dingy-   -DIA:Pick and Play-</Narration>
 
 	<Dialogue trigger="None/" convID="Pick and Play" r="true">
-		<Branch num="0" name="">/Player should not see this text. This text exists so that the very first cutscene is not directing immediate convo change.
-			<Action>GoToNextBranch/</Action>
-			<Reply>/</Reply>
-		</Branch>
-		<Branch num="1" name="">/
-			<Action>LoadConv/Default Encounter</Action>
+		<Branch num="1" name="">/This is the dispatch point of the dialogue. Normally seeing this would lead to your next encounter.
+			<Reply>Neat!/LoadConv/Default Encounter</Reply>
 		</Branch>
 	</Dialogue>
 
@@ -30,13 +26,13 @@
 
 	<Dialogue trigger="None/" convID="Encounter Win" r="true">
 		<Branch num="0" name="">-STR:_GeneratedUnit-/This is the encounter win dialogue. Wow, good job!
-			<Reply>Thanks!/NewScene/Main Gameplay Loop</Reply>
+			<Reply>Thanks!/NewScene/Main Game Loop</Reply>
 		</Branch>
 	</Dialogue>
 
 	<Dialogue trigger="None/" convID="Encounter Lost" r="true">
 		<Branch num="0" name="">-STR:_GeneratedUnit-/Too bad this is the lose dialogue. Wow, good job?
-			<Reply>Darn/NewScene/Main Gameplay Loop</Reply>
+			<Reply>Darn/NewScene/Main Game Loop</Reply>
 		</Branch>
 	</Dialogue>
 
