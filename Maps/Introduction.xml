@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Introduction" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 2:57:56 PM">
+<Level mapname="Introduction" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 4:34:41 PM">
 
 	<Narration> -DIA:Intro-</Narration>
 
@@ -32,7 +32,6 @@
 
 	<Dialogue trigger="None/" convID="Intro" r="true">
 		<Branch num="0" name="" showSingleReplies="true">/Psy Clash is a lot of fun, so here's a card battle roguelike based on it. Have fun! This introduction area is where we normally would set configuration options, but there aren't any yet. Click through to go to the Main Game Loop, which will repeatedly trigger a random encounter out of a set of predefined encounters. After that encounter, the game will loop back here.
-			<Action>Run/TrySetPlayerStartingDeck</Action>
 			<Action>ShowDeckButton/</Action>
 			<Reply>Continue./NextBranch</Reply>
 		</Branch>

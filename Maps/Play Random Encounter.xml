@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 3:25:03 PM">
+<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 4:34:55 PM">
 
 	<Narration> -PIC:Tavern_Dingy-   -DIA:Pick and Play-</Narration>
 
@@ -29,7 +29,7 @@
 			<Reply>/</Reply>
 		</Branch>
 	</Dialogue>
-	
+
 	<Dialogue trigger="None/" convID="Starter Deck Battle" r="true">
 		<Branch num="2" name="">Rohit/I have Rohit's deck, which is the starting deck. Good luck, have fun!
 			<Action>AddPortrait/Rohit,Villager Dese M,right</Action>

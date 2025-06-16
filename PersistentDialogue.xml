@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/16/2025 3:06:05 PM">
+<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/16/2025 4:44:48 PM">
 
 	<Script>TrySetPlayerStartingDeck
 		<Action>SetList/StartingDeck,Awareness|Bandit|Bandit|Bandit|Bandit|Barudit|Barudit|Gasul|Bowman|Frost Armor|Fury|Leap|Merchant|Mind Blast|Mind Blast|Mind Shield|Mind Shield|Shadowling|Shadowling|Solid State Shield|Swordsman|Swordsman|Terror</Action>
@@ -11,5 +11,37 @@
 		<Action>SetList/PlayerDeck,</Action>
 		<Action>CombineLists/PlayerDeck,StartingDeck,PlayerDeck</Action>
 	</Script>
+
+	<Script>ConfigureCardData
+		<Action>SetList/AllCards,Assassin|Bakery|Bandit|Barudit|Bowman|Crossbowman|Cryokineticist|Drake|Gasul|Golem|Greater Spriggat|Iron Jaw Trap|Library|Mantis Rider|Mentalist|Merchant|Photokineticist|Pyrokineticist|Psy Healer|Smuggler|Solid State Shield|Shadowling|Spearman|Spirit|Spriggat|Steam Engine|Swordsman|Awareness|Blinding Cloak|Dark Vortex|Drain|Feedback|Focus|Frost Armor|Fury|Kinetic Gust|Leap|Light Blast|Mind Blast|Mind Control|Mind Shield|Shadow Blast|Stimulate|Terror</Action>
+		<Action>SetList/AllCardsToRarity,1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2</Action>
+		<Action>SetList/RarityToName,Common|Uncommon|Rare</Action>
+		<Action>SetList/RarityToCost,2|5|15</Action>
+		<Action>Log/Loaded cards to index LASTINLIST[AllCards]</Action>
+	</Script>
+
+	<Script>GetCardDataByIndex
+		<Action>Log/Fetching card information from AllCards list at index -VAL:Index-.</Action>
+		<Action>SetString/CardName,LIST{AllCards,-VAL:Index-}</Action>
+		<Action>SetVal/Rarity,=:LIST{AllCardsToRarity,-VAL:Index-}</Action>
+		<Action>SetString/RarityName,LIST{RarityToName,-VAL:Rarity-}</Action>
+		<Action>SetVal/RarityCost,LIST{RarityToCost,-VAL:Rarity-}</Action>
+	</Script>
+
+	<Dialogue trigger="OnTurn/0" convID="Initialization" r="false">
+		<Branch num="0" name="">/The player should not see this initialization prompt. This has turn 0 so it can load during conversations.
+			<Action>Run/ConfigureCardData</Action>
+			<Action>Run/TrySetPlayerStartingDeck</Action>
+			<Action>EndConvImmediately/</Action>
+		</Branch>
+	</Dialogue>
+
+	<Dialogue trigger="OnLoaded/" convID="Battle Initialization" r="false">
+		<Branch num="0" name="">/The player should not see this initialization prompt. This one exists so that it can load in battle before turn 0.
+			<Action>LoadConv/Initialization</Action>
+			<Action>EndConvImmediately/</Action>
+			<Reply>/</Reply>
+		</Branch>
+	</Dialogue>
 
 </PersistentDialogue>
