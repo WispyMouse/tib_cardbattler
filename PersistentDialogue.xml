@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/16/2025 5:12:38 PM">
+<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/16/2025 5:59:03 PM">
 
 	<Script>TrySetPlayerStartingDeck
 		<Action>SetList/StartingDeck,Awareness|Bandit|Bandit|Bandit|Bandit|Barudit|Barudit|Gasul|Bowman|Frost Armor|Fury|Leap|Merchant|Mind Blast|Mind Blast|Mind Shield|Mind Shield|Shadowling|Shadowling|Solid State Shield|Swordsman|Swordsman|Terror</Action>
@@ -29,11 +29,20 @@
 	</Script>
 
 	<Script>RunAllInitializers
-		<Action>Run/ConfigureCardData</Action>
-		<Action>Run/TrySetPlayerStartingDeck</Action>
+		<Action>IfValRun/OneTimeStartup,=,0,OneTimeInitializers</Action>
 	</Script>
 
-	<Dialogue trigger="OnTurn/0" convID="Initialization" r="true">
+	<Script>OneTimeInitializers
+		<Action>Run/TrySetPlayerStartingDeck</Action>
+		<Action>Run/ConfigureCardData</Action>
+		<Action>SetAura/=:100</Action>
+	</Script>
+
+	<Script>GainPsyClashCard
+		<Action>AddToList/PlayerDeck,-STR:Name-</Action>
+	</Script>
+
+	<Dialogue trigger="OnTurn/0" convID="Initialization" r="false">
 		<Branch num="0" name="">/The player should not see this initialization prompt. This has turn 0 so it can load during conversations.
 			<Action>Run/RunAllInitializers</Action>
 			<Action>EndConvImmediately/</Action>
@@ -41,7 +50,7 @@
 		</Branch>
 	</Dialogue>
 
-	<Dialogue trigger="OnLoaded/" convID="Battle Initialization" r="true">
+	<Dialogue trigger="OnLoaded/" convID="Battle Initialization" r="false">
 		<Branch num="0" name="">/The player should not see this initialization prompt. This one exists so that it can load in battle before turn 0.
 			<Action>LoadConv/Initialization</Action>
 			<Action>EndConvImmediately/</Action>

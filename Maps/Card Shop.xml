@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Card Shop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 5:15:50 PM">
+<Level mapname="Card Shop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 5:58:41 PM">
 
 	<Narration>   -PIC:Psy_Academy_Office-  -DIA:Intro-</Narration>
+
+	<Shop costMultiplier="100" baseSalePrice="50" itemQuality="0" qualityVariance="0" foodCostPercent="0">Card Shop
+		<Stock type="Consumables" chance="100" num="3">Psy Clash Card Bandit</Stock>
+	</Shop>
 
 	<Script>ShowAllSinglesInBuySingles
 		<Action>ForLoop/-ii-,0-LASTINLIST[AllCards],1,Run,RemoveSingleInBuySingles,Index,-ii-</Action>
@@ -12,7 +16,7 @@
 		<Action>Log/Showing single information for card at index -VAL:Index-</Action>
 		<Action>Run/GetCardDataByIndex,Index,-VAL:Index-</Action>
 		<Action>Run/FormatBuyText</Action>
-		<Action>AddReply/,,-STR:BuyText-|Run|ShowBuySingleIndex;;Index;;-VAL:Index-</Action>
+		<Action>AddReply/,,-STR:BuyText-|Run|ShowBuySingleByIndex;;Index;;-VAL:Index-</Action>
 	</Script>
 
 	<Script>ShowBuySingleByIndex
@@ -33,15 +37,23 @@
 
 	<Dialogue trigger="None/" convID="Intro" r="true">
 		<Branch num="0" name="">Sorter/WELCOME. BUY THINGS.
+			<Action>ShowInfoBar/</Action>
 			<Action>AddPortrait/Sorter,Sorter/,left</Action>
 			<Action>Run/RunAllInitializers</Action>
 			<Reply>Buy Singles/LoadConv/Buy Singles</Reply>
 			<Reply>Leave/NewScene/Main Game Loop</Reply>
+			<Reply>Neat Shop Window/NamedBranch/OpenShop</Reply>
+		</Branch>
+		<Branch num="2" name="OpenShop">Sorter/OF COURSE. WHAT WILL YOU BE PURCHASING TODAY?
+			<Action>ShowShop/Card Shop</Action>
+		</Branch>
+		<Branch num="1" name="">/The player should not see this popup, which should immediately go to 0.
+			<Action>GoTo/0</Action>
 		</Branch>
 	</Dialogue>
 
 	<Dialogue trigger="None/" convID="Buy Singles" r="true">
-		<Branch num="0" name="Buy" showSingleReplies="true">Sorter/BUY SPECIFIC THINGS. WE SHOULD HAVE THINGS TO INDEX LASTINLIST[AllCards].
+		<Branch num="0" name="Buy" showSingleReplies="true">Sorter/BUY SPECIFIC THINGS.
 			<Action>AddPortrait/Sorter,Sorter/,left</Action>
 			<Action>Run/ShowAllSinglesInBuySingles</Action>
 			<Reply>Back/LoadConv/Intro</Reply>
@@ -49,15 +61,22 @@
 	</Dialogue>
 
 	<Dialogue trigger="None/" convID="Buy Single" r="true">
-		<Branch num="0" name="">Sorter/-STR:CardName-. GOOD CHOICE. THIS -STR:RarityName- WILL COST -VAL:RarityCost-.
+		<Branch num="0" name="">Sorter/-STR:CardName-. GOOD CHOICE. THIS -STR:RarityName- WILL COST -VAL:RarityCost-. THIS WOULD BE A GOOD SPOT TO TALK ABOUT THE CARD, PERHAPS.
+			<Action>SetVal/Aura,=:-AURA-</Action>
+			<Action>IfValGoTo/Aura,l,-VAL:RarityCost-,BRANCH[notenoughaura]</Action>
 			<Reply>Buy It!/NamedBranch/Confirm</Reply>
 			<Reply>Nevermind!/LoadConv/Buy Singles</Reply>
 		</Branch>
 		<Branch num="1" name="Confirm">/The player should not see this because it should buy the card and proceed.
 			<Action>AddToList/PlayerDeck,-VAL:CardName-</Action>
 			<Action>PlaySound/Coins</Action>
+			<Action>SetAura/-:-VAL:RarityCost-</Action>
 			<Action>LoadConv/Buy Singles</Action>
 			<Reply>/</Reply>
+		</Branch>
+		<Branch num="2" name="notenoughaura">Sorter/-STR:CardName-. THIS -STR:RarityName- WILL COST -VAL:RarityCost-. YOU DO NOT HAVE ENOUGH MONEY.
+			<Action>AddPortrait/Sorter,Sorter/,left</Action>
+			<Reply>Too bad/LoadConv/Buy Singles</Reply>
 		</Branch>
 	</Dialogue>
 
