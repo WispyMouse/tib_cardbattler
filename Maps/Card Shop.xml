@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Card Shop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 4:46:35 PM">
+<Level mapname="Card Shop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 5:15:50 PM">
 
-	<Narration>   -PIC:Psy_Academy_Office- -DIA:Intro-</Narration>
+	<Narration>   -PIC:Psy_Academy_Office-  -DIA:Intro-</Narration>
 
 	<Script>ShowAllSinglesInBuySingles
-		<Action>ForLoop/-ii-,0-LASTINLIST[AllCards],1,RemoveSingleInBuySingles,Index,-ii-</Action>
-		<Action>ForLoop/-ii-,0-LASTINLIST[AllCards],1,ShowSingleInBuySingles,Index,-ii-</Action>
+		<Action>ForLoop/-ii-,0-LASTINLIST[AllCards],1,Run,RemoveSingleInBuySingles,Index,-ii-</Action>
+		<Action>ForLoop/-ii-,0-LASTINLIST[AllCards],1,Run,ShowSingleInBuySingles,Index,-ii-</Action>
 	</Script>
 
 	<Script>ShowSingleInBuySingles
 		<Action>Log/Showing single information for card at index -VAL:Index-</Action>
-		<Action>GetCardDataByIndex/Index,-VAL:Index-</Action>
-		<Action>AddReply/,,-VAL:RarityCost- SPRITE[Aura] -STR:CardName-|Run|ShowBuySingleIndex;;Index;;-VAL:Index-</Action>
+		<Action>Run/GetCardDataByIndex,Index,-VAL:Index-</Action>
+		<Action>Run/FormatBuyText</Action>
+		<Action>AddReply/,,-STR:BuyText-|Run|ShowBuySingleIndex;;Index;;-VAL:Index-</Action>
 	</Script>
 
 	<Script>ShowBuySingleByIndex
@@ -21,13 +22,19 @@
 
 	<Script>RemoveSingleInBuySingles
 		<Action>Log/Removing all singles information for -VAL:Index-</Action>
-		<Action>GetCardDataByIndex/Index,-VAL:Index-</Action>
-		<Action>RemoveReply/,,-STR:CardName-</Action>
+		<Action>Run/GetCardDataByIndex,Index,-VAL:Index-</Action>
+		<Action>Run/FormatBuyText</Action>
+		<Action>RemoveReply/,,-STR:BuyText-</Action>
+	</Script>
+
+	<Script>FormatBuyText
+		<Action>SetString/BuyText,-VAL:RarityCost- SPRITE[Aura] -STR:CardName-</Action>
 	</Script>
 
 	<Dialogue trigger="None/" convID="Intro" r="true">
 		<Branch num="0" name="">Sorter/WELCOME. BUY THINGS.
-			<Action>AddPortrait/Sorter,Sorter:,left</Action>
+			<Action>AddPortrait/Sorter,Sorter/,left</Action>
+			<Action>Run/RunAllInitializers</Action>
 			<Reply>Buy Singles/LoadConv/Buy Singles</Reply>
 			<Reply>Leave/NewScene/Main Game Loop</Reply>
 		</Branch>
@@ -35,8 +42,8 @@
 
 	<Dialogue trigger="None/" convID="Buy Singles" r="true">
 		<Branch num="0" name="Buy" showSingleReplies="true">Sorter/BUY SPECIFIC THINGS. WE SHOULD HAVE THINGS TO INDEX LASTINLIST[AllCards].
+			<Action>AddPortrait/Sorter,Sorter/,left</Action>
 			<Action>Run/ShowAllSinglesInBuySingles</Action>
-			<Action>AddPortrait/Sorter,Sorter:,left</Action>
 			<Reply>Back/LoadConv/Intro</Reply>
 		</Branch>
 	</Dialogue>
