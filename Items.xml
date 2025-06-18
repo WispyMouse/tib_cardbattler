@@ -27,7 +27,7 @@
     <Item loadID="Book of Power" name="Book of Power" useableWith="Consumable" masteriesReq="Book of Power" consumedAfter="1" itemValue="700" sound="Paper" runsScripts="PromoteUser" commonality="0" image="Book Black" description="Unlock one's potential: instantly promote to an advanced class."></Item>
     <Item loadID="Key" name="Key" useableWith="Key" consumedAfter="1" itemValue="160" commonality="0" image="Key" description="Can open locked doors."></Item>
     <Item loadID="Key Ring" name="Key Ring" useableWith="Key" consumedAfter="5" itemValue="540" sound="Keys" commonality="0" image="Key Ring" description="Can open locked doors."></Item>
-	<Item loadID="Psy Clash Card Bandit" name="Psy Clash Card Bandit" useableWith="Automatic" consumedAfter="1" itemValue="5" sound="Card Shuffle" commonality="10" image="Card" description="One copy of the common Psy Clash card, Bandit." runsScripts="GainPsyClashCard,Name,Bandit"></Item>
+	<Item loadID="Bandit" name="Bandit" useableWith="Consumable"  consumedAfter="1" itemValue="5" sound="Card Shuffle" commonality="10" image="Card" description="Minion SPRITE[Aura] Yay!"></Item>
   </Consumable>
   <Weapon>
     <Item loadID="Practice Mace" name="Practice Mace" useableWith="Weapon Hand" masteriesReq="Mace" grantsSkills="Mace" consumedAfter="20" itemValue="25" statPlus="Strength,-1" commonality="0" image="Mace Wood" description="Flimsy practice mace."></Item>

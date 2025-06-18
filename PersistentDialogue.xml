@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/16/2025 5:59:03 PM">
+<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/17/2025 6:26:24 PM">
 
 	<Script>TrySetPlayerStartingDeck
 		<Action>SetList/StartingDeck,Awareness|Bandit|Bandit|Bandit|Bandit|Barudit|Barudit|Gasul|Bowman|Frost Armor|Fury|Leap|Merchant|Mind Blast|Mind Blast|Mind Shield|Mind Shield|Shadowling|Shadowling|Solid State Shield|Swordsman|Swordsman|Terror</Action>
@@ -29,17 +29,41 @@
 	</Script>
 
 	<Script>RunAllInitializers
-		<Action>IfValRun/OneTimeStartup,=,0,OneTimeInitializers</Action>
+		<Action>IfValRun/OneTimeStartupFlag,=,0,OneTimeInitializers</Action>
 	</Script>
 
 	<Script>OneTimeInitializers
+		<Action>SetVal/OneTimeStartupFlag,=:1</Action>
+		<Action>SwitchRoster/0</Action>
 		<Action>Run/TrySetPlayerStartingDeck</Action>
 		<Action>Run/ConfigureCardData</Action>
 		<Action>SetAura/=:100</Action>
+		<Action>ClearRoster/0</Action>
+		<Action>Recruit/Spirit of Card Playing/,0</Action>
+		<Action>SetList/PlayerDeckInactive</Action>
 	</Script>
 
 	<Script>GainPsyClashCard
 		<Action>AddToList/PlayerDeck,-STR:Name-</Action>
+	</Script>
+
+	<Script>GetCardIndexByName
+		<Action>SetVal/MatchingIndex,=:-1</Action>
+		<Action>ForLoop/-ii-,0-LASTINLIST[AllCards],1,Run,_GetCardIndexByNameForIndexAbortIfFound,CardNameToFind,-STR:CardNameToFind-,Index,-ii-</Action>
+		<Action>Log/After looking for the index of -STR:CardNameToFind-, the matching index was found at (or not found as -1): '-VAL:MatchingIndex-'</Action>
+	</Script>
+
+	<Script>_SetVal
+		<Action>SetVal/-STR:Variable Name-,-STR:Operator-:-VAL:Amount-</Action>
+	</Script>
+
+	<Script>_GetCardIndexByNameForIndex
+		<Action>Run/GetCardDataByIndex,Index,-VAL:Index-</Action>
+		<Action>IfStringRun/-STR:CardNameToFind-,-STR:CardName-,_SetVal,,Variable Name,MatchingIndex,Operator,=,Amount,-VAL:Index-</Action>
+	</Script>
+
+	<Script>_GetCardIndexByNameForIndexAbortIfFound
+		<Action>IfValRun/MatchingIndex,=,-1,_GetCardIndexByNameForIndex,CardNameToFind,-STR:CardNameToFind-,Index,-VAL:Index-</Action>
 	</Script>
 
 	<Dialogue trigger="OnTurn/0" convID="Initialization" r="false">
