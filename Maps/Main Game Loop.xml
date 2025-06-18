@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Main Game Loop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 2:58:06 PM">
+<Level mapname="Main Game Loop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/17/2025 6:34:08 PM">
 
 	<Narration>  -PIC:Card_Tournament_Dese_Alt- -DIA:Dispatch-</Narration>
 
 	<Dialogue trigger="None/" convID="Dispatch" r="true">
 		<Branch num="0" name="" showSingleReplies="true">/This is the main game loop dispatch!
 			<Action>ShowDeckButton/</Action>
+			<Action>ShowInfoBar/</Action>
+			<Action>ShowArmyOverviewButton/</Action>
+			<Action>ShowCalendarButton/</Action>
 			<Reply>To the action!/NewScene/Play Random Encounter</Reply>
+			<Reply>To the shop!/NewScene/Card Shop</Reply>
 		</Branch>
 	</Dialogue>
 

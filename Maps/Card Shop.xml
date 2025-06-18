@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Card Shop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/17/2025 6:28:30 PM">
+<Level mapname="Card Shop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/17/2025 7:24:08 PM">
 
 	<Narration>   -PIC:Psy_Academy_Office-  -DIA:Intro-</Narration>
-	
-	<Condition>Use Items,true</Condition>
-	<Condition>Roster Number,0</Condition>
 
 	<Shop costMultiplier="100" baseSalePrice="50" itemQuality="0" qualityVariance="0" foodCostPercent="0">Card Shop
 		<Stock type="Consumables" chance="100" num="3">Bandit</Stock>
@@ -45,9 +42,7 @@
 
 	<Script>_GainPlayerInventoryCardsLoop
 		<Action>InvToList/Reserve Supplies,ReservesInv</Action>
-		<Action>SetVal/ReservesLimiter,=:1</Action>
-		<Action>SetVal/ReservesLimiter,+:LASTINLIST[ReservesInv]</Action>
-		<Action>ForLoop/-InventoryIndex-,0--VAL:ReservesLimiter-,1,Run,GainCardFromPsyClashCardItem,PsyClashCardItemName,LIST{ReservesInv,-InventoryIndex-},InventoryIndex,-InventoryIndex-</Action>
+		<Action>ForLoop/-InventoryIndex-,0-LASTINLIST[ReservesInv],1,Run,GainCardFromPsyClashCardItem,PsyClashCardItemName,LIST{ReservesInv,-InventoryIndex-},InventoryIndex,-InventoryIndex-</Action>
 	</Script>
 
 	<Script>_RemoveItem
@@ -55,6 +50,7 @@
 	</Script>
 
 	<Script>GainCardFromPsyClashCardItem
+		<Action>SetVal/MatchingIndex,=:-1</Action>
 		<Action>Run/GetCardIndexByName,CardNameToFind,-STR:PsyClashCardItemName-</Action>
 		<Action>IfValRun/-VAL:MatchingIndex-,g,-1,_GainCardFromPsyClashCardItemConfirm,PsyClashCardItemName,-STR:PsyClashCardItemName-</Action>
 	</Script>
@@ -68,26 +64,31 @@
 
 	<Dialogue trigger="None/" convID="Intro" r="true">
 		<Branch num="0" name="">Sorter/WELCOME. BUY THINGS.
-			<Action>ShowInfoBar/</Action>
-			<Action>ShowDeckButton/</Action>
 			<Action>AddPortrait/Sorter,Sorter/,left</Action>
-			<Action>Run/RunAllInitializers</Action>
-			<Action>/</Action>
 			<Reply>Buy Singles/LoadConv/Buy Singles</Reply>
 			<Reply>Leave/NewScene/Main Game Loop</Reply>
 			<Reply>Neat Shop Window/NamedBranch/OpenShop</Reply>
+			<Reply>Show Supplies/NamedBranch/Reserve Supplies</Reply>
 		</Branch>
 		<Branch num="2" name="OpenShop">Sorter/OF COURSE. WHAT WILL YOU BE PURCHASING TODAY?-NL-(After closing the shop window, each card in your reserves will be added to your inactive Psy Clash cards)
 			<Action>ShowInfoBar/</Action>
 			<Action>ShowDeckButton/</Action>
 			<Action>ShowCalendarButton/</Action>
+			<Action>AddCondition/Use Items,true</Action>
+			<Action>ShowArmyOverviewButton/</Action>
+			<Action>AddCondition/Item Use,true</Action>
 			<Action>ShowShop/Card Shop,false</Action>
 			<Reply>/</Reply>
 		</Branch>
 		<Branch num="1" name="">/The player should not see this popup, which should immediately go to 0.
+			<Action>GiveItem/Reserve Supplies,Bandit</Action>
 			<Action>Run/GainPlayerInventoryCards</Action>
 			<Action>GoTo/0</Action>
 			<Reply>/</Reply>
+		</Branch>
+		<Branch num="3" name="Reserve Supplies">Sorter/HERE ARE YOUR THINGS.
+			<Action>ShowReserveSupplies/</Action>
+			<Reply>Thanks/NewBranch/0</Reply>
 		</Branch>
 	</Dialogue>
 
