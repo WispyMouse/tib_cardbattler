@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 6:25:59 AM">
+<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 6:30:50 AM">
 
 	<Narration> -PIC:Tavern_Dingy-   -DIA:Pick and Play-</Narration>
 
@@ -92,6 +92,7 @@
 		<Branch num="0" name="">-STR:OpponentName-/This is the encounter win dialogue. Wow, good job!
 			<Action>ClearPortraits/</Action>
 			<Action>AddPortrait/-STR:OpponentName-,-STR:OpponentName-,left</Action>
+			<Action>AddDayLog/Battle,Victorious versus -STR:OpponentName- in a random encounter</Action>
 			<Reply>Thanks!/NextBranch</Reply>
 		</Branch>
 		<Branch num="1" name="">/The player should not see this text, because it should immediately load a new scene.
@@ -103,6 +104,7 @@
 	<Dialogue trigger="None/" convID="Encounter Lost" r="true">
 		<Branch num="0" name="">-STR:OpponentName-/Too bad this is the lose dialogue.
 			<Action>AddPortrait/-STR:OpponentName-,-STR:OpponentName-,left</Action>
+			<Action>AddDayLog/Battle,Defeated by -STR:OpponentName- in a random encounter</Action>
 			<Reply>Darn/NextBranch</Reply>
 		</Branch>
 		<Branch num="1" name="">/The player should not see this text, because it should immediately load a new scene.
@@ -114,6 +116,7 @@
 	<Dialogue trigger="None/" convID="Skip Day" r="true">
 		<Branch num="0" name="">/The player should not see this text, because it should immediately load a new scene.
 			<Action>SetVal/UpdateDaysPassed,+:1</Action>
+			<Action>AddDayLog/Event,Skipped the day</Action>
 			<Action>NewScene/Main Game Loop</Action>
 			<Action>EndConvImmediately/</Action>
 			<Reply>/</Reply>
