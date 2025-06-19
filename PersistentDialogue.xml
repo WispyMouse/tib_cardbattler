@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/19/2025 6:43:00 AM">
 
 	<Script>TrySetPlayerStartingDeck
 		<Action>SetList/StartingDeck,Awareness|Bandit|Bandit|Bandit|Bandit|Barudit|Barudit|Gasul|Bowman|Frost Armor|Fury|Leap|Merchant|Mind Blast|Mind Blast|Mind Shield|Mind Shield|Shadowling|Shadowling|Solid State Shield|Swordsman|Swordsman|Terror</Action>
@@ -44,6 +43,10 @@
 		<Action>SwitchRoster/0</Action>
 		<Action>SetVal/UpdateDaysPassed,=:0</Action>
 		<Action>SetList/Encounters,</Action>
+		<Action>SetList/Week1Encounters,</Action>
+		<Action>SetList/Week2Encounters,</Action>
+		<Action>SetList/Week3Encounters,</Action>
+		<Action>SetList/Week4Encounters,</Action>
 		<Action>Run/RegisterAllEncounters</Action>
 	</Script>
 
@@ -77,16 +80,24 @@
 	</Script>
 
 	<Script>RegisterEncounter
-		<Action>Log/Registering Encounter. ConvId '-STR:ConvId-'.</Action>
+		<Action>Log/Registering Encounter. ConvId '-STR:ConvId-'. WeekNumber '-VAL:WeekNumber-'.</Action>
 		<Action>AddToList/Encounters,-STR:ConvId-</Action>
+		<Action>AddToList/Week-VAL:WeekNumber-Encounters,-STR:ConvId-</Action>
 	</Script>
 
 	<Script>RegisterAllEncounters
-		<Action>Run/RegisterEncounter,ConvId,Bandit Deck Battle</Action>
-		<Action>Run/RegisterEncounter,ConvId,Starter Deck Battle</Action>
-		<Action>Run/RegisterEncounter,ConvId,Tourney Three Deck Battle</Action>
-		<Action>Run/RegisterEncounter,ConvId,Dusht Deck Battle</Action>
-		<Action>Run/RegisterEncounter,ConvId,Sita Deck Battle</Action>
+		<Action>Run/RegisterEncounter,ConvId,Bandit Deck Battle,WeekNumber,1</Action>
+		<Action>Run/RegisterEncounter,ConvId,Starter Deck Battle,WeekNumber,1</Action>
+		<Action>Run/RegisterEncounter,ConvId,Tourney Three Deck Battle,WeekNumber,2</Action>
+		<Action>Run/RegisterEncounter,ConvId,Dusht Deck Battl3,WeekNumber,2</Action>
+		<Action>Run/RegisterEncounter,ConvId,Sita Deck Battle,WeekNumber,3</Action>
+	</Script>
+
+	<Script>SetCalendarDayLogForMonth
+		<Action>AddDayLog/Battle,Week 1 Boss Battle,6</Action>
+		<Action>AddDayLog/Battle,Week 2 Boss Battle,13</Action>
+		<Action>AddDayLog/Battle,Week 3 Boss Battle,20</Action>
+		<Action>AddDayLog/Battle,Week 4 Boss Battle,27</Action>
 	</Script>
 
 	<Dialogue trigger="OnTurn/0" convID="Initialization" r="false">
