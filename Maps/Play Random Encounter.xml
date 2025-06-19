@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 4:34:55 PM">
+<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 6:25:59 AM">
 
 	<Narration> -PIC:Tavern_Dingy-   -DIA:Pick and Play-</Narration>
 
 	<Dialogue trigger="None/" convID="Pick and Play" r="true">
-		<Branch num="1" name="">/This is where we can choose encounters from. What do you fancy?
-			<Action>ShowDeckButton/</Action>
-			<Reply>vs Bandit Deck/LoadConv/Bandit Deck Battle</Reply>
-			<Reply>vs Starter Deck/LoadConv/Starter Deck Battle</Reply>
-			<Reply>vs Advanced Deck/LoadConv/Tourney Three Deck Battle</Reply>
-			<Reply>vs Dusht the Deplorable Deck/LoadConv/Dusht Deck Battle</Reply>
-			<Reply>vs Sita the Shark/LoadConv/Sita Deck Battle</Reply>
+		<Branch num="1" name="">/This is where you'd have some random encounter. For now, choose!
+			<Action>Run/RunAllInitializers</Action>
+			<Action>Run/ShowButtons</Action>
+			<Reply>Skip The Day/LoadConv/Skip Day</Reply>
+			<Reply>Play Random Encounter/LoadConv/Random Encounter</Reply>
 		</Branch>
 	</Dialogue>
 
@@ -92,15 +90,42 @@
 
 	<Dialogue trigger="None/" convID="Encounter Win" r="true">
 		<Branch num="0" name="">-STR:OpponentName-/This is the encounter win dialogue. Wow, good job!
+			<Action>ClearPortraits/</Action>
 			<Action>AddPortrait/-STR:OpponentName-,-STR:OpponentName-,left</Action>
-			<Reply>Thanks!/NewScene/Main Game Loop</Reply>
+			<Reply>Thanks!/NextBranch</Reply>
+		</Branch>
+		<Branch num="1" name="">/The player should not see this text, because it should immediately load a new scene.
+			<Action>NewScene/Main Game Loop</Action>
+			<Reply>/</Reply>
 		</Branch>
 	</Dialogue>
 
 	<Dialogue trigger="None/" convID="Encounter Lost" r="true">
-		<Branch num="0" name="">-STR:OpponentName-/Too bad this is the lose dialogue. Wow, good job?
+		<Branch num="0" name="">-STR:OpponentName-/Too bad this is the lose dialogue.
 			<Action>AddPortrait/-STR:OpponentName-,-STR:OpponentName-,left</Action>
-			<Reply>Darn/NewScene/Main Game Loop</Reply>
+			<Reply>Darn/NextBranch</Reply>
+		</Branch>
+		<Branch num="1" name="">/The player should not see this text, because it should immediately load a new scene.
+			<Action>NewScene/Main Game Loop</Action>
+			<Reply>/</Reply>
+		</Branch>
+	</Dialogue>
+
+	<Dialogue trigger="None/" convID="Skip Day" r="true">
+		<Branch num="0" name="">/The player should not see this text, because it should immediately load a new scene.
+			<Action>SetVal/UpdateDaysPassed,+:1</Action>
+			<Action>NewScene/Main Game Loop</Action>
+			<Action>EndConvImmediately/</Action>
+			<Reply>/</Reply>
+		</Branch>
+	</Dialogue>
+
+	<Dialogue trigger="None/" convID="Random Encounter" r="true">
+		<Branch num="0" name="">/The player should not see this text, because it should immediately load the random encounter.
+			<Action>SetVal/UpdateDaysPassed,+:1</Action>
+			<Action>LoadConv/Bandit Deck Battle</Action>
+			<Action>EndConvImmediately/</Action>
+			<Reply>/</Reply>
 		</Branch>
 	</Dialogue>
 

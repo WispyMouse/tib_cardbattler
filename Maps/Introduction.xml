@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Introduction" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/16/2025 4:34:41 PM">
+<Level mapname="Introduction" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 6:06:56 AM">
 
 	<Narration> -DIA:Intro-</Narration>
 
@@ -31,9 +31,15 @@
 	</Menu>
 
 	<Dialogue trigger="None/" convID="Intro" r="true">
-		<Branch num="0" name="" showSingleReplies="true">/Psy Clash is a lot of fun, so here's a card battle roguelike based on it. Have fun! This introduction area is where we normally would set configuration options, but there aren't any yet. Click through to go to the Main Game Loop, which will repeatedly trigger a random encounter out of a set of predefined encounters. After that encounter, the game will loop back here.
+		<Branch num="0" name="" showSingleReplies="true">/Psy Clash is a lot of fun, so here's a card battle roguelike based on it. Have fun! This introduction area is where we normally would set configuration options, but there aren't any yet.
 			<Action>ShowDeckButton/</Action>
+			<Action>Run/RunAllInitializers</Action>
 			<Reply>Continue./NextBranch</Reply>
+		</Branch>
+		<Branch num="1" name="">/The player should not see this dialogue as the day passes.
+			<Action>SetDaysPassed/=:0</Action>
+			<Action>NewScene/Main Game Loop</Action>
+			<Reply>/</Reply>
 		</Branch>
 	</Dialogue>
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/17/2025 6:39:04 PM">
+<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/19/2025 6:26:52 AM">
 
 	<Script>TrySetPlayerStartingDeck
 		<Action>SetList/StartingDeck,Awareness|Bandit|Bandit|Bandit|Bandit|Barudit|Barudit|Gasul|Bowman|Frost Armor|Fury|Leap|Merchant|Mind Blast|Mind Blast|Mind Shield|Mind Shield|Shadowling|Shadowling|Solid State Shield|Swordsman|Swordsman|Terror</Action>
@@ -33,6 +33,7 @@
 	</Script>
 
 	<Script>OneTimeInitializers
+		<Action>Log/Running one-time initializers.</Action>
 		<Action>SetVal/OneTimeStartupFlag,=:1</Action>
 		<Action>Run/TrySetPlayerStartingDeck</Action>
 		<Action>Run/ConfigureCardData</Action>
@@ -41,6 +42,7 @@
 		<Action>Recruit/Spirit of Card Playing/,0</Action>
 		<Action>SetList/PlayerDeckInactive</Action>
 		<Action>SwitchRoster/0</Action>
+		<Action>SetVal/UpdateDaysPassed,=:0</Action>
 	</Script>
 
 	<Script>GainPsyClashCard
@@ -64,6 +66,12 @@
 
 	<Script>_GetCardIndexByNameForIndexAbortIfFound
 		<Action>IfValRun/MatchingIndex,=,-1,_GetCardIndexByNameForIndex,CardNameToFind,-STR:CardNameToFind-,Index,-VAL:Index-</Action>
+	</Script>
+
+	<Script>ShowButtons
+		<Action>ShowCalendarButton/</Action>
+		<Action>ShowInfoBar/</Action>
+		<Action>ShowDeckButton/</Action>
 	</Script>
 
 	<Dialogue trigger="OnTurn/0" convID="Initialization" r="false">

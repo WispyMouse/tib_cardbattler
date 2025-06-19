@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Card Shop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/17/2025 7:24:08 PM">
+<Level mapname="Card Shop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 6:22:08 AM">
 
 	<Narration>   -PIC:Psy_Academy_Office-  -DIA:Intro-</Narration>
 
@@ -64,11 +64,12 @@
 
 	<Dialogue trigger="None/" convID="Intro" r="true">
 		<Branch num="0" name="">Sorter/WELCOME. BUY THINGS.
+			<Action>Run/RunAllInitializers</Action>
+			<Action>Run/ShowButtons</Action>
 			<Action>AddPortrait/Sorter,Sorter/,left</Action>
 			<Reply>Buy Singles/LoadConv/Buy Singles</Reply>
-			<Reply>Leave/NewScene/Main Game Loop</Reply>
 			<Reply>Neat Shop Window/NamedBranch/OpenShop</Reply>
-			<Reply>Show Supplies/NamedBranch/Reserve Supplies</Reply>
+			<Reply>Leave/NewScene/Main Game Loop</Reply>
 		</Branch>
 		<Branch num="2" name="OpenShop">Sorter/OF COURSE. WHAT WILL YOU BE PURCHASING TODAY?-NL-(After closing the shop window, each card in your reserves will be added to your inactive Psy Clash cards)
 			<Action>ShowInfoBar/</Action>

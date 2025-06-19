@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Main Game Loop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/17/2025 6:34:08 PM">
+<Level mapname="Main Game Loop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 6:27:52 AM">
 
 	<Narration>  -PIC:Card_Tournament_Dese_Alt- -DIA:Dispatch-</Narration>
 
+	<Script>UpdateDay
+		<Action>Log/UpdateDaysPassed: '-VAL:UpdateDaysPassed-' ; Current days passed special character: '-DAYSPASSED-'</Action>
+		<Action>IfValRun/UpdateDaysPassed,g,-DAYSPASSED-,_UpdateDayConfirm</Action>
+	</Script>
+
+	<Script>_UpdateDayConfirm
+		<Action>SetDaysPassed/=:-VAL:UpdateDaysPassed-</Action>
+	</Script>
+
 	<Dialogue trigger="None/" convID="Dispatch" r="true">
 		<Branch num="0" name="" showSingleReplies="true">/This is the main game loop dispatch!
-			<Action>ShowDeckButton/</Action>
-			<Action>ShowInfoBar/</Action>
-			<Action>ShowArmyOverviewButton/</Action>
-			<Action>ShowCalendarButton/</Action>
+			<Action>Run/RunAllInitializers</Action>
+			<Action>Run/UpdateDay</Action>
+			<Action>Run/ShowButtons</Action>
 			<Reply>To the action!/NewScene/Play Random Encounter</Reply>
 			<Reply>To the shop!/NewScene/Card Shop</Reply>
 		</Branch>
