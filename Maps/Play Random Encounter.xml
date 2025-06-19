@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 6:30:50 AM">
+<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 6:48:36 AM">
 
 	<Narration> -PIC:Tavern_Dingy-   -DIA:Pick and Play-</Narration>
+
+	<Script>PickRandomEncounter
+		<Action>SetList/ValidEncounters,</Action>
+		<Action>CombineLists/ValidEncounters,Encounters,ValidEncounters</Action>
+		<Action>SetVal/RandomEncounterIndex,=:RANGE[0-LASTINLIST[ValidEncounters]]</Action>
+		<Action>Log/The last valid index for an encounter is 'LASTINLIST[ValidEncounters]'. Setting RandomEncounterIndex to '-VAL:RandomEncounterIndex-'.</Action>
+		<Action>SetString/RandomEncounterConvId,LIST{Encounters,-VAL:RandomEncounterIndex-}</Action>
+		<Action>Log/Chosen ID is '-STR:RandomEncounterConvId-'</Action>
+	</Script>
+
+	<Script>EnumerateAllEncounters
+		<Action>IfValRun/EncountersEnumerated,=,0,_EnumerateAllEncountersConfirm</Action>
+	</Script>
+
+	<Script>_EnumerateAllEncountersConfirm
+		<Action>ForLoop/-ii-,0-LASTINLIST[Encounters],1,Run,AddChooseableEncounter,EncounterIndex,-ii-</Action>
+	</Script>
+
+	<Script>AddChooseableEncounter
+		<Action>AddReply/,,LIST{Encounters,-VAL:EncounterIndex-}|LoadConv|LIST{Encounters,-VAL:EncounterIndex-}</Action>
+	</Script>
 
 	<Dialogue trigger="None/" convID="Pick and Play" r="true">
 		<Branch num="1" name="">/This is where you'd have some random encounter. For now, choose!
 			<Action>Run/RunAllInitializers</Action>
 			<Action>Run/ShowButtons</Action>
+			<Action>SetVal/EncountersEnumerated,=:0</Action>
 			<Reply>Skip The Day/LoadConv/Skip Day</Reply>
 			<Reply>Play Random Encounter/LoadConv/Random Encounter</Reply>
+			<Reply>Choose Specific Encounter/NamedBranch/Choose</Reply>
+		</Branch>
+		<Branch num="1" name="Choose">/Pick any encounter
+			<Action>Run/EnumerateAllEncounters</Action>
+			<Reply>Back/NewBranch/0</Reply>
 		</Branch>
 	</Dialogue>
 
@@ -126,7 +153,8 @@
 	<Dialogue trigger="None/" convID="Random Encounter" r="true">
 		<Branch num="0" name="">/The player should not see this text, because it should immediately load the random encounter.
 			<Action>SetVal/UpdateDaysPassed,+:1</Action>
-			<Action>LoadConv/Bandit Deck Battle</Action>
+			<Action>Run/PickRandomEncounter</Action>
+			<Action>LoadConv/-STR:RandomEncounterConvId-</Action>
 			<Action>EndConvImmediately/</Action>
 			<Reply>/</Reply>
 		</Branch>
