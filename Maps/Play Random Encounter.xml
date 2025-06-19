@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 7:07:04 AM">
+<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 7:24:05 AM">
 
 	<Narration> -PIC:Tavern_Dingy-   -DIA:Pick and Play-</Narration>
 
@@ -27,12 +27,21 @@
 
 	<Script>PickEncounterListName
 		<Action>SetVal/DaysPassed,=:-DAYSPASSED-</Action>
-		<Action>SetVal/MaxWeekNumber,1</Action>
+		<Action>SetVal/MaxWeekNumber,=:1</Action>
 		<Action>IfValRun/DaysPassed,g=,7,_SetVal,VariableName,MaxWeekNumber,Amount,2</Action>
 		<Action>IfValRun/DaysPassed,g=14,_SetVal,VariableName,MaxWeekNumber,Amount,3</Action>
 		<Action>IfValRun/DaysPassed,g=,21,_SetVal,VariableName,MaxWeekNumber,Amount,4</Action>
-		<Action>SetString/EncounterListName,Week-VAL:MaxWeekNumber-Encounters</Action>
-		<Action>Log/DaysPassed: '-VAL:DaysPassed- ; MaxWeekNumber: '-VAL:MaxWeekNumber-' ; EncounterListName -VAL:EncounterListName-'</Action>
+		<Action>SetString/Pool,</Action>
+		<Action>SetVal/DayOfTheWeek,=:-DAYOFTHEWEEK-</Action>
+		<Action>IfValRun/DayOfTheWeek,=:0,_SetString,Variable Name,Pool,String,Novice</Action>
+		<Action>IfValRun/DayOfTheWeek,=:1,_SetString,Variable Name,Pool,String,Novice</Action>
+		<Action>IfValRun/DayOfTheWeek,=:2,_SetString,Variable Name,Pool,String,Intermediate</Action>
+		<Action>IfValRun/DayOfTheWeek,=:3,_SetString,Variable Name,Pool,String,Intermediate</Action>
+		<Action>IfValRun/DayOfTheWeek,=:4,_SetString,Variable Name,Pool,String,Intermediate</Action>
+		<Action>IfValRun/DayOfTheWeek,=:5,_SetString,Variable Name,Pool,String,Expert</Action>
+		<Action>IfValRun/DayOfTheWeek,=:6,_SetString,Variable Name,Pool,String,Expert</Action>
+		<Action>SetString/EncounterListName,Week-VAL:MaxWeekNumber--STR:Pool-Encounters</Action>
+		<Action>Log/Pool: '-STR:Pool-' ; DaysPassed: '-VAL:DaysPassed- ; MaxWeekNumber: '-VAL:MaxWeekNumber-' ; EncounterListName -STR:EncounterListName-'</Action>
 	</Script>
 
 	<Dialogue trigger="None/" convID="Pick and Play" r="true">
@@ -135,6 +144,7 @@
 		</Branch>
 		<Branch num="1" name="">/The player should not see this text, because it should immediately load a new scene.
 			<Action>NewScene/Main Game Loop</Action>
+			<Action>ClearQueue/</Action>
 			<Reply>/</Reply>
 		</Branch>
 	</Dialogue>
@@ -147,6 +157,7 @@
 		</Branch>
 		<Branch num="1" name="">/The player should not see this text, because it should immediately load a new scene.
 			<Action>NewScene/Main Game Loop</Action>
+			<Action>ClearQueue/</Action>
 			<Reply>/</Reply>
 		</Branch>
 	</Dialogue>
@@ -157,6 +168,7 @@
 			<Action>AddDayLog/Event,Skipped the day</Action>
 			<Action>NewScene/Main Game Loop</Action>
 			<Action>EndConvImmediately/</Action>
+			<Action>ClearQueue/</Action>
 			<Reply>/</Reply>
 		</Branch>
 	</Dialogue>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/19/2025 7:17:29 AM">
 
 	<Script>TrySetPlayerStartingDeck
 		<Action>SetList/StartingDeck,Awareness|Bandit|Bandit|Bandit|Bandit|Barudit|Barudit|Gasul|Bowman|Frost Armor|Fury|Leap|Merchant|Mind Blast|Mind Blast|Mind Shield|Mind Shield|Shadowling|Shadowling|Solid State Shield|Swordsman|Swordsman|Terror</Action>
@@ -80,17 +81,25 @@
 	</Script>
 
 	<Script>RegisterEncounter
-		<Action>Log/Registering Encounter. ConvId '-STR:ConvId-'. WeekNumber '-VAL:WeekNumber-'.</Action>
+		<Action>Log/Registering Encounter. ConvId '-STR:ConvId-'. WeekNumber '-VAL:WeekNumber-'. Pool '-STR:Pool-'</Action>
 		<Action>AddToList/Encounters,-STR:ConvId-</Action>
-		<Action>AddToList/Week-VAL:WeekNumber-Encounters,-STR:ConvId-</Action>
+		<Action>AddToList/Week-VAL:WeekNumber--STR:Pool-Encounters,-STR:ConvId-</Action>
 	</Script>
 
 	<Script>RegisterAllEncounters
-		<Action>Run/RegisterEncounter,ConvId,Bandit Deck Battle,WeekNumber,1</Action>
-		<Action>Run/RegisterEncounter,ConvId,Starter Deck Battle,WeekNumber,1</Action>
-		<Action>Run/RegisterEncounter,ConvId,Tourney Three Deck Battle,WeekNumber,2</Action>
-		<Action>Run/RegisterEncounter,ConvId,Dusht Deck Battl3,WeekNumber,2</Action>
-		<Action>Run/RegisterEncounter,ConvId,Sita Deck Battle,WeekNumber,3</Action>
+		<Action>Run/RegisterEncounter,ConvId,Starter Deck Battle,WeekNumber,1,Pool,Novice</Action>
+		<Action>Run/RegisterEncounter,ConvId,Bandit Deck Battle,WeekNumber,1,Pool,Novice</Action>
+		<Action>Run/RegisterEncounter,ConvId,Bandit Deck Battle,WeekNumber,1,Pool,Intermediate</Action>
+		<Action>Run/RegisterEncounter,ConvId,Bandit Deck Battle,WeekNumber,1,Pool,Expert</Action>
+		<Action>Run/RegisterEncounter,ConvId,Bandit Deck Battle,WeekNumber,2,Pool,Novice</Action>
+		<Action>Run/RegisterEncounter,ConvId,Tourney Three Deck Battle,WeekNumber,2,Pool,Intermediate</Action>
+		<Action>Run/RegisterEncounter,ConvId,Dusht Deck Battl3,WeekNumber,2,Pool,Expert</Action>
+		<Action>Run/RegisterEncounter,ConvId,Sita Deck Battle,WeekNumber,3,Pool,Novice</Action>
+		<Action>Run/RegisterEncounter,ConvId,Sita Deck Battle,WeekNumber,3,Pool,Intermediate</Action>
+		<Action>Run/RegisterEncounter,ConvId,Sita Deck Battle,WeekNumber,3,Pool,Expert</Action>
+		<Action>Run/RegisterEncounter,ConvId,Sita Deck Battle,WeekNumber,4,Pool,Novice</Action>
+		<Action>Run/RegisterEncounter,ConvId,Sita Deck Battle,WeekNumber,4,Pool,Intermediate</Action>
+		<Action>Run/RegisterEncounter,ConvId,Sita Deck Battle,WeekNumber,4,Pool,Expert</Action>
 	</Script>
 
 	<Script>SetCalendarDayLogForMonth
@@ -98,6 +107,10 @@
 		<Action>AddDayLog/Battle,Week 2 Boss Battle,13</Action>
 		<Action>AddDayLog/Battle,Week 3 Boss Battle,20</Action>
 		<Action>AddDayLog/Battle,Week 4 Boss Battle,27</Action>
+	</Script>
+
+	<Script>_SetString
+		<Action>SetString/-STR:Variable Name-,-STR:String-</Action>
 	</Script>
 
 	<Dialogue trigger="OnTurn/0" convID="Initialization" r="false">
