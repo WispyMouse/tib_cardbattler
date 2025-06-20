@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 7:26:07 AM">
+<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 5:25:02 PM">
 
 	<Narration> -PIC:Tavern_Dingy-   -DIA:Pick and Play-</Narration>
 
@@ -179,6 +179,114 @@
 			<Action>Run/PickRandomEncounter</Action>
 			<Action>LoadConv/-STR:RandomEncounterConvId-</Action>
 			<Action>EndConvImmediately/</Action>
+			<Reply>/</Reply>
+		</Branch>
+	</Dialogue>
+
+	<Dialogue trigger="None/" convID="Xerxes Week 1" r="true">
+		<Branch num="0" name="">Xerxes Thimblewood/Hey there friend! Care for a casual game of Psy Clash?
+			<Action>ClearPortraits/</Action>
+			<Action>AddPortrait/Xerxes Thimblewood,Xerxes/Thimblewood,right,Orange</Action>
+			<Action>SetString/OpponentName,Xerxes Thimblewood</Action>
+			<Action>SetList/OpponentDeck,Bandit|Bandit|Bandit|Bandit|Psy Healer|Psy Healer|Swordsman|Shadowling|Shadowling|Solid State Shield|Solid State Shield|Leap|Leap|Mind Shield|Mind Shield|Mind Shield|Mind Shield|Frost Armor|Frost Armor|Frost Armor</Action>
+			<Reply>What can you tell me about your deck?/NamedBranch/Tell Me</Reply>
+			<Reply>Let's play!/NextBranch</Reply>
+		</Branch>
+		<Branch num="1" name="Tell Me">Xerxes Thimblewood/I love Psy Healers, so my deck is all about healing. It doesn't win much, but I like the sound of Mind Shields.
+			<Reply>Got it;; thanks. Let's play!/NextBranch</Reply>
+		</Branch>
+		<Branch num="2" name="Battle">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Xerxes Thimblewood,Orange,20,0,StartingDeck,Xerxes Thimblewood,1,2</Action>
+			<Reply>/</Reply>
+		</Branch>
+	</Dialogue>
+	
+	<Dialogue trigger="None/" convID="Jacqueline Week 1" r="true">
+		<Branch num="0" name="">Jacqueline Milldoor/You play? Sit for five minutes, I could use another win.
+			<Action>ClearPortraits/</Action>
+			<Action>AddPortrait/Jacqueline Milldoor,Jacqueline/Milldoor,right,Yellow</Action>
+			<Action>SetString/OpponentName,Jacqueline Milldoor</Action>
+			<Action>SetList/OpponentDeck,Gasul|Gasul|Gasul|Bowman|Bowman|Bowman|Bowman|Spriggat|Mentalist|Mentalist|Terror|Terror|Terror|Leap|Leap|Kinetic Gust|Kinetic Gust|Mind Control|Shadow Blast|Shadow Blast</Action>
+			<Reply>What can you tell me about your deck?/NamedBranch/Tell Me</Reply>
+			<Reply>Let's play!/NextBranch</Reply>
+		</Branch>
+		<Branch num="1" name="Tell Me">Jacqueline Milldoor/This deck is designed to shut you down, and take your things. It'll put the pressure on, and never let off. Mind Control and Shadowblast while I set up a Bowman.
+			<Reply>Got it;; thanks. Let's play!/NextBranch</Reply>
+		</Branch>
+		<Branch num="2" name="Battle">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Jacqueline Milldoor,Yellow,20,0,StartingDeck,Jacqueline Milldoor,1,2</Action>
+			<Reply>/</Reply>
+		</Branch>
+	</Dialogue>
+	
+	<Dialogue trigger="None/" convID="Legion Week 1" r="true">
+		<Branch num="0" name="">Legion/Cards? [You have never seen anyone gaze in to your soul so deeply, looking for an answer to this casual game]
+			<Action>ClearPortraits/</Action>
+			<Action>AddPortrait/Legion,Legion/,right,Violet</Action>
+			<Action>SetString/OpponentName,Legion</Action>
+			<Action>SetList/OpponentDeck,Bandit|Photokineticist|Pyrokineticist|Gasul|Gasul|Swordsman|Swordsman|Swordsman|Swordsman|Fury|Fury|Frost Armor|Frost Armor|Awareness|Awareness|Blinding Cloak|Leap|Leap|Stimulate|Stimulate</Action>
+			<Reply>What can you tell me about your deck?/NamedBranch/Tell Me</Reply>
+			<Reply>Let's play!/NextBranch</Reply>
+		</Branch>
+		<Branch num="1" name="Tell Me">Legion/I want my minions to hit [i]as hard as possible[/i], and I do that by augmenting them. My plan is to land a few effects like Fury, Awareness, and Blinding Cloak on my minions. My favorite cards are the Photokineticist and the Pyrokineticist.
+			<Reply>Got it;; thanks. Let's play!/NextBranch</Reply>
+		</Branch>
+		<Branch num="2" name="Battle">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Jacqueline Milldoor,Violet,20,0,StartingDeck,Jacqueline Milldoor,1,2</Action>
+			<Reply>/</Reply>
+		</Branch>
+	</Dialogue>
+	
+	<Dialogue trigger="None/" convID="Lukacs Week 1" r="true">
+		<Branch num="0" name="">Lukacs/Heyyyyy! Wow, it's good to be here. You're looking happy, want to play cards?
+			<Action>ClearPortraits/</Action>
+			<Action>AddPortrait/Lukacs,Lukacs/,right,Black</Action>
+			<Action>SetString/OpponentName,Lukacs</Action>
+			<Action>SetList/OpponentDeck,Bandit|Bandit|Bandit|Bandit|Swordsman|Swordsman|Swordsman|Swordsman|Solid State Shield|Solid State Shield|Frost Armor|Frost Armor|Frost Armor|Frost Armor|Fury|Fury|Mind Shield|Mind Shield|Stimulate|Stimulate</Action>
+			<Reply>What can you tell me about your deck?/NamedBranch/Tell Me</Reply>
+			<Reply>Let's play!/NextBranch</Reply>
+		</Branch>
+		<Branch num="1" name="Tell Me">Lukacs/Oh yeah! Well, this game is complicated, right? So what if I just play cards that make sense? Swordsman is good enough, yeah!
+			<Reply>Got it;; thanks. Let's play!/NextBranch</Reply>
+		</Branch>
+		<Branch num="2" name="Battle">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Jacqueline Milldoor,Black,20,0,StartingDeck,Jacqueline Milldoor,1,2</Action>
+			<Reply>/</Reply>
+		</Branch>
+	</Dialogue>
+	
+	<Dialogue trigger="None/" convID="Ahtram Week 1" r="true">
+		<Branch num="0" name="">Ahtram Potatoprince/Oh hey. You uh, want to play a round?
+			<Action>ClearPortraits/</Action>
+			<Action>AddPortrait/Ahtram Potatoprince,Ahtram/Potatoprince,right,White</Action>
+			<Action>SetString/OpponentName,Ahtram Potatoprince</Action>
+			<Action>SetList/OpponentDeck,Bakery|Bakery|Bakery|Library|Library|Library|Steam Engine|Steam Engine|Steam Engine|Merchant|Merchant|Kinetic Gust|Kinetic Gust|Kinetic Gust|Feedback|Feedback|Feedback|Light Blast|Light Blast|Drain</Action>
+			<Reply>What can you tell me about your deck?/NamedBranch/Tell Me</Reply>
+			<Reply>Let's play!/NextBranch</Reply>
+		</Branch>
+		<Branch num="1" name="Tell Me">Ahtram Potatoprince/My girlfriend is an Engineer, and she's really got me in to some of these building cards. Like, I just play a Library one turn, and draw for the rest of the game? Sign me up. If I win, it's going to be through my damaging cards like Feedback and Light Blast.
+			<Reply>Got it;; thanks. Let's play!/NextBranch</Reply>
+		</Branch>
+		<Branch num="2" name="Battle">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Ahtram Potatoprince,White,20,0,StartingDeck,Ahtram Potatoprince,1,2</Action>
+			<Reply>/</Reply>
+		</Branch>
+	</Dialogue>
+	
+	<Dialogue trigger="None/" convID="Karathet Week 1" r="true">
+		<Branch num="0" name="">Karathet/Always exciting to ssssee new players here at the sssshop. Shall we classsh?
+			<Action>ClearPortraits/</Action>
+			<Action>AddPortrait/Karathet,Karathet/,right,Green</Action>
+			<Action>SetString/OpponentName,Karathet</Action>
+			<Action>SetList/OpponentDeck,Gasul|Gasul|Gasul|Gasul|Barudit|Barudit|Barudit|Barudit|Leap|Leap|Leap|Kinetic Gust|Kinetic Gust|Stimulate|Mind Blast|Mind Blast|Mind Shield|Mind Shield|Frost Armor|Fury</Action>
+			<Reply>What can you tell me about your deck?/NamedBranch/Tell Me</Reply>
+			<Reply>Let's play!/NextBranch</Reply>
+		</Branch>
+		<Branch num="1" name="Tell Me">Karathet/I love how good the Lissits are in classsh! My deck isss all about Gasul and Barudits, sssupported by sssome removal and protection.
+			<Reply>Got it;; thanks. Let's play!/NextBranch</Reply>
+		</Branch>
+		<Branch num="2" name="Battle">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Karathet,Green,20,0,StartingDeck,Karathet,1,2</Action>
 			<Reply>/</Reply>
 		</Branch>
 	</Dialogue>

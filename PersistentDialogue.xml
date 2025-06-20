@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/19/2025 7:17:29 AM">
+<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/19/2025 5:07:04 PM">
 
 	<Script>TrySetPlayerStartingDeck
 		<Action>SetList/StartingDeck,Awareness|Bandit|Bandit|Bandit|Bandit|Barudit|Barudit|Gasul|Bowman|Frost Armor|Fury|Leap|Merchant|Mind Blast|Mind Blast|Mind Shield|Mind Shield|Shadowling|Shadowling|Solid State Shield|Swordsman|Swordsman|Terror</Action>
@@ -100,6 +100,12 @@
 		<Action>Run/RegisterEncounter,ConvId,Sita Deck Battle,WeekNumber,4,Pool,Novice</Action>
 		<Action>Run/RegisterEncounter,ConvId,Sita Deck Battle,WeekNumber,4,Pool,Intermediate</Action>
 		<Action>Run/RegisterEncounter,ConvId,Sita Deck Battle,WeekNumber,4,Pool,Expert</Action>
+		<Action>Run/RegisterEncounter,ConvId,Xerxes Week 1,WeekNumber,1,Pool,Novice</Action>
+		<Action>Run/RegisterEncounter,ConvId,Lukacs Week 1,WeekNumber,1,Pool,Novice</Action>
+		<Action>Run/RegisterEncounter,ConvId,Ahtram Week 1,WeekNumber,1,Pool,Intermediate</Action>
+		<Action>Run/RegisterEncounter,ConvId,Karathet Week 1,WeekNumber,1,Pool,Intermediate</Action>
+		<Action>Run/RegisterEncounter,ConvId,Jacqueline Week 1,WeekNumber,1,Pool,Expert</Action>
+		<Action>Run/RegisterEncounter,ConvId,Legion Week 1,WeekNumber,1,Pool,Expert</Action>
 	</Script>
 
 	<Script>SetCalendarDayLogForMonth
