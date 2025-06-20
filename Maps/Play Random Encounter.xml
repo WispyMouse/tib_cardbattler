@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 5:25:02 PM">
+<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 6:37:34 PM">
 
 	<Narration> -PIC:Tavern_Dingy-   -DIA:Pick and Play-</Narration>
 
 	<Script>PickRandomEncounter
 		<Action>SetList/ValidEncounters,</Action>
 		<Action>Run/PickEncounterListName</Action>
-		<Action>CombineLists/ValidEncounters,-STR:EncounterListName,Week-,ValidEncounters</Action>
+		<Action>CombineLists/ValidEncounters,-STR:EncounterListName-,ValidEncounters</Action>
 		<Action>SetVal/RandomEncounterIndex,=:RANGE[0-LASTINLIST[ValidEncounters]]</Action>
 		<Action>Log/The last valid index for an encounter is 'LASTINLIST[ValidEncounters]'. Setting RandomEncounterIndex to '-VAL:RandomEncounterIndex-'.</Action>
-		<Action>SetString/RandomEncounterConvId,LIST{Encounters,-VAL:RandomEncounterIndex-}</Action>
+		<Action>SetString/RandomEncounterConvId,LIST{ValidEncounters,-VAL:RandomEncounterIndex-}</Action>
+		<Action>RemoveFromList/-STR:EncounterListName-,-STR:RandomEncounterConvId-</Action>
 		<Action>Log/Chosen ID is '-STR:RandomEncounterConvId-'</Action>
 	</Script>
 
@@ -29,17 +30,17 @@
 		<Action>SetVal/DaysPassed,=:-DAYSPASSED-</Action>
 		<Action>SetVal/MaxWeekNumber,=:1</Action>
 		<Action>IfValRun/DaysPassed,g=,7,_SetVal,VariableName,MaxWeekNumber,Amount,2</Action>
-		<Action>IfValRun/DaysPassed,g=14,_SetVal,VariableName,MaxWeekNumber,Amount,3</Action>
+		<Action>IfValRun/DaysPassed,g=,14,_SetVal,VariableName,MaxWeekNumber,Amount,3</Action>
 		<Action>IfValRun/DaysPassed,g=,21,_SetVal,VariableName,MaxWeekNumber,Amount,4</Action>
 		<Action>SetString/Pool,</Action>
 		<Action>SetVal/DayOfTheWeek,=:-DAYOFTHEWEEK-</Action>
-		<Action>IfValRun/DayOfTheWeek,=:0,_SetString,Variable Name,Pool,String,Novice</Action>
-		<Action>IfValRun/DayOfTheWeek,=:1,_SetString,Variable Name,Pool,String,Novice</Action>
-		<Action>IfValRun/DayOfTheWeek,=:2,_SetString,Variable Name,Pool,String,Intermediate</Action>
-		<Action>IfValRun/DayOfTheWeek,=:3,_SetString,Variable Name,Pool,String,Intermediate</Action>
-		<Action>IfValRun/DayOfTheWeek,=:4,_SetString,Variable Name,Pool,String,Intermediate</Action>
-		<Action>IfValRun/DayOfTheWeek,=:5,_SetString,Variable Name,Pool,String,Expert</Action>
-		<Action>IfValRun/DayOfTheWeek,=:6,_SetString,Variable Name,Pool,String,Expert</Action>
+		<Action>IfValRun/DayOfTheWeek,=,0,_SetString,Variable Name,Pool,String,Novice</Action>
+		<Action>IfValRun/DayOfTheWeek,=,1,_SetString,Variable Name,Pool,String,Novice</Action>
+		<Action>IfValRun/DayOfTheWeek,=,2,_SetString,Variable Name,Pool,String,Intermediate</Action>
+		<Action>IfValRun/DayOfTheWeek,=,3,_SetString,Variable Name,Pool,String,Intermediate</Action>
+		<Action>IfValRun/DayOfTheWeek,=,4,_SetString,Variable Name,Pool,String,Intermediate</Action>
+		<Action>IfValRun/DayOfTheWeek,=,5,_SetString,Variable Name,Pool,String,Expert</Action>
+		<Action>IfValRun/DayOfTheWeek,=,6,_SetString,Variable Name,Pool,String,Expert</Action>
 		<Action>SetString/EncounterListName,Week-VAL:MaxWeekNumber--STR:Pool-Encounters</Action>
 		<Action>Log/Pool: '-STR:Pool-' ; DaysPassed: '-VAL:DaysPassed- ; MaxWeekNumber: '-VAL:MaxWeekNumber-' ; EncounterListName -STR:EncounterListName-'</Action>
 	</Script>
@@ -176,6 +177,7 @@
 	<Dialogue trigger="None/" convID="Random Encounter" r="true">
 		<Branch num="0" name="">/The player should not see this text, because it should immediately load the random encounter.
 			<Action>SetVal/UpdateDaysPassed,+:1</Action>
+			<Action>RemoveFromList/list,-STR:RandomEncounterConvId-</Action>
 			<Action>Run/PickRandomEncounter</Action>
 			<Action>LoadConv/-STR:RandomEncounterConvId-</Action>
 			<Action>EndConvImmediately/</Action>
@@ -196,11 +198,11 @@
 			<Reply>Got it;; thanks. Let's play!/NextBranch</Reply>
 		</Branch>
 		<Branch num="2" name="Battle">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
-			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Xerxes Thimblewood,Orange,20,0,StartingDeck,Xerxes Thimblewood,1,2</Action>
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Xerxes Thimblewood,Orange,20,0,OpponentDeck,Xerxes Thimblewood,1,2</Action>
 			<Reply>/</Reply>
 		</Branch>
 	</Dialogue>
-	
+
 	<Dialogue trigger="None/" convID="Jacqueline Week 1" r="true">
 		<Branch num="0" name="">Jacqueline Milldoor/You play? Sit for five minutes, I could use another win.
 			<Action>ClearPortraits/</Action>
@@ -214,11 +216,11 @@
 			<Reply>Got it;; thanks. Let's play!/NextBranch</Reply>
 		</Branch>
 		<Branch num="2" name="Battle">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
-			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Jacqueline Milldoor,Yellow,20,0,StartingDeck,Jacqueline Milldoor,1,2</Action>
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Jacqueline Milldoor,Yellow,20,0,OpponentDeck,Jacqueline Milldoor,1,2</Action>
 			<Reply>/</Reply>
 		</Branch>
 	</Dialogue>
-	
+
 	<Dialogue trigger="None/" convID="Legion Week 1" r="true">
 		<Branch num="0" name="">Legion/Cards? [You have never seen anyone gaze in to your soul so deeply, looking for an answer to this casual game]
 			<Action>ClearPortraits/</Action>
@@ -232,11 +234,11 @@
 			<Reply>Got it;; thanks. Let's play!/NextBranch</Reply>
 		</Branch>
 		<Branch num="2" name="Battle">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
-			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Jacqueline Milldoor,Violet,20,0,StartingDeck,Jacqueline Milldoor,1,2</Action>
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Jacqueline Milldoor,Violet,20,0,OpponentDeck,Jacqueline Milldoor,1,2</Action>
 			<Reply>/</Reply>
 		</Branch>
 	</Dialogue>
-	
+
 	<Dialogue trigger="None/" convID="Lukacs Week 1" r="true">
 		<Branch num="0" name="">Lukacs/Heyyyyy! Wow, it's good to be here. You're looking happy, want to play cards?
 			<Action>ClearPortraits/</Action>
@@ -250,11 +252,11 @@
 			<Reply>Got it;; thanks. Let's play!/NextBranch</Reply>
 		</Branch>
 		<Branch num="2" name="Battle">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
-			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Jacqueline Milldoor,Black,20,0,StartingDeck,Jacqueline Milldoor,1,2</Action>
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Lukacs,Black,20,0,OpponentDeck,Lukacs,1,2</Action>
 			<Reply>/</Reply>
 		</Branch>
 	</Dialogue>
-	
+
 	<Dialogue trigger="None/" convID="Ahtram Week 1" r="true">
 		<Branch num="0" name="">Ahtram Potatoprince/Oh hey. You uh, want to play a round?
 			<Action>ClearPortraits/</Action>
@@ -268,11 +270,11 @@
 			<Reply>Got it;; thanks. Let's play!/NextBranch</Reply>
 		</Branch>
 		<Branch num="2" name="Battle">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
-			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Ahtram Potatoprince,White,20,0,StartingDeck,Ahtram Potatoprince,1,2</Action>
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Ahtram Potatoprince,White,20,0,OpponentDeck,Ahtram Potatoprince,1,2</Action>
 			<Reply>/</Reply>
 		</Branch>
 	</Dialogue>
-	
+
 	<Dialogue trigger="None/" convID="Karathet Week 1" r="true">
 		<Branch num="0" name="">Karathet/Always exciting to ssssee new players here at the sssshop. Shall we classsh?
 			<Action>ClearPortraits/</Action>
@@ -286,7 +288,7 @@
 			<Reply>Got it;; thanks. Let's play!/NextBranch</Reply>
 		</Branch>
 		<Branch num="2" name="Battle">/Player should not see this or the reply. The reply is empty because otherwise it would execute after first opponent turn.
-			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Karathet,Green,20,0,StartingDeck,Karathet,1,2</Action>
+			<Action>CardGame/Encounter Win,Encounter Lost,PlayerDeck,Karathet,Green,20,0,OpponentDeck,Karathet,1,2</Action>
 			<Reply>/</Reply>
 		</Branch>
 	</Dialogue>
