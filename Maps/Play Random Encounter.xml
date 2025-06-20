@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 7:24:05 AM">
+<Level mapname="Play Random Encounter" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 7:26:07 AM">
 
 	<Narration> -PIC:Tavern_Dingy-   -DIA:Pick and Play-</Narration>
 
@@ -124,8 +124,8 @@
 
 	<Dialogue trigger="None/" convID="Sita Deck Battle" r="true">
 		<Branch num="2" name="">Sita/I have Sita's deck. Ahahaha, have fun.
-			<Action>AddPortrait/Dusht,Dusht,right</Action>
-			<Action>SetString/OpponentName,Dusht</Action>
+			<Action>AddPortrait/Sita,Sita,right</Action>
+			<Action>SetString/OpponentName,Sita</Action>
 			<Action>SetList/OpponentDeck,Barudit|Barudit|Barudit|Barudit|Drake|Drake|Bowman|Bowman|Frost Armor|Frost Armor|Fury|Fury|Fury|Fury|Leap|Leap|Smuggler|Smuggler|Focus|Focus|Focus|Focus|Stimulate|Stimulate|Spriggat|Spriggat|Spearman|Spearman|Feedback|Feedback|Shadow Blast|Shadow Blast|Dark Vortex</Action>
 			<Reply>Fight on!/NextBranch</Reply>
 		</Branch>
