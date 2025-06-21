@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/20/2025 5:53:47 PM">
+<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/20/2025 7:03:00 PM">
 
 	<Script>_SetString
 		<Action>SetString/-STR:Variable Name-,-STR:String-</Action>
 	</Script>
-	
+
 	<Script>RunAllInitializers
 		<Action>IfValRun/OneTimeStartupFlag,=,0,OneTimeInitializers</Action>
 	</Script>
@@ -38,9 +38,9 @@
 		<Action>SetList/PlayerDeck,</Action>
 		<Action>CombineLists/PlayerDeck,StartingDeck,PlayerDeck</Action>
 	</Script>
-	
+
 	<Script>ConfigureAllCardData
-	<Action>SetList/RarityToName,Starter|Common|Uncommon|Rare|Exalted</Action>
+		<Action>SetList/RarityToName,Starter|Common|Uncommon|Rare|Exalted</Action>
 		<Action>SetList/AllCards,</Action>
 		<Action>SetList/AllCardsToRarity,</Action>
 		<Action>SetList/RarityToCost,0|5|15|60|140</Action>
@@ -159,8 +159,7 @@
 		<Action>Run/RegisterEncounter,ConvId,Jacqueline Week 1,WeekNumber,1,Pool,Expert</Action>
 		<Action>Run/RegisterEncounter,ConvId,Legion Week 1,WeekNumber,1,Pool,Expert</Action>
 	</Script>
-	
-	
+
 	<Script>RegisterEncounter
 		<Action>Log/Registering Encounter. ConvId '-STR:ConvId-'. WeekNumber '-VAL:WeekNumber-'. Pool '-STR:Pool-'</Action>
 		<Action>AddToList/Encounters,-STR:ConvId-</Action>
