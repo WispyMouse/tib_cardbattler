@@ -1,33 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/19/2025 6:35:34 PM">
+<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/20/2025 5:53:47 PM">
 
-	<Script>TrySetPlayerStartingDeck
-		<Action>SetList/StartingDeck,Awareness|Bandit|Bandit|Bandit|Bandit|Barudit|Barudit|Gasul|Bowman|Frost Armor|Fury|Leap|Merchant|Mind Blast|Mind Blast|Mind Shield|Mind Shield|Shadowling|Shadowling|Solid State Shield|Swordsman|Swordsman|Terror</Action>
-		<Action>SetVal/DeckLastIndex,=:LASTINLIST[PlayerDeck]</Action>
-		<Action>IfValRun/DeckLastIndex,l,0,_ConfirmedSetPlayerStartingDeck</Action>
+	<Script>_SetString
+		<Action>SetString/-STR:Variable Name-,-STR:String-</Action>
 	</Script>
-
-	<Script>_ConfirmedSetPlayerStartingDeck
-		<Action>SetList/PlayerDeck,</Action>
-		<Action>CombineLists/PlayerDeck,StartingDeck,PlayerDeck</Action>
-	</Script>
-
-	<Script>ConfigureCardData
-		<Action>SetList/AllCards,Assassin|Bakery|Bandit|Barudit|Bowman|Crossbowman|Cryokineticist|Drake|Gasul|Golem|Greater Spriggat|Iron Jaw Trap|Library|Mantis Rider|Mentalist|Merchant|Photokineticist|Pyrokineticist|Psy Healer|Smuggler|Solid State Shield|Shadowling|Spearman|Spirit|Spriggat|Steam Engine|Swordsman|Awareness|Blinding Cloak|Dark Vortex|Drain|Feedback|Focus|Frost Armor|Fury|Kinetic Gust|Leap|Light Blast|Mind Blast|Mind Control|Mind Shield|Shadow Blast|Stimulate|Terror</Action>
-		<Action>SetList/AllCardsToRarity,1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2|3|1|2</Action>
-		<Action>SetList/RarityToName,Starter|Common|Uncommon|Rare</Action>
-		<Action>SetList/RarityToCost,1|2|5|15</Action>
-		<Action>Log/Loaded cards to index LASTINLIST[AllCards]</Action>
-	</Script>
-
-	<Script>GetCardDataByIndex
-		<Action>Log/Fetching card information from AllCards list at index -VAL:Index-.</Action>
-		<Action>SetString/CardName,LIST{AllCards,-VAL:Index-}</Action>
-		<Action>SetVal/Rarity,=:LIST{AllCardsToRarity,-VAL:Index-}</Action>
-		<Action>SetString/RarityName,LIST{RarityToName,-VAL:Rarity-}</Action>
-		<Action>SetVal/RarityCost,=:LIST{RarityToCost,-VAL:Rarity-}</Action>
-	</Script>
-
+	
 	<Script>RunAllInitializers
 		<Action>IfValRun/OneTimeStartupFlag,=,0,OneTimeInitializers</Action>
 	</Script>
@@ -36,7 +13,7 @@
 		<Action>Log/Running one-time initializers.</Action>
 		<Action>SetVal/OneTimeStartupFlag,=:1</Action>
 		<Action>Run/TrySetPlayerStartingDeck</Action>
-		<Action>Run/ConfigureCardData</Action>
+		<Action>Run/ConfigureAllCardData</Action>
 		<Action>SetAura/=:100</Action>
 		<Action>ClearRoster/0</Action>
 		<Action>Recruit/Spirit of Card Playing/,0</Action>
@@ -49,6 +26,87 @@
 		<Action>SetList/Week3Encounters,</Action>
 		<Action>SetList/Week4Encounters,</Action>
 		<Action>Run/RegisterAllEncounters</Action>
+	</Script>
+
+	<Script>TrySetPlayerStartingDeck
+		<Action>SetList/StartingDeck,Awareness|Bandit|Bandit|Bandit|Bandit|Barudit|Barudit|Gasul|Bowman|Frost Armor|Fury|Leap|Merchant|Mind Blast|Mind Blast|Mind Shield|Mind Shield|Shadowling|Shadowling|Solid State Shield|Swordsman|Swordsman|Terror</Action>
+		<Action>SetVal/DeckLastIndex,=:LASTINLIST[PlayerDeck]</Action>
+		<Action>IfValRun/DeckLastIndex,l,0,_ConfirmedSetPlayerStartingDeck</Action>
+	</Script>
+
+	<Script>_ConfirmedSetPlayerStartingDeck
+		<Action>SetList/PlayerDeck,</Action>
+		<Action>CombineLists/PlayerDeck,StartingDeck,PlayerDeck</Action>
+	</Script>
+	
+	<Script>ConfigureAllCardData
+	<Action>SetList/RarityToName,Starter|Common|Uncommon|Rare|Exalted</Action>
+		<Action>SetList/AllCards,</Action>
+		<Action>SetList/AllCardsToRarity,</Action>
+		<Action>SetList/RarityToCost,0|5|15|60|140</Action>
+		<Action>Run/RegisterCardData,CardName,Bandit,Rarity,0</Action>
+		<Action>Run/RegisterCardData,CardName,Swordsman,Rarity,0</Action>
+		<Action>Run/RegisterCardData,CardName,Solid State Shield,Rarity,0</Action>
+		<Action>Run/RegisterCardData,CardName,Mind Blast,Rarity,0</Action>
+		<Action>Run/RegisterCardData,CardName,Mind Shield,Rarity,0</Action>
+		<Action>Log/Starter rarity cards registered. Last index is now 'LASTINLIST[AllCards]'.</Action>
+		<Action>Run/RegisterCardData,CardName,Assassin,Rarity,1</Action>
+		<Action>Run/RegisterCardData,CardName,Bakery,Rarity,1</Action>
+		<Action>Run/RegisterCardData,CardName,Barudit,Rarity,1</Action>
+		<Action>Run/RegisterCardData,CardName,Bowman,Rarity,1</Action>
+		<Action>Run/RegisterCardData,CardName,Gasul,Rarity,1</Action>
+		<Action>Run/RegisterCardData,CardName,Iron Jaw Trap,Rarity,1</Action>
+		<Action>Run/RegisterCardData,CardName,Mentalist,Rarity,1</Action>
+		<Action>Run/RegisterCardData,CardName,Psy Healer,Rarity,1</Action>
+		<Action>Run/RegisterCardData,CardName,Shadowling,Rarity,1</Action>
+		<Action>Run/RegisterCardData,CardName,Awareness,Rarity,1</Action>
+		<Action>Run/RegisterCardData,CardName,Frost Armor,Rarity,1</Action>
+		<Action>Log/Common rarity cards registered. Last index is now 'LASTINLIST[AllCards]'.</Action>
+		<Action>Run/RegisterCardData,CardName,Crossbowman,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Cyrokineticist,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Drake,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Golem,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Library,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Mantis Rider,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Merchant,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Photokineticist,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Pyrokineticist,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Spearman,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Spriggat,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Steam Engine,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Blinding Cloak,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Drain,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Feedback,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Fury,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Kinetic Gust,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Leap,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Light Blast,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Shadow Blast,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Stimulate,Rarity,2</Action>
+		<Action>Run/RegisterCardData,CardName,Terror,Rarity,2</Action>
+		<Action>Log/Uncommon rarity cards registered. Last index is now 'LASTINLIST[AllCards]'.</Action>
+		<Action>Run/RegisterCardData,CardName,Greater Spriggat,Rarity,3</Action>
+		<Action>Run/RegisterCardData,CardName,Smuggler,Rarity,3</Action>
+		<Action>Run/RegisterCardData,CardName,Spirit,Rarity,3</Action>
+		<Action>Run/RegisterCardData,CardName,Dark Vortex,Rarity,3</Action>
+		<Action>Run/RegisterCardData,CardName,Mind Control,Rarity,3</Action>
+		<Action>Log/Rare rarity cards registered. Last index is now 'LASTINLIST[AllCards]'.</Action>
+		<Action>Run/RegisterCardData,CardName,Focus,Rarity,4</Action>
+		<Action>Log/Exalted rarity cards registered. Last index is now 'LASTINLIST[AllCards]'.</Action>
+	</Script>
+
+	<Script>RegisterCardData
+		<Action>Log/Registering card name '-STR:CardName-' with rarity '-VAL:Rarity-'</Action>
+		<Action>AddToList/AllCards,-STR:CardName-</Action>
+		<Action>AddToList/AllCardsToRarity,-VAL:Rarity-</Action>
+	</Script>
+
+	<Script>GetCardDataByIndex
+		<Action>Log/Fetching card information from AllCards list at index -VAL:Index-.</Action>
+		<Action>SetString/CardName,LIST{AllCards,-VAL:Index-}</Action>
+		<Action>SetVal/Rarity,=:LIST{AllCardsToRarity,-VAL:Index-}</Action>
+		<Action>SetString/RarityName,LIST{RarityToName,-VAL:Rarity-}</Action>
+		<Action>SetVal/RarityCost,=:LIST{RarityToCost,-VAL:Rarity-}</Action>
 	</Script>
 
 	<Script>GainPsyClashCard
@@ -80,12 +138,6 @@
 		<Action>ShowDeckButton/</Action>
 	</Script>
 
-	<Script>RegisterEncounter
-		<Action>Log/Registering Encounter. ConvId '-STR:ConvId-'. WeekNumber '-VAL:WeekNumber-'. Pool '-STR:Pool-'</Action>
-		<Action>AddToList/Encounters,-STR:ConvId-</Action>
-		<Action>AddToList/Week-VAL:WeekNumber--STR:Pool-Encounters,-STR:ConvId-</Action>
-	</Script>
-
 	<Script>RegisterAllEncounters
 		<Action>Run/RegisterEncounter,ConvId,Starter Deck Battle,WeekNumber,1,Pool,Novice</Action>
 		<Action>Run/RegisterEncounter,ConvId,Bandit Deck Battle,WeekNumber,1,Pool,Novice</Action>
@@ -107,16 +159,19 @@
 		<Action>Run/RegisterEncounter,ConvId,Jacqueline Week 1,WeekNumber,1,Pool,Expert</Action>
 		<Action>Run/RegisterEncounter,ConvId,Legion Week 1,WeekNumber,1,Pool,Expert</Action>
 	</Script>
+	
+	
+	<Script>RegisterEncounter
+		<Action>Log/Registering Encounter. ConvId '-STR:ConvId-'. WeekNumber '-VAL:WeekNumber-'. Pool '-STR:Pool-'</Action>
+		<Action>AddToList/Encounters,-STR:ConvId-</Action>
+		<Action>AddToList/Week-VAL:WeekNumber--STR:Pool-Encounters,-STR:ConvId-</Action>
+	</Script>
 
 	<Script>SetCalendarDayLogForMonth
 		<Action>AddDayLog/Battle,Week 1 Boss Battle,6</Action>
 		<Action>AddDayLog/Battle,Week 2 Boss Battle,13</Action>
 		<Action>AddDayLog/Battle,Week 3 Boss Battle,20</Action>
 		<Action>AddDayLog/Battle,Week 4 Boss Battle,27</Action>
-	</Script>
-
-	<Script>_SetString
-		<Action>SetString/-STR:Variable Name-,-STR:String-</Action>
 	</Script>
 
 	<Dialogue trigger="OnTurn/0" convID="Initialization" r="false">
