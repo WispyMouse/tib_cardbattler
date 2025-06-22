@@ -3,15 +3,15 @@
 	<PsyClashCards id="Psy Clash Cards" desc="Cards in the popular collectible card game Psy Clash." num="44">
 		<g type="Psy Clash Cards" id="Card-Assassin" name="Assassin" desc="SPRITE[Light]Common SPRITE[Morale]Minion/SPRITE[Energy]2/SPRITE[Crush]2/SPRITE[Crush Res.]1-NL-When intercepting: switches to an open lane, if available."></g>
 		<g type="Psy Clash Cards" id="Card-Bakery" name="Bakery" desc="SPRITE[Light]CommonSPRITE[Morale]Minion/SPRITE[Energy]2/SPRITE[Crush]0/SPRITE[Crush Res.]4-NL-Cannot attack. When owner's turn starts, +1 health to owner."></g>
-		<g type="Psy Clash Cards" id="Card-Bandit" name="Bandit" desc="
-		SPRITE[Immobilized]StarterSPRITE[Morale]Minion/SPRITE[Energy]1/SPRITE[Crush]2/SPRITE[Crush Res.]1-NL-"></g>
-		<g type="Psy Clash Cards" id="Card-Barudit" name="Barudit" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 1-NL--NL-[b]Power:[/b] 1   [b]Health:[/b] 1-NL--NL-When intercepting: hits first."></g>
-		<g type="Psy Clash Cards" id="Card-Bowman" name="Bowman" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 2-NL--NL-[b]Power:[/b] 1   [b]Health:[/b] 2-NL--NL-Can freely damage any minion instead of attacking."></g>
-		<g type="Psy Clash Cards" id="Card-Crossbowman" name="Crossbowman" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 4-NL--NL-[b]Power:[/b] 2   [b]Health:[/b] 3-NL--NL-Can freely damage any minion instead of attacking."></g>
-		<g type="Psy Clash Cards" id="Card-Cryokineticist" name="Cryokineticist" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 3-NL--NL-[b]Power:[/b] 2   [b]Health:[/b] 2-NL--NL-When intercepting or intercepted: -2 power to enemy minion."></g>
-		<g type="Psy Clash Cards" id="Card-Drake" name="Drake" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 3-NL--NL-[b]Power:[/b] 3   [b]Health:[/b] 2-NL--NL-When intercepting: hits first."></g>
-		<g type="Psy Clash Cards" id="Card-Gasul" name="Gasul" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 1-NL--NL-[b]Power:[/b] 1   [b]Health:[/b] 2-NL--NL-When played: +1 card to owner."></g>
-		<g type="Psy Clash Cards" id="Card-Golem" name="Golem" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 4-NL--NL-[b]Power:[/b] 5   [b]Health:[/b] 8-NL--NL-"></g>
+		<g type="Psy Clash Cards" id="Card-Bandit" name="Bandit" desc="SPRITE
+		[Immobilized]StarterSPRITE[Morale]Minion/SPRITE[Energy]1/SPRITE[Crush]2/SPRITE[Crush Res.]1-NL-"></g>
+		<g type="Psy Clash Cards" id="Card-Barudit" name="Barudit" desc="SPRITE[Light]CommonSPRITE[Morale]Minion/SPRITE[Energy]1/SPRITE[Crush]1/SPRITE[Crush Res.]1-NL-When intercepting: hits first."></g>
+		<g type="Psy Clash Cards" id="Card-Bowman" name="Bowman" desc="SPRITE[Light]CommonSPRITE[Morale]Minion/SPRITE[Energy]2/SPRITE[Crush]1/SPRITE[Crush Res.]2-NL-Can freely damage any minion instead of attacking."></g>
+		<g type="Psy Clash Cards" id="Card-Crossbowman" name="Crossbowman" desc="SPRITE[Star]UncommonSPRITE[Morale]Minion/SPRITE[Energy]4/SPRITE[Crush]2/SPRITE[Crush Res.]3-NL-Can freely damage any minion instead of attacking."></g>
+		<g type="Psy Clash Cards" id="Card-Cryokineticist" name="Cryokineticist" desc="SPRITE[Star]UncommonSPRITE[Morale]Minion/SPRITE[Energy]3/SPRITE[Crush]2/SPRITE[Crush Res.]2-NL-When intercepting or intercepted: -2 power to enemy minion."></g>
+		<g type="Psy Clash Cards" id="Card-Drake" name="Drake" desc="SPRITE[Star]UncommonSPRITE[Morale]Minion/SPRITE[Energy]3/SPRITE[Crush]3/SPRITE[Crush Res.]2-NL-When intercepting: hits first."></g>
+		<g type="Psy Clash Cards" id="Card-Gasul" name="Gasul" desc="SPRITE[Light]CommonSPRITE[Morale]Minion/SPRITE[Energy]1/SPRITE[Crush]1/SPRITE[Crush Res.]1-NL-When played: +1 card to owner."></g>
+		<g type="Psy Clash Cards" id="Card-Golem" name="Golem" desc="SPRITE[Star]UncommonSPRITE[Morale]Minion/SPRITE[Energy]4/SPRITE[Crush]5/SPRITE[Crush Res.]8-NL-"></g>
 		<g type="Psy Clash Cards" id="Card-Greater Spriggat" name="Greater Spriggat" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 4-NL--NL-[b]Power:[/b] 5   [b]Health:[/b] 4-NL--NL-Cannot be intercepted."></g>
 		<g type="Psy Clash Cards" id="Card-Iron Jaw Trap" name="Iron Jaw Trap" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 0-NL--NL-[b]Power:[/b] 3   [b]Health:[/b] 1-NL--NL-Cannot attack. When intercepting: 3 damage to enemy and 1 to self."></g>
 		<g type="Psy Clash Cards" id="Card-Library" name="Library" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 2-NL--NL-[b]Power:[/b] 0   [b]Health:[/b] 4-NL--NL-Cannot attack. When owner's turn starts, +1 card to owner."></g>
