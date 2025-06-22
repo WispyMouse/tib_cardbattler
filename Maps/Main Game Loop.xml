@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Main Game Loop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/20/2025 7:05:08 PM">
+<Level mapname="Main Game Loop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/22/2025 1:23:21 PM">
 
-	<Narration>  -PIC:Card_Tournament_Dese_Alt- -DIA:Day Begin-</Narration>
+	<Narration>  -PIC:Card_Tournament_Dese_Alt-  -DIA:Game Begin-</Narration>
 
 	<Shop costMultiplier="100" baseSalePrice="50" itemQuality="0" qualityVariance="0" foodCostPercent="0">Card Shop
-		<Stock type="Consumables" chance="100" num="3">Bandit</Stock>
+		<Stock type="Consumables" chance="100" num="1" materials="3">Bandit,Swordsman,Barudit,Golem,Spriggat,Bandit</Stock>
+		<Stock type="Consumables" chance="100" num="1" materials="3">Mind Blast,Leap,Mind Control,Feedback,Drain,Light Blast,Shadow Blast</Stock>
+		<Stock type="Consumables" chance="100" num="1" materials="3">Bandit,Swordsman,Barudit,Golem,Spriggat,Bandit</Stock>
+		<Stock type="Consumables" chance="100" num="1" materials="3">Mind Blast,Leap,Mind Control,Feedback,Drain,Light Blast,Shadow Blast</Stock>
 	</Shop>
 
 	<Script>ShowAllSinglesInBuySingles
@@ -43,7 +46,7 @@
 	<Script>_GainPlayerInventoryCardsLoop
 		<Action>InvToList/Reserve Supplies,ReservesInv</Action>
 		<Action>SetList/ReverseInventoryIndexes,</Action>
-		<Action>ForLoop/-InventoryIndex-,0-LASTINLIST[ReservesInv],1,Run,_AddValToList,List Name,ReverseInventoryIndexes,Entry Value,-InventoryIndex-,Add To Beginning,true</Action>	
+		<Action>ForLoop/-InventoryIndex-,0-LASTINLIST[ReservesInv],1,Run,_AddValToList,List Name,ReverseInventoryIndexes,Entry Value,-InventoryIndex-,Add To Beginning,true</Action>
 		<Action>SetList/ReverseInventoryStrings,</Action>
 		<Action>ForLoop/-InventoryIndex-,0-LASTINLIST[ReservesInv],1,Run,_AddStringToList,List Name,ReverseInventoryStrings,Entry Value,LIST{ReservesInv,-InventoryIndex-},Add To Beginning,true</Action>
 		<Action>ForLoop/-InventoryIndex-,0-LASTINLIST[ReservesInv],1,Run,GainCardFromPsyClashCardItem,PsyClashCardItemName,LIST{ReverseInventoryStrings,-InventoryIndex-},InventoryIndex,LIST{ReverseInventoryIndexes,-InventoryIndex-}</Action>
@@ -118,14 +121,26 @@
 		<Action>Log/Pool: '-STR:Pool-' ; DaysPassed: '-VAL:DaysPassed- ; MaxWeekNumber: '-VAL:MaxWeekNumber-' ; EncounterListName -STR:EncounterListName-'</Action>
 	</Script>
 
-	<Dialogue trigger="None/" convID="Day Begin" r="true">
-		<Branch num="0" name="" showSingleReplies="true">/This is the main game loop dispatch!
+	<Script>PopulateShop
+		<Action>AddStock/Card Shop,Consumables,Bandit|Swordsman|Barudit|Golem|Spriggat|Bandit,3</Action>
+		<Action>AddStock/Card Shop,Consumables,Mind Blast|Leap|Mind Control|Feedback|Drain|Light Blast|Shadow Blast,3</Action>
+	</Script>
+
+	<Dialogue trigger="None/" convID="Game Begin" r="true">
+		<Branch num="0" name="" showSingleReplies="true">/Wow the game started! This dialogue is here so that the editor preview does not run unsafe scripts.
 			<Action>Run/RunAllInitializers</Action>
+			<Reply>Time to start the game!/LoadConv/Day Begin</Reply>
+		</Branch>
+	</Dialogue>
+
+	<Dialogue trigger="None/" convID="Day Begin" r="true">
+		<Branch num="0" name="" showSingleReplies="true">/This is the main game loop dispatch! You should see this at the beginning of a day. This exists so that something distinct happens before going on to the core day loop menu.
 			<Action>SetVal/EncountersEnumerated,=:0</Action>
 			<Action>Run/UpdateDay</Action>
 			<Action>Run/ShowButtons</Action>
 			<Action>Run/PickEncounterListName</Action>
-			<Reply>Time to start the game!/LoadConv/Daily Loop</Reply>
+			<Action>Run/PopulateShop</Action>
+			<Reply>Time to start the day!/LoadConv/Daily Loop</Reply>
 		</Branch>
 	</Dialogue>
 
