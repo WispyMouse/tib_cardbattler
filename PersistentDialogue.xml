@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/20/2025 7:03:00 PM">
+<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/22/2025 12:43:13 PM">
 
 	<Script>_SetString
 		<Action>SetString/-STR:Variable Name-,-STR:String-</Action>
@@ -123,9 +123,17 @@
 		<Action>SetVal/-STR:Variable Name-,-STR:Operator-:-VAL:Amount-</Action>
 	</Script>
 
+	<Script>_AddValToList
+		<Action>AddToList/-STR:List Name-,-VAL:Entry Value-,-STR:Add To Beginning-</Action>
+	</Script>
+
+	<Script>_AddStringToList
+		<Action>AddToList/-STR:List Name-,-STR:Entry Value-,-STR:Add To Beginning-</Action>
+	</Script>
+
 	<Script>_GetCardIndexByNameForIndex
 		<Action>Run/GetCardDataByIndex,Index,-VAL:Index-</Action>
-		<Action>IfStringRun/-STR:CardNameToFind-,-STR:CardName-,_SetVal,,Variable Name,MatchingIndex,Operator,=,Amount,-VAL:Index-</Action>
+		<Action>IfStringRun/CardNameToFind,-STR:CardName-,_SetVal,false,Variable Name,MatchingIndex,Operator,=,Amount,-VAL:Index-</Action>
 	</Script>
 
 	<Script>_GetCardIndexByNameForIndexAbortIfFound

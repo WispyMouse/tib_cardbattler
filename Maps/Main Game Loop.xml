@@ -42,7 +42,11 @@
 
 	<Script>_GainPlayerInventoryCardsLoop
 		<Action>InvToList/Reserve Supplies,ReservesInv</Action>
-		<Action>ForLoop/-InventoryIndex-,0-LASTINLIST[ReservesInv],1,Run,GainCardFromPsyClashCardItem,PsyClashCardItemName,LIST{ReservesInv,-InventoryIndex-},InventoryIndex,-InventoryIndex-</Action>
+		<Action>SetList/ReverseInventoryIndexes,</Action>
+		<Action>ForLoop/-InventoryIndex-,0-LASTINLIST[ReservesInv],1,Run,_AddValToList,List Name,ReverseInventoryIndexes,Entry Value,-InventoryIndex-,Add To Beginning,true</Action>	
+		<Action>SetList/ReverseInventoryStrings,</Action>
+		<Action>ForLoop/-InventoryIndex-,0-LASTINLIST[ReservesInv],1,Run,_AddStringToList,List Name,ReverseInventoryStrings,Entry Value,LIST{ReservesInv,-InventoryIndex-},Add To Beginning,true</Action>
+		<Action>ForLoop/-InventoryIndex-,0-LASTINLIST[ReservesInv],1,Run,GainCardFromPsyClashCardItem,PsyClashCardItemName,LIST{ReverseInventoryStrings,-InventoryIndex-},InventoryIndex,LIST{ReverseInventoryIndexes,-InventoryIndex-}</Action>
 	</Script>
 
 	<Script>_RemoveItem
@@ -51,15 +55,16 @@
 
 	<Script>GainCardFromPsyClashCardItem
 		<Action>SetVal/MatchingIndex,=:-1</Action>
+		<Action>Log/Gaining card based on name -STR:PsyClashCardItemName-</Action>
 		<Action>Run/GetCardIndexByName,CardNameToFind,-STR:PsyClashCardItemName-</Action>
 		<Action>IfValRun/-VAL:MatchingIndex-,g,-1,_GainCardFromPsyClashCardItemConfirm,PsyClashCardItemName,-STR:PsyClashCardItemName-</Action>
 	</Script>
 
 	<Script>_GainCardFromPsyClashCardItemConfirm
+		<Action>Log/Awarding the player with the -STR:CardName- card, which matched at index -VAL:MatchingIndex-. Removing inventory index -VAL:InventoryIndex-</Action>
 		<Action>Run/GetCardDataByIndex,Index,-VAL:MatchingIndex-</Action>
 		<Action>AddToList/PlayerDeckInactive,-STR:CardName-</Action>
 		<Action>RemoveItem/Reserve Supplies,-VAL:InventoryIndex-</Action>
-		<Action>Log/Awarding the player with the -STR:CardName- card, which matched at index -VAL:MatchingIndex-. Removing inventory index -VAL:InventoryIndex-</Action>
 	</Script>
 
 	<Script>UpdateDay
@@ -167,7 +172,6 @@
 			<Reply>/</Reply>
 		</Branch>
 		<Branch num="1" name="">/The player should not see this popup, which should immediately go to 0.
-			<Action>GiveItem/Reserve Supplies,Bandit</Action>
 			<Action>Run/GainPlayerInventoryCards</Action>
 			<Action>GoTo/0</Action>
 			<Reply>/</Reply>
