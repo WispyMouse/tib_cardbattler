@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Glossary>
 	<PsyClashCards id="Psy Clash Cards" desc="Cards in the popular collectible card game Psy Clash." num="44">
-		<g type="Psy Clash Cards" id="Card-Assassin" name="Assassin" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 2-NL--NL-[b]Power:[/b] 2   [b]Health:[/b] 1-NL--NL-When intercepting: switches to an open lane, if available."></g>
-		<g type="Psy Clash Cards" id="Card-Bakery" name="Bakery" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 2-NL--NL-[b]Power:[/b] 0   [b]Health:[/b] 4-NL--NL-Cannot attack. When owner's turn starts, +1 health to owner."></g>
-		<g type="Psy Clash Cards" id="Card-Bandit" name="Bandit" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 1-NL--NL-[b]Power:[/b] 2   [b]Health:[/b] 1-NL--NL-" shop_desc="Minion -SPRITE[Aura]- Yay!"></g>
+		<g type="Psy Clash Cards" id="Card-Assassin" name="Assassin" desc="SPRITE[Light]Common SPRITE[Morale]Minion/SPRITE[Energy]2/SPRITE[Crush]2/SPRITE[Crush Res.]1-NL-When intercepting: switches to an open lane, if available."></g>
+		<g type="Psy Clash Cards" id="Card-Bakery" name="Bakery" desc="SPRITE[Light]CommonSPRITE[Morale]Minion/SPRITE[Energy]2/SPRITE[Crush]0/SPRITE[Crush Res.]4-NL-Cannot attack. When owner's turn starts, +1 health to owner."></g>
+		<g type="Psy Clash Cards" id="Card-Bandit" name="Bandit" desc="
+		SPRITE[Immobilized]StarterSPRITE[Morale]Minion/SPRITE[Energy]1/SPRITE[Crush]2/SPRITE[Crush Res.]1-NL-"></g>
 		<g type="Psy Clash Cards" id="Card-Barudit" name="Barudit" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 1-NL--NL-[b]Power:[/b] 1   [b]Health:[/b] 1-NL--NL-When intercepting: hits first."></g>
 		<g type="Psy Clash Cards" id="Card-Bowman" name="Bowman" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 2-NL--NL-[b]Power:[/b] 1   [b]Health:[/b] 2-NL--NL-Can freely damage any minion instead of attacking."></g>
 		<g type="Psy Clash Cards" id="Card-Crossbowman" name="Crossbowman" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 4-NL--NL-[b]Power:[/b] 2   [b]Health:[/b] 3-NL--NL-Can freely damage any minion instead of attacking."></g>

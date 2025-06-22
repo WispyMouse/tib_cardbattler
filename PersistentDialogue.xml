@@ -43,7 +43,7 @@
 		<Action>SetList/RarityToName,Starter|Common|Uncommon|Rare|Exalted</Action>
 		<Action>SetList/AllCards,</Action>
 		<Action>SetList/AllCardsToRarity,</Action>
-		<Action>SetList/RarityToCost,0|5|15|60|140</Action>
+		<Action>SetList/RarityToCost,1|5|15|60|140</Action>
 		<Action>Run/RegisterCardData,CardName,Bandit,Rarity,0</Action>
 		<Action>Run/RegisterCardData,CardName,Swordsman,Rarity,0</Action>
 		<Action>Run/RegisterCardData,CardName,Solid State Shield,Rarity,0</Action>

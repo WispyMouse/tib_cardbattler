@@ -4,10 +4,6 @@
 	<Narration>  -PIC:Card_Tournament_Dese_Alt-  -DIA:Game Begin-</Narration>
 
 	<Shop costMultiplier="100" baseSalePrice="50" itemQuality="0" qualityVariance="0" foodCostPercent="0">Card Shop
-		<Stock type="Consumables" chance="100" num="1" materials="3">Bandit,Swordsman,Barudit,Golem,Spriggat,Bandit</Stock>
-		<Stock type="Consumables" chance="100" num="1" materials="3">Mind Blast,Leap,Mind Control,Feedback,Drain,Light Blast,Shadow Blast</Stock>
-		<Stock type="Consumables" chance="100" num="1" materials="3">Bandit,Swordsman,Barudit,Golem,Spriggat,Bandit</Stock>
-		<Stock type="Consumables" chance="100" num="1" materials="3">Mind Blast,Leap,Mind Control,Feedback,Drain,Light Blast,Shadow Blast</Stock>
 	</Shop>
 
 	<Script>ShowAllSinglesInBuySingles
@@ -122,6 +118,7 @@
 	</Script>
 
 	<Script>PopulateShop
+		<Action>AddStock/Card Shop,Consumables,Assassin</Action>
 		<Action>AddStock/Card Shop,Consumables,Bandit|Swordsman|Barudit|Golem|Spriggat|Bandit,3</Action>
 		<Action>AddStock/Card Shop,Consumables,Mind Blast|Leap|Mind Control|Feedback|Drain|Light Blast|Shadow Blast,3</Action>
 	</Script>
