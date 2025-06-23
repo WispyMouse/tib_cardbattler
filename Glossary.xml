@@ -3,8 +3,7 @@
 	<PsyClashCards id="Psy Clash Cards" desc="Cards in the popular collectible card game Psy Clash." num="44">
 		<g type="Psy Clash Cards" id="Card-Assassin" name="Assassin" desc="SPRITE[Light]Common SPRITE[Morale]Minion/SPRITE[Energy]2/SPRITE[Crush]2/SPRITE[Crush Res.]1-NL-When intercepting: switches to an open lane, if available."></g>
 		<g type="Psy Clash Cards" id="Card-Bakery" name="Bakery" desc="SPRITE[Light]CommonSPRITE[Morale]Minion/SPRITE[Energy]2/SPRITE[Crush]0/SPRITE[Crush Res.]4-NL-Cannot attack. When owner's turn starts, +1 health to owner."></g>
-		<g type="Psy Clash Cards" id="Card-Bandit" name="Bandit" desc="SPRITE
-		[Immobilized]StarterSPRITE[Morale]Minion/SPRITE[Energy]1/SPRITE[Crush]2/SPRITE[Crush Res.]1-NL-"></g>
+		<g type="Psy Clash Cards" id="Card-Bandit" name="Bandit" desc="SPRITE		[Immobilized]StarterSPRITE[Morale]Minion/SPRITE[Energy]1/SPRITE[Crush]2/SPRITE[Crush Res.]1-NL-"></g>
 		<g type="Psy Clash Cards" id="Card-Barudit" name="Barudit" desc="SPRITE[Light]CommonSPRITE[Morale]Minion/SPRITE[Energy]1/SPRITE[Crush]1/SPRITE[Crush Res.]1-NL-When intercepting: hits first."></g>
 		<g type="Psy Clash Cards" id="Card-Bowman" name="Bowman" desc="SPRITE[Light]CommonSPRITE[Morale]Minion/SPRITE[Energy]2/SPRITE[Crush]1/SPRITE[Crush Res.]2-NL-Can freely damage any minion instead of attacking."></g>
 		<g type="Psy Clash Cards" id="Card-Crossbowman" name="Crossbowman" desc="SPRITE[Star]UncommonSPRITE[Morale]Minion/SPRITE[Energy]4/SPRITE[Crush]2/SPRITE[Crush Res.]3-NL-Can freely damage any minion instead of attacking."></g>
@@ -21,30 +20,30 @@
 		<g type="Psy Clash Cards" id="Card-Photokineticist" name="Photokineticist" desc="SPRITE[Star]UncommonSPRITE[Morale]Minion/SPRITE[Energy]3/SPRITE[Crush]3/SPRITE[Crush Res.]4-NL-Cannot be directly targeted by enemy abilities or cards."></g>
 		<g type="Psy Clash Cards" id="Card-Pyrokineticist" name="Pyrokineticist" desc="SPRITE[Star]UncommonSPRITE[Morale]Minion/SPRITE[Energy]3/SPRITE[Crush]4/SPRITE[Crush Res.]2-NL-When hitting a player: +2 extra damage."></g>
 		<g type="Psy Clash Cards" id="Card-Psy Healer" name="Psy Healer" desc="SPRITE[Light]CommonSPRITE[Morale]Minion/SPRITE[Energy]2/SPRITE[Crush]0/SPRITE[Crush Res.]6-NL-Player gains 2 health when minion attacks."></g>
-		<g type="Psy Clash Cards" id="Card-Smuggler" name="Smuggler" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 1-NL--NL-[b]Power:[/b] 1   [b]Health:[/b] 1-NL--NL-When attacking: +1 card to player. When hitting opponent: -1 energy to target."></g>
-		<g type="Psy Clash Cards" id="Card-Solid State Shield" name="Solid State Shield" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 1-NL--NL-[b]Power:[/b] 0   [b]Health:[/b] 8-NL--NL-Cannot attack."></g>
-		<g type="Psy Clash Cards" id="Card-Shadowling" name="Shadowling" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 1-NL--NL-[b]Power:[/b] 1   [b]Health:[/b] 3-NL--NL-Cannot be intercepted."></g>
-		<g type="Psy Clash Cards" id="Card-Spearman" name="Spearman" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 2-NL--NL-[b]Power:[/b] 1   [b]Health:[/b] 5-NL--NL-When intercepting: +1 power."></g>
-		<g type="Psy Clash Cards" id="Card-Spirit" name="Spirit" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 2-NL--NL-[b]Power:[/b] 1   [b]Health:[/b] 3-NL--NL-When hitting opponent: -1 energy to target, +1 energy to owner. Returns to deck on death."></g>
-		<g type="Psy Clash Cards" id="Card-Spriggat" name="Spriggat" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 3-NL--NL-[b]Power:[/b] 3   [b]Health:[/b] 3-NL--NL-Cannot be intercepted."></g>
-		<g type="Psy Clash Cards" id="Card-Steam Engine" name="Steam Engine" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 2-NL--NL-[b]Power:[/b] 0   [b]Health:[/b] 4-NL--NL-Cannot attack. When owner's turn starts, +1 energy to owner."></g>
-		<g type="Psy Clash Cards" id="Card-Swordsman" name="Swordsman" desc="[b]Type:[/b] Minion   [b]Cost:[/b] 2-NL--NL-[b]Power:[/b] 2   [b]Health:[/b] 3-NL--NL-"></g>
-		<g type="Psy Clash Cards" id="Card-Awareness" name="Awareness" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 2-NL--NL-Targets a friendly minion. Chosen minion now hits first when intercepting."></g>
-		<g type="Psy Clash Cards" id="Card-Blinding Cloak" name="Blinding Cloak" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 2-NL--NL-Targets a friendly minion. Chosen minion may no longer be intercepted."></g>
-		<g type="Psy Clash Cards" id="Card-Dark Vortex" name="Dark Vortex" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 3-NL--NL-All enemy minions lose 2 health."></g>
-		<g type="Psy Clash Cards" id="Card-Drain" name="Drain" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 2-NL--NL-Opponent loses 4 energy (to a minimum of -1)."></g>
-		<g type="Psy Clash Cards" id="Card-Feedback" name="Feedback" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 3-NL--NL-Player drains 4 health from opponent."></g>
-		<g type="Psy Clash Cards" id="Card-Focus" name="Focus" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 0-NL--NL-Player gains 1 energy and 1 card. Returns to deck after use."></g>
-		<g type="Psy Clash Cards" id="Card-Frost Armor" name="Frost Armor" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 1-NL--NL-Targets a friendly minion. Chosen minion gains +3 health."></g>
-		<g type="Psy Clash Cards" id="Card-Fury" name="Fury" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 2-NL--NL-Targets a friendly minion. Chosen minion gains +2 power."></g>
-		<g type="Psy Clash Cards" id="Card-Kinetic Gust" name="Kinetic Gust" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 1-NL--NL-Targets an enemy minion. Chosen minion takes 1 damage and switches to an open lane, if available."></g>
-		<g type="Psy Clash Cards" id="Card-Leap" name="Leap" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 0-NL--NL-Targets a friendly minion. Chosen minion switches to an open lane, if available. Gain 1 card."></g>
-		<g type="Psy Clash Cards" id="Card-Light Blast" name="Light Blast" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 2-NL--NL-Opponent takes 5 damage."></g>
-		<g type="Psy Clash Cards" id="Card-Mind Blast" name="Mind Blast" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 1-NL--NL-Targets an enemy minion. Chosen minion takes 1 damage."></g>
-		<g type="Psy Clash Cards" id="Card-Mind Control" name="Mind Control" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 3-NL--NL-Targets an enemy minion. Chosen minion becomes your minion if you have an open lane."></g>
-		<g type="Psy Clash Cards" id="Card-Mind Shield" name="Mind Shield" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 1-NL--NL-Gain 3 health."></g>
-		<g type="Psy Clash Cards" id="Card-Shadow Blast" name="Shadow Blast" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 2-NL--NL-Targets an enemy minion. Chosen minion takes 4 damage."></g>
-		<g type="Psy Clash Cards" id="Card-Stimulate" name="Stimulate" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 1-NL--NL-Gain 3 cards, up to a maximum hand size of 7."></g>
-		<g type="Psy Clash Cards" id="Card-Terror" name="Terror" desc="[b]Type:[/b] Effect   [b]Cost:[/b] 1-NL--NL-Targets an enemy minion. Chosen minion cannot attack during its owner's turn."></g>
+		<g type="Psy Clash Cards" id="Card-Smuggler" name="Smuggler" desc="SPRITE[Stunned]RareSPRITE[Morale]Minion/SPRITE[Energy]1/SPRITE[Crush]1/SPRITE[Crush Res.]1-NL-When attacking: +1 card to player. When hitting opponent: -1 energy to target."></g>
+		<g type="Psy Clash Cards" id="Card-Solid State Shield" name="Solid State Shield" desc="SPRITE[Immobilized]StarterSPRITE[Morale]Minion/SPRITE[Energy]1/SPRITE[Crush]0/SPRITE[Crush Res.]8-NL-Cannot attack."></g>
+		<g type="Psy Clash Cards" id="Card-Shadowling" name="Shadowling" desc="SPRITE[Light]CommonSPRITE[Morale]Minion/SPRITE[Energy]1/SPRITE[Crush]1/SPRITE[Crush Res.]3-NL-Cannot be intercepted."></g>
+		<g type="Psy Clash Cards" id="Card-Spearman" name="Spearman" desc="SPRITE[Star]UncommonSPRITE[Morale]Minion/SPRITE[Energy]2/SPRITE[Crush]1/SPRITE[Crush Res.]5-NL-When intercepting: +1 power."></g>
+		<g type="Psy Clash Cards" id="Card-Spirit" name="Spirit" desc="SPRITE[Stunned]RareSPRITE[Morale]Minion/SPRITE[Energy]2/SPRITE[Crush]1/SPRITE[Crush Res.]3-NL-When hitting opponent: -1 energy to target, +1 energy to owner. Returns to deck on death."></g>
+		<g type="Psy Clash Cards" id="Card-Spriggat" name="Spriggat" desc="SPRITE[Star]UncommonSPRITE[Morale]Minion/SPRITE[Energy]3/SPRITE[Crush]3/SPRITE[Crush Res.]3-NL-Cannot be intercepted."></g>
+		<g type="Psy Clash Cards" id="Card-Steam Engine" name="Steam Engine" desc="SPRITE[Star]UncommonSPRITE[Morale]Minion/SPRITE[Energy]2/SPRITE[Crush]0/SPRITE[Crush Res.]4-NL-Cannot attack. When owner's turn starts, +1 energy to owner."></g>
+		<g type="Psy Clash Cards" id="Card-Swordsman" name="Swordsman" desc="SPRITE[Immobilized]StarterSPRITE[Morale]Minion/SPRITE[Energy]2/SPRITE[Crush]2/SPRITE[Crush Res.]3-NL-"></g>
+		<g type="Psy Clash Cards" id="Card-Awareness" name="Awareness" desc="SPRITE[Light]CommonSPRITE[Psy]Effect/SPRITE[Energy]2-NL-Targets a friendly minion. Chosen minion now hits first when intercepting."></g>
+		<g type="Psy Clash Cards" id="Card-Blinding Cloak" name="Blinding Cloak" desc="SPRITE[Star]UncommonSPRITE[Psy]Effect/SPRITE[Energy]2-NL-Targets a friendly minion. Chosen minion may no longer be intercepted."></g>
+		<g type="Psy Clash Cards" id="Card-Dark Vortex" name="Dark Vortex" desc="SPRITE[Stunned]RareSPRITE[Psy]Effect/SPRITE[Energy]3-NL-All enemy minions lose 2 health."></g>
+		<g type="Psy Clash Cards" id="Card-Drain" name="Drain" desc="SPRITE[Star]UncommonSPRITE[Psy]Effect/SPRITE[Energy]2-NL-Opponent loses 4 energy (to a minimum of -1)."></g>
+		<g type="Psy Clash Cards" id="Card-Feedback" name="Feedback" desc="SPRITE[Star]UncommonSPRITE[Psy]Effect/SPRITE[Energy]3-NL-Player drains 4 health from opponent."></g>
+		<g type="Psy Clash Cards" id="Card-Focus" name="Focus" desc="SPRITE[Shining]ExaltedSPRITE[Psy]Effect/SPRITE[Energy]0-NL-Player gains 1 energy and 1 card. Returns to deck after use."></g>
+		<g type="Psy Clash Cards" id="Card-Frost Armor" name="Frost Armor" desc="SPRITE[Light]CommonSPRITE[Psy]Effect/SPRITE[Energy]1-NL-Targets a friendly minion. Chosen minion gains +3 health."></g>
+		<g type="Psy Clash Cards" id="Card-Fury" name="Fury" desc="SPRITE[Star]UncommonSPRITE[Psy]Effect/SPRITE[Energy]2-NL-Targets a friendly minion. Chosen minion gains +2 power."></g>
+		<g type="Psy Clash Cards" id="Card-Kinetic Gust" name="Kinetic Gust" desc="SPRITE[Star]UncommonSPRITE[Psy]Effect/SPRITE[Energy]1-NL-Targets an enemy minion. Chosen minion takes 1 damage and switches to an open lane, if available."></g>
+		<g type="Psy Clash Cards" id="Card-Leap" name="Leap" desc="SPRITE[Star]UncommonSPRITE[Psy]Effect/SPRITE[Energy]0-NL-Targets a friendly minion. Chosen minion switches to an open lane, if available. Gain 1 card."></g>
+		<g type="Psy Clash Cards" id="Card-Light Blast" name="Light Blast" desc="SPRITE[Star]UncommonSPRITE[Psy]Effect/SPRITE[Energy]2-NL-Opponent takes 5 damage."></g>
+		<g type="Psy Clash Cards" id="Card-Mind Blast" name="Mind Blast" desc="SPRITE[Immobilized]Starter[Psy]Effect/SPRITE[Energy]1-NL-Targets an enemy minion. Chosen minion takes 1 damage."></g>
+		<g type="Psy Clash Cards" id="Card-Mind Control" name="Mind Control" desc="SPRITE[Stunned]RareSPRITE[Psy]Effect/SPRITE[Energy]3-NL-Targets an enemy minion. Chosen minion becomes your minion if you have an open lane."></g>
+		<g type="Psy Clash Cards" id="Card-Mind Shield" name="Mind Shield" desc="SPRITE[Immobilized]StarterSPRITE[Psy]Effect/SPRITE[Energy]3-NL-Gain 3 health."></g>
+		<g type="Psy Clash Cards" id="Card-Shadow Blast" name="Shadow Blast" desc="SPRITE[Star]UncommonSPRITE[Psy]Effect/SPRITE[Energy]2-NL-Targets an enemy minion. Chosen minion takes 4 damage."></g>
+		<g type="Psy Clash Cards" id="Card-Stimulate" name="Stimulate" desc="SPRITE[Star]UncommonSPRITE[Psy]Effect/SPRITE[Energy]1-NL-Gain 3 cards, up to a maximum hand size of 7."></g>
+		<g type="Psy Clash Cards" id="Card-Terror" name="Terror" desc="SPRITE[Star]UncommonSPRITE[Psy]Effect/SPRITE[Energy]1-NL-Targets an enemy minion. Chosen minion cannot attack during its owner's turn."></g>
 	</PsyClashCards>
 </Glossary>
