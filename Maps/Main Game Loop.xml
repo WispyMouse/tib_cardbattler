@@ -123,7 +123,7 @@
 	</Dialogue>
 
 	<Dialogue trigger="None/" convID="Daily Loop" r="true">
-		<Branch num="0" name="" showSingleReplies="true">/Days since starting: -VAL:DaysPassed--NL-Week challenge index: -VAL:MaxWeekNumber--NL-Encounter pool: -STR:Pool-
+		<Branch num="0" name="" showSingleReplies="true">/Days since starting: -VAL:DaysPassed--NL-Week challenge index: -VAL:MaxWeekNumber--NL-Encounter pool: -STR:DayOfWeekPool-
 			<Action>Run/ShowButtons</Action>
 			<Reply>To daily encounter!/LoadConv/Daily Encounter</Reply>
 			<Reply>To the shop!/LoadConv/Card Shop</Reply>

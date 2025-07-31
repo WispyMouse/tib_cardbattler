@@ -199,16 +199,16 @@
 		<Action>IfValRun/DaysPassed,g=,7,_SetVal,VariableName,MaxWeekNumber,Amount,2</Action>
 		<Action>IfValRun/DaysPassed,g=,14,_SetVal,VariableName,MaxWeekNumber,Amount,3</Action>
 		<Action>IfValRun/DaysPassed,g=,21,_SetVal,VariableName,MaxWeekNumber,Amount,4</Action>
-		<Action>SetString/Pool,</Action>
+		<Action>SetString/DayOfWeekPool,</Action>
 		<Action>Run/GetDifficultyPoolForDayOfWeek,DayOfWeekNumber,-DAYOFTHEWEEK-</Action>
-		<Action>SetString/EncounterListName,Week-VAL:MaxWeekNumber--STR:Pool-Encounters</Action>
-		<Action>Log/Pool: '-STR:Pool-' ; DaysPassed: '-VAL:DaysPassed- ; MaxWeekNumber: '-VAL:MaxWeekNumber-' ; EncounterListName -STR:EncounterListName-'</Action>
+		<Action>SetString/EncounterListName,Week-VAL:MaxWeekNumber--STR:DayOfWeekPool-Encounters</Action>
+		<Action>Log/DayOfWeekPool: '-STR:DayOfWeekPool-' ; DaysPassed: '-VAL:DaysPassed- ; MaxWeekNumber: '-VAL:MaxWeekNumber-' ; EncounterListName -STR:EncounterListName-'</Action>
 	</Script>
 
 	<Script>GetDifficultyPoolForDayOfWeek
 		<Action>Log/Day of the week is '-VAL:DayOfWeekNumber-'.</Action>
 		<Action>SetString/DayOfWeekPool,LIST{DifficultyPoolsForDaysOfWeek,-VAL:DayOfWeekNumber-}</Action>
-		<Action>Log/Determined pool for day number '-VAL:DayOfWeekNumber-' is '-STR:DifficultyPoolsForDaysOfWeek-'.</Action>
+		<Action>Log/Determined pool for day number '-VAL:DayOfWeekNumber-' is '-STR:DayOfWeekPool-'.</Action>
 	</Script>
 
 	<Dialogue trigger="OnTurn/0" convID="Initialization" r="false">
