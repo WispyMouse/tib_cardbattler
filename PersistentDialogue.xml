@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="6/22/2025 1:11:45 PM">
+<PersistentDialogue desc="Dialogue and scripts that are universally available in every scene in the campaign (e.g. death monologues or scripts used in items and skills)." campaign="TIB Card Battler" lastEdited="7/30/2025 9:28:32 PM">
 
 	<Script>_SetString
 		<Action>SetString/-STR:Variable Name-,-STR:String-</Action>
@@ -20,12 +20,14 @@
 		<Action>SetList/PlayerDeckInactive</Action>
 		<Action>SwitchRoster/0</Action>
 		<Action>SetVal/UpdateDaysPassed,=:0</Action>
+		<Action>SetList/DifficultyPoolsForDaysOfWeek,Novice|Novice|Intermediate|Intermediate|Expert|Expert|Boss</Action>
 		<Action>SetList/Encounters,</Action>
 		<Action>SetList/Week1Encounters,</Action>
 		<Action>SetList/Week2Encounters,</Action>
 		<Action>SetList/Week3Encounters,</Action>
 		<Action>SetList/Week4Encounters,</Action>
 		<Action>Run/RegisterAllEncounters</Action>
+		<Action>Run/SetCalendarDayLogForMonth</Action>
 	</Script>
 
 	<Script>TrySetPlayerStartingDeck
@@ -166,6 +168,10 @@
 		<Action>Run/RegisterEncounter,ConvId,Karathet Week 1,WeekNumber,1,Pool,Intermediate</Action>
 		<Action>Run/RegisterEncounter,ConvId,Jacqueline Week 1,WeekNumber,1,Pool,Expert</Action>
 		<Action>Run/RegisterEncounter,ConvId,Legion Week 1,WeekNumber,1,Pool,Expert</Action>
+		<Action>Run/RegisterEncounter,ConvId,Jacqueline Week 1,WeekNumber,1,Pool,Boss</Action>
+		<Action>Run/RegisterEncounter,ConvId,Jacqueline Week 1,WeekNumber,2,Pool,Boss</Action>
+		<Action>Run/RegisterEncounter,ConvId,Jacqueline Week 1,WeekNumber,3,Pool,Boss</Action>
+		<Action>Run/RegisterEncounter,ConvId,Jacqueline Week 1,WeekNumber,4,Pool,Boss</Action>
 	</Script>
 
 	<Script>RegisterEncounter
@@ -175,10 +181,34 @@
 	</Script>
 
 	<Script>SetCalendarDayLogForMonth
-		<Action>AddDayLog/Battle,Week 1 Boss Battle,6</Action>
-		<Action>AddDayLog/Battle,Week 2 Boss Battle,13</Action>
-		<Action>AddDayLog/Battle,Week 3 Boss Battle,20</Action>
-		<Action>AddDayLog/Battle,Week 4 Boss Battle,27</Action>
+		<Action>ForLoop/-ii-,0-27,1,Run,SetCalendarDayLogForDay,DayNumberOfMonth,-ii-</Action>
+	</Script>
+
+	<Script>SetCalendarDayLogForDay
+		<Action>Log/Day of month: -VAL:DayNumberOfMonth-</Action>
+		<Action>SetVal/DayOfWeekNumber,=:-VAL:DayNumberOfMonth-</Action>
+		<Action>SetVal/DayOfWeekNumber,mod:7</Action>
+		<Action>Run/GetDifficultyPoolForDayOfWeek,DayOfWeekNumber,-VAL:DayOfWeekNumber-</Action>
+		<Action>SetString/DayScheduleLabel,-STR:DayOfWeekPool- Battle</Action>
+		<Action>Schedule/-VAL:DayNumberOfMonth-,-STR:DayScheduleLabel-,,true,true,true</Action>
+	</Script>
+
+	<Script>PickEncounterListName
+		<Action>SetVal/DaysPassed,=:-DAYSPASSED-</Action>
+		<Action>SetVal/MaxWeekNumber,=:1</Action>
+		<Action>IfValRun/DaysPassed,g=,7,_SetVal,VariableName,MaxWeekNumber,Amount,2</Action>
+		<Action>IfValRun/DaysPassed,g=,14,_SetVal,VariableName,MaxWeekNumber,Amount,3</Action>
+		<Action>IfValRun/DaysPassed,g=,21,_SetVal,VariableName,MaxWeekNumber,Amount,4</Action>
+		<Action>SetString/Pool,</Action>
+		<Action>Run/GetDifficultyPoolForDayOfWeek,DayOfWeekNumber,-DAYOFTHEWEEK-</Action>
+		<Action>SetString/EncounterListName,Week-VAL:MaxWeekNumber--STR:Pool-Encounters</Action>
+		<Action>Log/Pool: '-STR:Pool-' ; DaysPassed: '-VAL:DaysPassed- ; MaxWeekNumber: '-VAL:MaxWeekNumber-' ; EncounterListName -STR:EncounterListName-'</Action>
+	</Script>
+
+	<Script>GetDifficultyPoolForDayOfWeek
+		<Action>Log/Day of the week is '-VAL:DayOfWeekNumber-'.</Action>
+		<Action>SetString/DayOfWeekPool,LIST{DifficultyPoolsForDaysOfWeek,-VAL:DayOfWeekNumber-}</Action>
+		<Action>Log/Determined pool for day number '-VAL:DayOfWeekNumber-' is '-STR:DifficultyPoolsForDaysOfWeek-'.</Action>
 	</Script>
 
 	<Dialogue trigger="OnTurn/0" convID="Initialization" r="false">

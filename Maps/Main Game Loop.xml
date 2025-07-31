@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Main Game Loop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="6/22/2025 1:23:21 PM">
+<Level mapname="Main Game Loop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="7/30/2025 9:01:08 PM">
 
 	<Narration>  -PIC:Card_Tournament_Dese_Alt-  -DIA:Game Begin-</Narration>
 
@@ -96,25 +96,6 @@
 
 	<Script>AddChooseableEncounter
 		<Action>AddReply/,,LIST{Encounters,-VAL:EncounterIndex-}|LoadConv|LIST{Encounters,-VAL:EncounterIndex-}</Action>
-	</Script>
-
-	<Script>PickEncounterListName
-		<Action>SetVal/DaysPassed,=:-DAYSPASSED-</Action>
-		<Action>SetVal/MaxWeekNumber,=:1</Action>
-		<Action>IfValRun/DaysPassed,g=,7,_SetVal,VariableName,MaxWeekNumber,Amount,2</Action>
-		<Action>IfValRun/DaysPassed,g=,14,_SetVal,VariableName,MaxWeekNumber,Amount,3</Action>
-		<Action>IfValRun/DaysPassed,g=,21,_SetVal,VariableName,MaxWeekNumber,Amount,4</Action>
-		<Action>SetString/Pool,</Action>
-		<Action>SetVal/DayOfTheWeek,=:-DAYOFTHEWEEK-</Action>
-		<Action>IfValRun/DayOfTheWeek,=,0,_SetString,Variable Name,Pool,String,Novice</Action>
-		<Action>IfValRun/DayOfTheWeek,=,1,_SetString,Variable Name,Pool,String,Novice</Action>
-		<Action>IfValRun/DayOfTheWeek,=,2,_SetString,Variable Name,Pool,String,Intermediate</Action>
-		<Action>IfValRun/DayOfTheWeek,=,3,_SetString,Variable Name,Pool,String,Intermediate</Action>
-		<Action>IfValRun/DayOfTheWeek,=,4,_SetString,Variable Name,Pool,String,Intermediate</Action>
-		<Action>IfValRun/DayOfTheWeek,=,5,_SetString,Variable Name,Pool,String,Expert</Action>
-		<Action>IfValRun/DayOfTheWeek,=,6,_SetString,Variable Name,Pool,String,Expert</Action>
-		<Action>SetString/EncounterListName,Week-VAL:MaxWeekNumber--STR:Pool-Encounters</Action>
-		<Action>Log/Pool: '-STR:Pool-' ; DaysPassed: '-VAL:DaysPassed- ; MaxWeekNumber: '-VAL:MaxWeekNumber-' ; EncounterListName -STR:EncounterListName-'</Action>
 	</Script>
 
 	<Script>PopulateShop
