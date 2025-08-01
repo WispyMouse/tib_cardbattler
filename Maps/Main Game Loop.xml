@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Main Game Loop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="7/30/2025 9:01:08 PM">
+<Level mapname="Main Game Loop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="7/31/2025 9:32:35 PM">
 
 	<Narration>  -PIC:Card_Tournament_Dese_Alt-  -DIA:Game Begin-</Narration>
 
@@ -152,7 +152,7 @@
 			<Action>AddPortrait/Sorter,Sorter/,left</Action>
 			<Reply>Buy Singles/LoadConv/Buy Singles</Reply>
 			<Reply>Neat Shop Window/NamedBranch/OpenShop</Reply>
-			<Reply>Back/Load Conv/Daily Loop</Reply>
+			<Reply>Back/LoadConv/Daily Loop</Reply>
 		</Branch>
 		<Branch num="2" name="OpenShop">Sorter/OF COURSE. WHAT WILL YOU BE PURCHASING TODAY?-NL-(After closing the shop window, each card in your reserves will be added to your inactive Psy Clash cards)
 			<Action>ShowInfoBar/</Action>
@@ -179,7 +179,7 @@
 		<Branch num="0" name="Buy" showSingleReplies="true">Sorter/BUY SPECIFIC THINGS.
 			<Action>AddPortrait/Sorter,Sorter/,left</Action>
 			<Action>Run/ShowAllSinglesInBuySingles</Action>
-			<Reply>Back/LoadConv/Intro</Reply>
+			<Reply>Back/LoadConv/Card Shop</Reply>
 		</Branch>
 	</Dialogue>
 
