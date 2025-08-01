@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Main Game Loop" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="7/31/2025 9:39:23 PM">
+<Level mapname="Main Game Loop" maptype="Cut Scene: Static" maxplayers="1" musictrack="Ravinale" winAura="0" nextbattle="" saveable="true" campaign="TIB Card Battler" lastEdited="7/31/2025 10:04:43 PM">
 
-	<Narration>    -DIA:Game Begin- -PIC:Card_Tournament_Dese-| -DIA:Card Shop-  -PIC:Shop-</Narration>
+	<Narration>    -DIA:Game Begin- -PIC:Card_Tournament_Dese-| -DIA:Day Begin-| -DIA:Card Shop-  -PIC:Shop-</Narration>
 
 	<Shop costMultiplier="100" baseSalePrice="50" itemQuality="0" qualityVariance="0" foodCostPercent="0">Card Shop
+		<Stock type="Consumables" chance="100" num="1" materials="Bronze/Iron/Wood/Leather">Assassin</Stock>
+		<Stock type="Consumables" chance="100" num="1" materials="3">Bandit,Swordsman,Barudit,Golem,Spriggat,Bandit</Stock>
+		<Stock type="Consumables" chance="100" num="1" materials="3">Mind Blast,Leap,Mind Control,Feedback,Drain,Light Blast,Shadow Blast</Stock>
 	</Shop>
 
 	<Script>ShowAllSinglesInBuySingles
@@ -107,7 +110,7 @@
 	<Dialogue trigger="None/" convID="Game Begin" r="true">
 		<Branch num="0" name="" showSingleReplies="true">/Wow the game started! This dialogue is here so that the editor preview does not run unsafe scripts.
 			<Action>Run/RunAllInitializers</Action>
-			<Reply>Time to start the game!/LoadConv/Day Begin</Reply>
+			<Reply>Time to start the game!/NextFrame</Reply>
 		</Branch>
 	</Dialogue>
 
@@ -125,6 +128,7 @@
 	<Dialogue trigger="None/" convID="Daily Loop" r="true">
 		<Branch num="0" name="" showSingleReplies="true">/Days since starting: -VAL:DaysPassed--NL-Week challenge index: -VAL:MaxWeekNumber--NL-Encounter pool: -STR:DayOfWeekPool-
 			<Action>Run/ShowButtons</Action>
+			<Action>ChangeBackground/Card_Tournament_Dese</Action>
 			<Reply>To daily encounter!/LoadConv/Daily Encounter</Reply>
 			<Reply>To the shop!/NamedBranch/Go To Shop</Reply>
 			<Reply>Choose Specific Encounter/NamedBranch/Choose</Reply>
@@ -134,7 +138,7 @@
 			<Reply>Back/NewBranch/0</Reply>
 		</Branch>
 		<Branch num="2" name="Go To Shop">/Player shouldn't see this
-			<Action>GoToFrame/1</Action>
+			<Action>GoToFrame/2</Action>
 			<Reply>Nothing/</Reply>
 		</Branch>
 	</Dialogue>
@@ -154,6 +158,7 @@
 			<Action>Run/RunAllInitializers</Action>
 			<Action>Run/ShowButtons</Action>
 			<Action>AddPortrait/Sorter,Sorter/,left</Action>
+			<Action>ChangeBackground/Shop</Action>
 			<Reply>Buy Singles/LoadConv/Buy Singles</Reply>
 			<Reply>Neat Shop Window/NamedBranch/OpenShop</Reply>
 			<Reply>Back/NamedBranch/Return To Main Loop</Reply>
@@ -178,7 +183,8 @@
 			<Reply>Thanks/NewBranch/0</Reply>
 		</Branch>
 		<Branch num="4" name="Return To Main Loop">/Player shouldn't see this
-			<Action>GoToFrame/0</Action>
+			<Action>ClearPortraits/</Action>
+			<Action>GoToFrame/1</Action>
 			<Reply>Nothing/</Reply>
 		</Branch>
 	</Dialogue>

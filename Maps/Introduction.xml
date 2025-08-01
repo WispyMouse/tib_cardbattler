@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Level mapname="Introduction" maptype="Cut Scene: Static" maxplayers="1" musictrack="" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="6/19/2025 6:06:56 AM">
+<Level mapname="Introduction" maptype="Cut Scene: Static" maxplayers="1" musictrack="Preparing For Battle" winAura="0" nextbattle="Main Game Loop" saveable="true" campaign="TIB Card Battler" lastEdited="7/31/2025 9:57:59 PM">
 
-	<Narration> -DIA:Intro-</Narration>
+	<Narration> -DIA:Intro- -PIC:None-</Narration>
 
 	<Shop costMultiplier="100" baseSalePrice="50" itemQuality="3" qualityVariance="2" foodCostPercent="300">Default Store
 		<Stock type="Weapons" chance="100" num="1-5" materials="WeaponMaterials">GEN:Axe</Stock>
